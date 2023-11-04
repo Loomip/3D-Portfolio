@@ -1,0 +1,736 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7fa9cf0991a6d4cbf5d4c682aa70e1, type: 3}
+  m_Name: Data_Messages
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Kor
+    list:
+    - Scene: 2
+      DialogIndex: 0
+      Name: 
+      Actor: 0
+      Text: "\uD3EC\uD2B8\uD3F4\uB9AC\uC624 \uBC84\uC804\uC740 \uC2A4\uD1A0\uB9AC
+        \uC911\uAC04\uC5D0\uC11C \uC2DC\uC791\uD569\uB2C8\uB2E4."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 1
+      Name: 
+      Actor: 0
+      Text: "\uC55E\uACFC \uB05D \uC2A4\uD1A0\uB9AC\uB294 \uAC1C\uBC1C\uB418\uC9C0
+        \uC54A\uB294\uC810 \uB108\uB978 \uC591\uD574 \uBD80\uD0C1\uB4DC\uB9BD\uB2C8\uB2E4."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 2
+      Name: 
+      Actor: 0
+      Text: "\uC5EC\uAE30\uB294 \uB300\uD55C\uBBFC\uAD6D xx\uC9C0\uC5ED\uC758 xxx\uD559\uAD50"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 3
+      Name: 
+      Actor: 0
+      Text: "\uC1A1\uC774\uB294 \uD50C\uB808\uC774\uC5B4\uC640 \uC545\uBABD(lucid
+        dream) \uC18D\uC5D0\uC11C\uB3C4 \uC5F4\uC2EC\uD788 \uC2F8\uC6CC \uC654\uC9C0\uB9CC
+        \uD604\uC2E4\uC5D0\uC11C\uB294 \uC790\uC2E0\uB3C4 \uC9C0\uD0A4\uC9C0 \uBABB\uD558\uB294\uAC83\uC5D0
+        \uB300\uD55C \uAD34\uB9AC\uAC10\uC744 \uB290\uB080\uB2E4."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 4
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uACB0\uAD6D \uB09C \uC57D\uD55C \uC0AC\uB78C\uC774\uC57C.. \uC544\uBB34\uB3C4
+        \uAD6C\uD560\uC218 \uC5C6\uC5B4.. "
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 5
+      Name: 
+      Actor: 0
+      Text: "\uACB0\uAD6D \uC1A1\uC774\uB294 ???\uD604\uC0C1\uC758 \uC7AC\uBB3C\uC774
+        \uB418\uC5B4\uBC84\uB9AC\uACE0 \uD559\uAD50\uAC00 \uC545\uBABD(lucid dream)\uC18D\uC5D0
+        \uBA39\uD600\uBC84\uB9B0\uB2E4."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 6
+      Name: "\uD50C\uB808\uC774\uC5B4"
+      Actor: 1
+      Text: "\uACB0\uAD6D.. \uC774\uB807\uAC8C \uB418\uBC84\uB837\uAD6C\uB098 \u2026"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 7
+      Name: "\uD604\uC6B0"
+      Actor: 2
+      Text: "\uC820\uC7A5.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 8
+      Name: "\uD604\uC544"
+      Actor: 3
+      Text: "\uC1A1\uC774\uC57C.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 9
+      Name: "\uC740\uC11C"
+      Actor: 4
+      Text: "\uB2E4\uB4E4 \uB2A6\uC9C0 \uC54A\uAC8C \uC640\uC918\uC11C \uACE0\uB9C8\uC6CC"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 10
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uD558\u2026 \uC774 \uC2DC\uAC04\uC5D0 \uC774\uAC8C \uBB34\uC2A8\uC77C\uC774\uC57C..
+        \uC8FC\uBCC0\uC740 \uAC71\uC815\uD558\uC9C0\uB9C8 \uC544\uBE60 \uD55C\uD14C
+        \uB9D0\uD574\uC11C \uB9C9\uC544\uB1A7\uC5B4"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 11
+      Name: "\uB2E4\uC628"
+      Actor: 6
+      Text: "\uB108\uBB34 \uAC11\uC791\uC2A4\uB7EC\uC6CC\uC11C \uC7A5\uBE44\uB294
+        \uB9CE\uC774 \uCC59\uAE30\uC9C0 \uBABB\uD587\uC5B4 \uADF8\uB798\uB3C4 \uB3C4\uC6C0\uC774
+        \uD544\uC694\uD558\uBA74 \uB9D0\uD574\uC918"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 2
+      DialogIndex: 12
+      Name: "\uC740\uC11C"
+      Actor: 7
+      Text: "\uC77C\uB2E8 \uAC01\uC790 \uD769\uC5B4\uC838\uC11C \uC774\uACF3\uC758
+        \uC815\uBCF4\uB97C \uCC3E\uC544\uBCF4\uC790"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 0
+      Name: "\uD604\uC6B0"
+      Actor: 2
+      Text: "\uB098 \uB54C\uBB38\uC774\uC57C.. \uB0B4\uAC00 \uC606\uC5D0\uC11C \uC9C0\uCF1C\uC92C\uC5B4\uC57C
+        \uD588\uC5B4..!!"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 0
+      Name: "\uD604\uC544"
+      Actor: 3
+      Text: "\uB108\uBB34 \uC790\uCC45 \uD558\uC9C0 \uB9D0\uC790.. \uC81C\uC77C \uAD34\uB85C\uC6B4\uAC74
+        \uC1A1\uC774 \uC790\uC2E0\uC77C\uAEBC\uC57C.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 0
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uC53B\uC9C0\uB3C4 \uBABB\uD558\uACE0 \uC774\uAC8C \uBB34\uC2A8\uC77C\uC774\uC57C..
+        \uB108\uBB34 \uCC1D\uCC1D\uD574!"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 1
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uC870\uC0AC\uD574\uBCF4\uB2C8 \uC548\uC5D0 \uBAAC\uC2A4\uD130\uAC00
+        \uC788\uB294\uAC70 \uAC19\uC544 10\uB9C8\uB9AC\uB9CC \uC7A1\uC544\uC918"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 2
+      Select_Code_2: 3
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: "\uC54C\uC558\uC5B4"
+      Select_Txt_2: "\uB098\uC911\uC5D0.."
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 2
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uB2E4\uB140\uC640"
+      Return: 4
+      Quest: 1
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 3
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uBB50..?"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 4
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uC544 \uB108\uBB34 \uB365\uB2E4 .."
+      Return: 4
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 0
+      Name: "\uC740\uC11C"
+      Actor: 4
+      Text: "\uD544\uC694\uD55C\uAC8C \uC788\uC5B4?"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 1
+      Select_Code_2: -1
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: "\uC0B0\uB2E4"
+      Select_Txt_2: "\uB098\uAC04\uB2E4"
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 3
+      DialogIndex: 0
+      Name: "\uB2E4\uC628"
+      Actor: 6
+      Text: "\uC7A5\uBE44\uB294 \uC740\uC11C\uAC00 \uD314\uACE0 \uC788\uC5B4"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 4
+      DialogIndex: 0
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uC6D0\uB798 xxx\uD559\uAD50\uAC00 \uC774\uB807\uAC8C \uCEF7\uB358\uAC00..?"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 4
+      DialogIndex: 1
+      Name: "\uC740\uC11C"
+      Actor: 4
+      Text: "???\uD604\uC0C1\uC774 \uC77C\uC5B4\uB098\uBA74 \uC774\uC0C1\uD560\uAC83\uB3C4
+        \uC5C6\uC9C0"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 4
+      DialogIndex: 2
+      Name: "\uD50C\uB808\uC774\uC5B4"
+      Actor: 1
+      Text: "\uC870\uC2EC\uD788 \uC55E\uC73C\uB85C \uAC00\uBCF4\uC790"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 4
+      DialogIndex: 1
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uB2E4 \uC7A1\uC740\uAC70\uC57C??"
+      Return: 0
+      Quest: 1
+      Select_Code_1: 2
+      Select_Code_2: 3
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 4
+      DialogIndex: 2
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uACE0\uC0DD\uD588\uC5B4"
+      Return: 2
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 1
+    - Scene: 4
+      DialogIndex: 3
+      Name: "\uC18C\uC5F0"
+      Actor: 5
+      Text: "\uBB50\uC57C? \uAC70\uC9D3\uB9D0 \uD558\uB294\uAC70\uC57C?"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 5
+      DialogIndex: 0
+      Name: "\uD604\uC6B0"
+      Actor: 2
+      Text: "\uC800\uAC74.. \uC1A1\uC774\uAC00 \uD0A4\uC6B0\uB358 \uC560\uC644\uC2AC\uB77C\uC784..
+        \uB108\uB3C4.. \uACB0\uAD6D.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 5
+      DialogIndex: 1
+      Name: "\uD604\uC544"
+      Actor: 3
+      Text: "\uD604\uC6B0\uC57C \uC55E\uC73C\uB85C \uB098\uAC08\uB824\uBA74 \uC5B4\uCA54\uC218
+        \uC5C6\uC744\uAC70 \uAC19\uC544 (\uD50C\uB808\uC774\uC5B4)(\uC774)\uC57C
+        \uBE60\uB974\uAC8C \uD574\uCE58\uC6B0\uC790!"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 0
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uC653\uAD6C\uB098.. \uC598\uB4E4\uC544.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 1
+      Name: "\uD604\uC6B0"
+      Actor: 2
+      Text: "\uC1A1\uC774\uC57C!! \uC81C\uBC1C \uB2E4\uC2DC \uB3CC\uC544\uC640!!
+        \uC6B0\uB9AC \uD589\uBCF5\uD588\uC796\uC544!!"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 2
+      Name: "\uD50C\uB808\uC774\uC5B4"
+      Actor: 1
+      Text: "\uADF8\uB798!! \uC1A1\uC774\uC57C!! \uC6B0\uB9AC \uD568\uAED8 \uBC84\uD168\uC654\uC796\uC544!!
+        \uB3D9\uB8CC\uC796\uC544!!"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 3
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uD604\uC6B0\uC57C.. \uB09C.. \uC5B8\uC81C\uAE4C\uC9C0 \uC774 \uC9D3\uC744
+        \uACC4\uC18D \uD574\uC57C\uB418\uB294\uAC70\uC57C..?"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 4
+      Name: "\uD604\uC6B0"
+      Actor: 2
+      Text: "\uBB50..?"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 5
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uBBF8\uC548\uD574 (\uD50C\uB808\uC774\uC5B4)(\uC774)\uC57C \uADF8\uB9AC\uACE0
+        \uBAA8\uB450..  \uD558\uC9C0\uB9CC \uC5B4\uCA54\uC218 \uC5C6\uC5C7\uC5B4.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 6
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uB0B4\uAC00 \uC0DD\uAC01\uD588\uB358 \uC758\uB85C\uC6C0\uC740 \uB0A0
+        \uC2EB\uC5B4\uD558\uAC8C \uB9CC\uB4E4\uC5C7\uC5B4.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 7
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uC774\uAC70\uB77C\uBA74 \uB098\uB294 \uB0B4 \uC790\uC2E0\uC744 \uBBF8\uC6CC\uD558\uC9C0
+        \uC54A\uC544\uB3C4\uB3FC.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 8
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uB108\uD76C\uB4E4\uACFC \uB9CC\uB098\uAE30 \uC804\uC73C\uB85C \uB3CC\uC544\uAC08\uC218
+        \uC788\uC5B4.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 9
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uB098\uB294 \uC774\uC81C \uC544\uBB34\uC5D0\uAC8C\uB3C4 \uAD6C\uC6D0\uBC1B\uC9C0
+        \uC54A\uC544.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 10
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uB098\uB294 \uC774\uC81C \uB2E4\uB978\uC0AC\uB78C\uC744 \uAD6C\uD558\uC9C0
+        \uC54A\uC544\uB3C4\uB3FC.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 11
+      Name: "\uC1A1\uC774"
+      Actor: 8
+      Text: "\uB098\uB294 \uC774\uC81C \uC774 \uC0DD\uD65C\uC744 \uB05D\uB0BC\uC218
+        \uC788\uC5B4.."
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 7
+      DialogIndex: 12
+      Name: "\uD604\uC6B0"
+      Actor: 2
+      Text: "\uC548\uB3FC!!! \uC1A1\uC774\uC57C!!!!!!!"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
