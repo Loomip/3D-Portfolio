@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316cdf6af8bf54f4697970ae79976642, type: 3}
+  m_Name: Data_LaclizeWord
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Sheet1
+    list:
+    - Type: None
+      Kor: 
+      Eng: 
+      Jpn: 
+    - Type: Title_Name
+      Kor: "\uC790\uAC01\uBABD"
+      Eng: Lucid Dream
+      Jpn: "\u660E\u6670\u5922"
+    - Type: Quest
+      Kor: "\uD018\uC2A4\uD2B8"
+      Eng: Quest
+      Jpn: "\u30AF\u30A8\u30B9\u30C8"
+    - Type: Equip
+      Kor: "\uC7A5\uBE44"
+      Eng: Equip
+      Jpn: " \u88C5\u5099"
+    - Type: Collection
+      Kor: "\uC218\uC9D1"
+      Eng: Collection
+      Jpn: " \u53CE\u96C6"
+    - Type: Enhance
+      Kor: "\uAC15\uD654"
+      Eng: Enhance
+      Jpn: "\u5F37\u5316"
+    - Type: Option
+      Kor: "\uC635\uC158"
+      Eng: Option
+      Jpn: "\u30AA\u30D7\u30B7\u30E7\u30F3"
+    - Type: Likability
+      Kor: "\uD638\uAC10\uB3C4"
+      Eng: Likability
+      Jpn: "\u597D\u611F\u5EA6"
+    - Type: Material
+      Kor: "\uC7AC\uB8CC"
+      Eng: Material
+      Jpn: "\u6750\u6599"
+    - Type: Sell
+      Kor: "\uD310\uB9E4\uD558\uAE30"
+      Eng: Sell
+      Jpn: " \u58F2\u308B"
+    - Type: Purchase
+      Kor: "\uAD6C\uB9E4\uD558\uAE30"
+      Eng: Purchase
+      Jpn: " \u8CFC\u5165\u3059\u308B"
+    - Type: Use
+      Kor: "\uC0AC\uC6A9\uD558\uAE30"
+      Eng: Use
+      Jpn: "\u4F7F\u7528\u3059\u308B"
+    - Type: Wear
+      Kor: "\uCC29\uC6A9\uD558\uAE30"
+      Eng: Wear
+      Jpn: "\u7740\u7528\u3059\u308B"
+    - Type: Unbind
+      Kor: "\uD574\uC81C\uD558\uAE30"
+      Eng: Unbind
+      Jpn: "\u89E3\u9664\u3059\u308B"

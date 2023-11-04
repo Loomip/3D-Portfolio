@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e111effe70942584bb0b4eada069bc78, type: 3}
+  m_Name: Data_Charater
+  m_EditorClassIdentifier: 
+  sheets:
+  - name: Sheet1
+    list:
+    - Name: Player
+      HP: 1000
+      MHP: 1000
+      Gauge: 0
+      MGauge: 100
+      Fill_Gauge: 10
+      Atk: 100
+      Def: 50
+      Spd: 5
+      Acc: 80
+      Eva: 30
+      Del: 0
+    - Name: Slime
+      HP: 500
+      MHP: 500
+      Gauge: 0
+      MGauge: 0
+      Fill_Gauge: 0
+      Atk: 50
+      Def: 25
+      Spd: 3
+      Acc: 80
+      Eva: 20
+      Del: 10
+    - Name: Mushroom
+      HP: 700
+      MHP: 700
+      Gauge: 0
+      MGauge: 0
+      Fill_Gauge: 0
+      Atk: 70
+      Def: 30
+      Spd: 3
+      Acc: 80
+      Eva: 30
+      Del: 10
+    - Name: Cactus
+      HP: 1000
+      MHP: 1000
+      Gauge: 0
+      MGauge: 0
+      Fill_Gauge: 0
+      Atk: 100
+      Def: 50
+      Spd: 5
+      Acc: 80
+      Eva: 30
+      Del: 10
+    - Name: KingSlime
+      HP: 1500
+      MHP: 1500
+      Gauge: 0
+      MGauge: 0
+      Fill_Gauge: 0
+      Atk: 125
+      Def: 50
+      Spd: 5
+      Acc: 100
+      Eva: 40
+      Del: 10
+    - Name: ShiiDeathing
+      HP: 2000
+      MHP: 2000
+      Gauge: 0
+      MGauge: 0
+      Fill_Gauge: 0
+      Atk: 150
+      Def: 50
+      Spd: 5
+      Acc: 100
+      Eva: 40
+      Del: 10
