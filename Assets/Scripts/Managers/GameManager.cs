@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonDontDestroy<GameManager>
 {
-
+    public e_Scene SceneType { get; protected set; } = e_Scene.None;
 
     //æ¿¿« ¿Œµ¶Ω∫
     private int currentSceneIndex;
@@ -24,7 +25,12 @@ public class GameManager : SingletonDontDestroy<GameManager>
 
     private void SceneStart()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            LoadSceneManager.LoadScene("School");
+        LoadSceneManager.LoadScene("School");
+    }
+
+    protected virtual void Init()
+    {
+
+
     }
 }

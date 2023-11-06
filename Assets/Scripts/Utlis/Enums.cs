@@ -88,7 +88,18 @@ public enum e_Spend
     Pizza
 }
 
-
+public enum e_Scene
+{
+    None,
+    Title,
+    Loading,
+    School,
+    Schoo_Building,
+    School_KingSlime,
+    Schoo_Building_1,
+    School_ShiiDeathing,
+    Length
+}
 
 
 
