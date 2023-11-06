@@ -12,6 +12,8 @@ public class EquipSlot : Slot
 
     public e_EquipType Type { get; private set; }
 
+    public Player player;
+
     //무기를 끼고 있는지
     public bool IsEquipped { get; private set; } = false;
 
@@ -30,7 +32,7 @@ public class EquipSlot : Slot
 
         foreach (var s in status)
         {
-            Player.instance.stat.AddStat(s.Key, s.Value);
+            player.stat.AddStat(s.Key, s.Value);
         }
     }
 
@@ -43,7 +45,7 @@ public class EquipSlot : Slot
 
         foreach (var s in status)
         {
-            Player.instance.stat.RemoveStat(s.Key, s.Value);
+            player.stat.RemoveStat(s.Key, s.Value);
         }
     
         // 장착된 아이템을 제거함
@@ -58,6 +60,7 @@ public class EquipSlot : Slot
 
     private void Start()
     {
+        player = FindObjectOfType<Player>();
         img_Frame.enabled = true;
     }
 }

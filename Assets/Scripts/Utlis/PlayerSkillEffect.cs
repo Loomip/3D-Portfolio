@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSkillEffect : MonoBehaviour
 {
     public GameObject Explosion_Effect;
+    public Player player;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,12 +16,13 @@ public class PlayerSkillEffect : MonoBehaviour
             // 적에게 맞았을 때 이펙트를 생성
             GameObject game = Instantiate(Explosion_Effect, transform.position, Quaternion.identity);
             Effect effect = game.GetComponent<Effect>();
-            effect.Atk = Player.instance.stat.GetStat(e_StatType.Atk) + 300;
+            effect.Atk = player.stat.GetStat(e_StatType.Atk) + 300;
         }
     }
 
     private void Start()
     {
+        player = FindObjectOfType<Player>();
         StartCoroutine(DestroyAfterDelay(gameObject, 5f));
     }
 

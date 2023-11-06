@@ -7,13 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Title.unity
-    guid: 69858be146bbd484e937ee408e4f9b2b
+    guid: 5fc5535b37be9c34698002568a4bce50
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: f468bca47cf0ad245b73fb9c160b308f
   - enabled: 1
-    path: Assets/Scenes/Dialog.unity
-    guid: db5f5a776f0a7344290f45be4fdab472
+    path: Assets/Scenes/New Scene.unity
+    guid: bff998e30a09599459513979c386dd70
   - enabled: 1
     path: Assets/Scenes/School.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

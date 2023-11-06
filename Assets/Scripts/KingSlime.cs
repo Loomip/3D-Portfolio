@@ -13,9 +13,11 @@ public class KingSlime : Enemy
     private bool isExecutingPattern2 = false;
     [SerializeField] LayerMask layerMask;
     int meleeAttackRange = 3;
+    Player player;
 
     void Start()
     {
+        player = FindObjectOfType<Player>();
         Init();
         StartCoroutine(Think());
         nav.enabled = true;
@@ -44,13 +46,13 @@ public class KingSlime : Enemy
             switch (randomPattern)
             {
                 case 0:
-                    if (Vector3.Distance(transform.position, Player.instance.transform.position) < meleeAttackRange)
+                    if (Vector3.Distance(transform.position, player.transform.position) < meleeAttackRange)
                     {
                         yield return ExecutePattern1();
                     }
                     break;
                 case 1:
-                    if (Vector3.Distance(transform.position, Player.instance.transform.position) > meleeAttackRange)
+                    if (Vector3.Distance(transform.position, player.transform.position) > meleeAttackRange)
                     {
                         yield return ExecutePattern2();
                     }
@@ -91,7 +93,7 @@ public class KingSlime : Enemy
         TauntArea.GetComponent<Attack>().Atk = atk;
 
         Vector3 offset = new Vector3(1.5f, 0f, 1.5f);
-        tauntVec = Player.instance.transform.position + lookVec + offset;
+        tauntVec = player.transform.position + lookVec + offset;
 
         // NavMeshAgent È°¼ºÈ­
         nav.enabled = true;

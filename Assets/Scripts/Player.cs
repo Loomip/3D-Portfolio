@@ -10,7 +10,7 @@ using UnityEngine;
 // Action 변수변환 x => void 제목 (){}
 // Func 변수 변환 o => void 제목 (int (int,int .. +n)))
 
-public class Player : SingletonDontDestroy<Player>
+public class Player : MonoBehaviour
 {
     CharacterController character;
     public Animator animator;
@@ -222,7 +222,7 @@ public class Player : SingletonDontDestroy<Player>
         float length = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(length);
         --gaugeCount;
-        UIManager.instance.Refresh_Gauge(instance);
+        UIManager.instance.Refresh_Gauge(this);
         isUseSkill = false;
 
         canUseSkill = true;
@@ -242,7 +242,7 @@ public class Player : SingletonDontDestroy<Player>
         }
 
         // 게이지 리프레시
-        UIManager.instance.Refresh_Gauge(instance);
+        UIManager.instance.Refresh_Gauge(this);
     }
 
 

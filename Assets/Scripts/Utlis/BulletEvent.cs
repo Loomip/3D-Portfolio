@@ -6,6 +6,7 @@ public class BulletEvent : MonoBehaviour
 {
     public Transform bulletPos;
     public GameObject bullet;
+    public Player player;
 
     public void Shot()
     {
@@ -14,7 +15,11 @@ public class BulletEvent : MonoBehaviour
         Rigidbody bulletRigid = intantBullet.GetComponent<Rigidbody>();
         Bullets bullets = intantBullet.GetComponent<Bullets>();
         bulletRigid.velocity = bulletPos.forward * 20f;
-        bullets.Atk = Player.instance.stat.GetStat(e_StatType.Atk);
+        bullets.Atk = player.stat.GetStat(e_StatType.Atk);
     }
 
+    void Awake()
+    {
+        player = FindObjectOfType<Player>();
+    }
 }

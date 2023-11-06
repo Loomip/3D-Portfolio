@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonDontDestroy<GameManager>
 {
+
+
     //æ¿¿« ¿Œµ¶Ω∫
     private int currentSceneIndex;
 
@@ -18,5 +20,11 @@ public class GameManager : SingletonDontDestroy<GameManager>
     public int GetCurrentSceneIndex()
     {
         return currentSceneIndex;
+    }
+
+    private void SceneStart()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            LoadSceneManager.LoadScene("School");
     }
 }

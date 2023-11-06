@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public Transform bulletPos;
     public GameObject rangeBullet;
     private ClassroomController classroomController;
+    public Player player;
 
     //======================================================================================
     //1. 스텟 (네임)
@@ -385,7 +386,7 @@ public class Enemy : MonoBehaviour
         {
             AttackCollider atk = other.GetComponent<AttackCollider>();
             Vector3 reactVec = transform.position - other.transform.position;
-            Player.instance.FillGauge(Player.instance.fill_Gauge);
+            player.FillGauge(player.fill_Gauge);
 
             TakeDamage(atk.Atk, reactVec);
             
@@ -397,7 +398,7 @@ public class Enemy : MonoBehaviour
         {
             Bullets bullet = other.GetComponent<Bullets>();
             Vector3 reactVec = transform.position - other.transform.position;
-            Player.instance.FillGauge(Player.instance.fill_Gauge);
+            player.FillGauge(player.fill_Gauge);
             TakeDamage(bullet.Atk, reactVec);
 
             //대미지 표기방식
@@ -429,6 +430,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        player = FindObjectOfType<Player>();
         Init();
     }
 

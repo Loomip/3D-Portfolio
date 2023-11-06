@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
-using static UnityEngine.Rendering.VolumeComponent;
+using UnityEngine.SceneManagement;
 
 public class UIManager : SingletonDontDestroy<UIManager>
 {
     [Header("체력바")]
-    [SerializeField] Image player_HP;
+    public GameObject hp;
+    public Image player_HP;
     Dictionary<string, Image> hpList = new Dictionary<string, Image>();
 
     //HP 리프레쉬
@@ -29,8 +29,9 @@ public class UIManager : SingletonDontDestroy<UIManager>
     //=========================================================================================================
 
     [Header("Gauge")]
-    [SerializeField] public Image player_Gauge;
-    [SerializeField] public TextMeshProUGUI gaugeText;
+    public GameObject gauge;
+    public Image player_Gauge;
+    public TextMeshProUGUI gaugeText;
     Dictionary<string, Image> gaugeList = new Dictionary<string, Image>();
 
     //Gauge 리프레쉬
@@ -57,11 +58,14 @@ public class UIManager : SingletonDontDestroy<UIManager>
     //=========================================================================================================
 
     [Header("대화창 UI")]
+    public GameObject InteractText;
+    public Player player;
     public GameObject MessageBox;
     public TextMeshProUGUI talkText;
     public TextMeshProUGUI nameText;
     public bool isAction;
     private GameObject scanObject;
+
     [System.Serializable]
     public class ChoiceUI
     {
@@ -100,6 +104,27 @@ public class UIManager : SingletonDontDestroy<UIManager>
             MessageBox.SetActive(isAction);
         }
     }
+
+    void InteractableObject()
+    {
+        if (player != null)
+        {
+            if (player.GetInterctableObject() != null)
+                InteractableShow();
+            else
+                InteractableHide();
+        }
+    }
+
+    private void InteractableShow()
+    {
+        InteractText.SetActive(true);
+    }
+    private void InteractableHide()
+    {
+        InteractText.SetActive(false);
+    }
+
     //===========================================================================================================================
 
     [Header("인벤토리")]
@@ -123,7 +148,7 @@ public class UIManager : SingletonDontDestroy<UIManager>
     //메뉴 프리펩이 들어갈 위치
     [SerializeField] Transform Maun;
 
-    public void Show()
+    public void InvenShow()
     {
         Initialize();
     }
@@ -257,23 +282,42 @@ public class UIManager : SingletonDontDestroy<UIManager>
 
     protected override void DoAwake()
     {
+        player = FindObjectOfType<Player>();
         inven.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        // 현재 씬의 이름
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName != "Title" /*&& sceneName != "Menu"*/)
         {
-            inven.SetActive(!inven.activeInHierarchy);
+            // HP와 게이지 활성화
+            hp.SetActive(true);
+            gauge.SetActive(true);
 
-            var isShow = inven.activeInHierarchy;
+            InteractableObject();
 
-            Cursor.lockState = isShow ? CursorLockMode.None : CursorLockMode.Locked;
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                inven.SetActive(!inven.activeInHierarchy);
 
-            Time.timeScale = isShow ? 0f : 1f;
+                var isShow = inven.activeInHierarchy;
 
-            if (isShow) Show();
+                Cursor.lockState = isShow ? CursorLockMode.None : CursorLockMode.Locked;
+
+                Time.timeScale = isShow ? 0f : 1f;
+
+                if (isShow) InvenShow();
+            }
+        }
+        else
+        {
+            // HP와 게이지 비활성화
+            hp.SetActive(false);
+            gauge.SetActive(false);
         }
     }
 }

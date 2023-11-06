@@ -16,6 +16,7 @@ public class Bullets : MonoBehaviour
     [SerializeField] float speed = 0f;
     float currentSpeed = 0f;
     [SerializeField] LayerMask layerMask = 0;
+    Player player;
 
     // 타겟이 설정되었는지 여부를 나타내는 플래그
     public bool isTargetSet = false;
@@ -70,7 +71,7 @@ public class Bullets : MonoBehaviour
             else
             {
                 // 몬스터가 플레이어를 향해 유도탄을 발사하는 로직 추가
-                Vector3 playerDirection = (Player.instance.transform.position - transform.position).normalized;
+                Vector3 playerDirection = (player.transform.position - transform.position).normalized;
 
                 if (currentSpeed <= speed)
                     currentSpeed += speed * Time.deltaTime;
@@ -90,6 +91,7 @@ public class Bullets : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         targetSetTime = Time.time; // 초기화
         StartCoroutine(LaunchDelay());
+        player = FindObjectOfType<Player>();
     }
 
     private void Update()

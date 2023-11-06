@@ -38,6 +38,7 @@ public class Equip : MonoBehaviour
     UseButton useButton;
 
     InventoryManager inventoy;
+    Player player;
 
     //인벤토리 슬롯
     Slot slot;
@@ -170,10 +171,10 @@ public class Equip : MonoBehaviour
                         // 기존에 장착되어 있던 모든 무기들을 비활성화
                         foreach (int index in currentWeaponIndices)
                         {
-                            if (index >= 0 && index < Player.instance.weapons.Length)
+                            if (index >= 0 && index < player.weapons.Length)
                             {
-                                Player.instance.weapons[index].SetActive(false);
-                                Player.instance.animator.SetInteger("weaponType", 0);
+                                player.weapons[index].SetActive(false);
+                                player.animator.SetInteger("weaponType", 0);
                             }
                         }
                         return;
@@ -203,24 +204,24 @@ public class Equip : MonoBehaviour
             switch (spend)
             {
                 case e_Spend.Bread:
-                    Player.instance.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.instance.Refresh_HP(Player.instance);
+                    player.stat.AddStat(e_StatType.HP, item.Value);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.Croissant:
-                    Player.instance.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.instance.Refresh_HP(Player.instance);
+                    player.stat.AddStat(e_StatType.HP, item.Value);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.Donut:
-                    Player.instance.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.instance.Refresh_HP(Player.instance);
+                    player.stat.AddStat(e_StatType.HP, item.Value);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.HamburgerM:
-                    Player.instance.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.instance.Refresh_HP(Player.instance);
+                    player.stat.AddStat(e_StatType.HP, item.Value);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.Pizza:
-                    Player.instance.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.instance.Refresh_HP(Player.instance);
+                    player.stat.AddStat(e_StatType.HP, item.Value);
+                    UIManager.instance.Refresh_HP(player);
                     break;
             }
         }
@@ -245,7 +246,7 @@ public class Equip : MonoBehaviour
         e_ItemType itemType = BaseData.ToEnum<e_ItemType>(itemData.ItemType);
 
         // 무기를 들었을 경우만 공격할수 있도록
-        Player.instance.isWeaponEquipped = itemType == e_ItemType.Weapon;
+        player.isWeaponEquipped = itemType == e_ItemType.Weapon;
 
         // 선택한 아이템이 무기인 경우
         if (itemType == e_ItemType.Weapon)
@@ -253,9 +254,9 @@ public class Equip : MonoBehaviour
             // 기존에 장착되어 있던 모든 무기들을 비활성화
             foreach (int index in currentWeaponIndices)
             {
-                if (index >= 0 && index < Player.instance.weapons.Length)
+                if (index >= 0 && index < player.weapons.Length)
                 {
-                    Player.instance.weapons[index].SetActive(false);
+                    player.weapons[index].SetActive(false);
                 }
             }
 
@@ -269,9 +270,9 @@ public class Equip : MonoBehaviour
 
             foreach (int index in indexList)
             {
-                if (index >= 0 && index < Player.instance.weapons.Length)
+                if (index >= 0 && index < player.weapons.Length)
                 {
-                    Player.instance.weapons[index].SetActive(true);
+                    player.weapons[index].SetActive(true);
 
                     // 현재 장착중인 무기의 인덱스 업데이트
                     currentWeaponIndices.Add(index);
@@ -280,7 +281,7 @@ public class Equip : MonoBehaviour
 
 
             // 애니메이션 설정
-            Player.instance.animator.SetInteger("weaponType", (int)weaponType);
+            player.animator.SetInteger("weaponType", (int)weaponType);
 
             // 선택한 아이템의 타입과 일치하는 장비 슬롯을 찾음
             foreach (var equipSlot in equipSlotList.Values)
@@ -419,6 +420,7 @@ public class Equip : MonoBehaviour
 
     private void Start()
     {
+        player = FindObjectOfType<Player>();
         InitEquipSlots();
         InitSlots();
         ItemData selectedItem = GetSelectedItem();

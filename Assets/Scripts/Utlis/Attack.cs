@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public GameObject AttackPos;
+    public Player player;
 
     // 무기의 공격력 값을 저장하는 변수
     public int Atk
@@ -18,14 +19,14 @@ public class Attack : MonoBehaviour
         AttackCollider attackCollider = AttackPos.GetComponent<AttackCollider>();
         if (attackCollider != null)
         {
-            attackCollider.Atk = Player.instance.stat.GetStat(e_StatType.Atk);
+            attackCollider.Atk = player.stat.GetStat(e_StatType.Atk);
             AttackPos.SetActive(true);
         }
     }
 
     void StertTR()
     {
-        foreach (var weapon in Player.instance.weapons)
+        foreach (var weapon in player.weapons)
         {
             if (weapon != null)
             {
@@ -40,7 +41,7 @@ public class Attack : MonoBehaviour
 
     void EndTR()
     {
-        foreach (var weapon in Player.instance.weapons)
+        foreach (var weapon in player.weapons)
         {
             if (weapon != null)
             {
@@ -51,5 +52,10 @@ public class Attack : MonoBehaviour
                 }
             }
         }
+    }
+
+    void Awake()
+    {
+        player = FindObjectOfType<Player>();
     }
 }
