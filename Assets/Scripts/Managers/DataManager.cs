@@ -233,7 +233,7 @@ public class DataManager : SingletonDontDestroy<DataManager>
         }
     }
 
-    public List<Data_Messages.Param> GetDialogData(int scene, string name)
+    public List<Data_Messages.Param> GetNPCDialogData(int scene, string name)
     {
         if (DialogData.ContainsKey(language))
         {
@@ -242,6 +242,22 @@ public class DataManager : SingletonDontDestroy<DataManager>
                 // - 데이터의 Scene과 매개변수로 전달된 scene과 일치하는지 확인
                 // - 데이터의 Name이 매개변수로 전달된 name과 일치하는지 확인
                 .Where(entry => entry.Scene == scene && entry.Name == name)
+                .ToList();
+
+            return filteredData;
+        }
+        return null;
+    }
+
+    public List<Data_Messages.Param> GetDialogData(int scene)
+    {
+        if (DialogData.ContainsKey(language))
+        {
+            // DialogData 사전에서 현재 언어에 해당하는 데이터
+            var filteredData = DialogData[language]
+                // - 데이터의 Scene과 매개변수로 전달된 scene과 일치하는지 확인
+                // - 데이터의 Name이 매개변수로 전달된 name과 일치하는지 확인
+                .Where(entry => entry.Scene == scene)
                 .ToList();
 
             return filteredData;

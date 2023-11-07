@@ -6,12 +6,13 @@ public class NPC_Base : MonoBehaviour
 {
     public string npcNameCode;
     public int currentDialogIndex = 0;
+    public GameManager gameManager;
 
     public List<Data_Messages.Param> dialogData;
 
     public virtual void OnInteract()
     {
-        dialogData = DataManager.instance.GetDialogData(GameManager.instance.GetCurrentSceneIndex(), npcNameCode);
+        dialogData = DataManager.instance.GetNPCDialogData(gameManager.GetCurrentSceneIndex(), npcNameCode);
         StartCoroutine(NpcManager.instance.DialogueCoroutine(this));
     }
 
@@ -34,5 +35,10 @@ public class NPC_Base : MonoBehaviour
         {
             currentDialogIndex++;
         }
+    }
+
+    public void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
     }
 }

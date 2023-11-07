@@ -8,11 +8,15 @@ public class GameManager : SingletonDontDestroy<GameManager>
 {
     public e_Scene SceneType { get; protected set; } = e_Scene.None;
 
+    public GameObject eventSystemPrefab;
+
     //씬의 인덱스
     private int currentSceneIndex;
 
-    protected override void DoAwake()
+    public virtual void OnInteract()
     {
+        Init();
+
         // 게임이 시작될 때 현재 씬의 인덱스를 설정합니다.
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
@@ -23,14 +27,14 @@ public class GameManager : SingletonDontDestroy<GameManager>
         return currentSceneIndex;
     }
 
-    private void SceneStart()
-    {
-        LoadSceneManager.LoadScene("School");
-    }
-
+    //UI는 꼭 EventSystem이 필요함으로 객체가 존재하지 않으면 생성
     protected virtual void Init()
     {
-
-
+        SceneType = e_Scene.None;
+        // EventSystem 객체가 존재하지 않으면 생성
+        if (FindObjectOfType<EventSystem>() == null)
+        {
+            Instantiate(eventSystemPrefab);
+        }
     }
 }

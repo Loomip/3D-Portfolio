@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackPos: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &402991623659662521
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackPos: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &492945278476340942
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,15 +279,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5ac05d54294ac4ca05ad55b944c005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigid: {fileID: 0}
-  animator: {fileID: 0}
+  rigid: {fileID: 7493224281893148578}
+  animator: {fileID: 2285606261954369551}
   meshs: []
-  nav: {fileID: 0}
+  nav: {fileID: 2265481640172256810}
   target: {fileID: 0}
   monsterType: 2
   meleeArea: {fileID: 8022859928542393389}
   bulletPos: {fileID: 0}
   rangeBullet: {fileID: 0}
+  player: {fileID: 0}
   Name: KingSlime
   moveInterval: 10
   waitTime: 5

@@ -1000,15 +1000,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d4950a550747641b81a7f4c7649099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigid: {fileID: 0}
-  animator: {fileID: 0}
+  rigid: {fileID: 4780801984415896993}
+  animator: {fileID: 7278748482248448824}
   meshs: []
-  nav: {fileID: 0}
+  nav: {fileID: 6728215346493426724}
   target: {fileID: 0}
   monsterType: 2
   meleeArea: {fileID: 0}
   bulletPos: {fileID: 2619860532725199072}
   rangeBullet: {fileID: 7849684199962779811, guid: 702c1a66dd96f4541bbc4e2768a5ee21, type: 3}
+  player: {fileID: 0}
   Name: ShiiDeathing
   moveInterval: 10
   waitTime: 5
@@ -1019,7 +1020,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  isLook: 1
 --- !u!114 &4430771564522862613
 MonoBehaviour:
   m_ObjectHideFlags: 0

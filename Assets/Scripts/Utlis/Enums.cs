@@ -93,6 +93,7 @@ public enum e_Scene
     None,
     Title,
     Loading,
+    Dialog,
     School,
     Schoo_Building,
     School_KingSlime,

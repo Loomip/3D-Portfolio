@@ -13,11 +13,9 @@ public class KingSlime : Enemy
     private bool isExecutingPattern2 = false;
     [SerializeField] LayerMask layerMask;
     int meleeAttackRange = 3;
-    Player player;
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
         Init();
         StartCoroutine(Think());
         nav.enabled = true;

@@ -426,11 +426,11 @@ public class Enemy : MonoBehaviour
         stat = new Stat(Name);
         meshs = GetComponentsInChildren<SkinnedMeshRenderer>();
         nav = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
         Init();
     }
 

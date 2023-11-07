@@ -505,12 +505,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1bbdf85aeade443a47dce188ed168e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigid: {fileID: 362614002354287597}
+  animator: {fileID: 1816351096123177080}
+  meshs: []
+  nav: {fileID: 3905745405178867825}
   target: {fileID: 0}
   monsterType: 1
   meleeArea: {fileID: 0}
   bulletPos: {fileID: 1023365772780514758}
   rangeBullet: {fileID: 4772249565601112606, guid: ce97d2162a74f424f9707d05909de346, type: 3}
-  bossPatternCount: 3
+  player: {fileID: 0}
   Name: Slime
   moveInterval: 5
   waitTime: 2
