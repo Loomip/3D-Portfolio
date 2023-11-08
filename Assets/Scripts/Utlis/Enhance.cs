@@ -34,11 +34,9 @@ public class Enhance : MonoBehaviour
 
     List<Slot> slotList = new List<Slot>();
 
-    InventoryManager inventoy;
-
     List<ItemData> dataList = new List<ItemData>();
 
-    void InitSlots()
+    public void InitSlots()
     {
         dataList = InventoryManager.instance.GetItemList();
 
@@ -47,20 +45,18 @@ public class Enhance : MonoBehaviour
             slot = Instantiate(enhanceSlotPrefab, enhanceContent).GetComponent<Slot>();
             slot.SLOTINDEX = i;
             slotList.Add(slot);
-
         }
     }
 
     //인벤토리의 아이템 아이콘을 갱신하는 메서드
     public void RefreshIcon()
     {
-        inventoy = InventoryManager.instance;
-        dataList = inventoy.GetItemList();
-        inventoy.CUR_SLOT_COUNT = dataList.Count;
+        dataList = InventoryManager.instance.GetItemList();
+        InventoryManager.instance.CUR_SLOT_COUNT = dataList.Count;
 
         for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
-            if (i < inventoy.CUR_SLOT_COUNT && -1 < dataList[i].id)
+            if (i < InventoryManager.instance.CUR_SLOT_COUNT && -1 < dataList[i].id)
             {
                 slotList[i].Set_Icon(dataList[i]);
             }
@@ -82,7 +78,7 @@ public class Enhance : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         InitSlots();
         tooltip_Icon.enabled = true;

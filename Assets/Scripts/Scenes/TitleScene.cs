@@ -8,6 +8,7 @@ public class TitleScene : GameManager
 {
     public GameObject inven;
     public GameObject titleUI;
+    private GameManager gameManager;
 
     //메뉴 프리펩이 들어갈 위치
     public Transform Maun;
@@ -69,6 +70,16 @@ public class TitleScene : GameManager
 
         titleUI.SetActive(true);
 
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    private void Awake()
+    {
+        gameManager = GameManager.instance;
+    }
+
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Escape) && currentOptionMenu != null)
         {
             Destroy(currentOptionMenu);
@@ -76,8 +87,5 @@ public class TitleScene : GameManager
             inven.SetActive(false);
             Gold.SetActive(true);
         }
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 }

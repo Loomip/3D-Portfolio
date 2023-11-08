@@ -51,7 +51,7 @@ public class Equip : MonoBehaviour
     List<ItemData> dataList;
 
     //인벤토리의 슬롯을 초기화 하는 메서드
-    void InitSlots()
+    public void InitSlots()
     {
         for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
@@ -65,7 +65,7 @@ public class Equip : MonoBehaviour
     }
 
     //장비 슬롯 생성
-    void InitEquipSlots()
+    public void InitEquipSlots()
     {
         for (int i = 0; i < (int)e_EquipType.Length; ++i)
         {
