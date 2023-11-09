@@ -18,14 +18,14 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
         while (npc.GetCurrentDialogIndex() < npc.dialogData.Count)
         {
             Data_Messages.Param currentDialogue = npc.dialogData[npc.GetCurrentDialogIndex()];
-            UIManager.instance.nameText.text = currentDialogue.Name;
-            UIManager.instance.talkText.text = currentDialogue.Text;
+            UIManager.Inst.nameText.text = currentDialogue.Name;
+            UIManager.Inst.talkText.text = currentDialogue.Text;
 
             //선택지가 없는 경우 사라지게 만듬
             for (int i = 0; i < 4; ++i)
             {
-                UIManager.instance.choices[i].button.gameObject.SetActive(false);
-                UIManager.instance.choices[i].button.onClick.RemoveAllListeners();
+                UIManager.Inst.choices[i].button.gameObject.SetActive(false);
+                UIManager.Inst.choices[i].button.onClick.RemoveAllListeners();
             }
 
             if (currentDialogue.Quest > 0)
@@ -44,26 +44,26 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
 
                     if (selectCode != 0)
                     {
-                        UIManager.instance.choices[i].button.gameObject.SetActive(true);
+                        UIManager.Inst.choices[i].button.gameObject.SetActive(true);
 
-                        UIManager.instance.choices[i].text.text =
+                        UIManager.Inst.choices[i].text.text =
                             currentDialogue.GetType().GetField($"Select_Txt_{i + 1}").GetValue(currentDialogue).ToString();
 
                         hasSelectOptions = true;
 
-                        UIManager.instance.choices[i].button.onClick.AddListener(() =>
+                        UIManager.Inst.choices[i].button.onClick.AddListener(() =>
                         {
                             hasSelectOptions = false;
                             if (selectCode == -1)
                             {
-                                UIManager.instance.Close_Talk();
+                                UIManager.Inst.Close_Talk();
                             }
                             else
                             { 
                                 //상점 열기
                                 if (npc.TryGetComponent(out NPC_Shop shop))
                                 {
-                                    UIManager.instance.Close_Talk();
+                                    UIManager.Inst.Close_Talk();
                                     shop.OnInteract();
                                 }
                                 else
@@ -94,7 +94,7 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
             // 대화 데이터의 마지막 부분에 도달한 경우
             if (npc.GetCurrentDialogIndex() >= npc.dialogData.Count - 1)
             {
-                UIManager.instance.Close_Talk();
+                UIManager.Inst.Close_Talk();
                 yield break;
             }
             else
@@ -102,7 +102,7 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                 //선택지 이후에 대화를 끔
                 if (isDialogueFinished)
                 {
-                    UIManager.instance.Close_Talk();
+                    UIManager.Inst.Close_Talk();
                     isDialogueFinished = false;
                     hasSelectOptions = false;
                     yield break;

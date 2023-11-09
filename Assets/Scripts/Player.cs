@@ -31,6 +31,14 @@ public class Player : MonoBehaviour
     // 회피 중일 때의 방향을 저장할 변수
     private Vector3 dodgeDir;
 
+    //플레이어 위치 정보
+    public Vector3 position;
+
+    public Player(Vector3 position)
+    {
+        this.position = position;
+    }
+
     //0. 캐릭터 네임
     public string Name;
 
@@ -222,7 +230,7 @@ public class Player : MonoBehaviour
         float length = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(length);
         --gaugeCount;
-        UIManager.instance.Refresh_Gauge(this);
+        UIManager.Inst.Refresh_Gauge(this);
         isUseSkill = false;
 
         canUseSkill = true;
@@ -242,7 +250,7 @@ public class Player : MonoBehaviour
         }
 
         // 게이지 리프레시
-        UIManager.instance.Refresh_Gauge(this);
+        UIManager.Inst.Refresh_Gauge(this);
     }
 
 
@@ -338,7 +346,7 @@ public class Player : MonoBehaviour
             {
                 CurHealth -= damage;
                 Debug.Log("Player Health: " + CurHealth);
-                UIManager.instance.Refresh_HP(this);
+                UIManager.Inst.Refresh_HP(this);
                 StartCoroutine(OnDamage());
             }
 
@@ -385,7 +393,7 @@ public class Player : MonoBehaviour
     public void InteractWithCurrentTarget()
     {
         // 대화창이 이미 열려있는 경우, 새로운 대화를 시작하지 않음
-        if (UIManager.instance.isAction) return;
+        if (UIManager.Inst.isAction) return;
 
         float interactRange = 1.5f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
@@ -395,7 +403,7 @@ public class Player : MonoBehaviour
             {
                 npc.OnInteract();
 
-                UIManager.instance.Refresh_Talk(gameObject);
+                UIManager.Inst.Refresh_Talk(gameObject);
             }
         }
     }

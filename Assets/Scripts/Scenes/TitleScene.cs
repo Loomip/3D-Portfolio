@@ -8,7 +8,6 @@ public class TitleScene : GameManager
 {
     public GameObject inven;
     public GameObject titleUI;
-    private GameManager gameManager;
 
     //메뉴 프리펩이 들어갈 위치
     public Transform Maun;
@@ -62,7 +61,7 @@ public class TitleScene : GameManager
     }
 
     // 이스케이프 키를 누르면 옵션 메뉴를 닫습니다.
-    public override void OnInteract()
+    public override void Init()
     {
         base.Init();
 
@@ -72,10 +71,6 @@ public class TitleScene : GameManager
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-    }
-    private void Awake()
-    {
-        gameManager = GameManager.instance;
     }
 
     private void Update()

@@ -57,7 +57,7 @@ public class Slot : MonoBehaviour
     //슬롯의 아이콘을 설정하는 메서드
     public void Set_Icon(ItemData newItem)
     {
-        if (DataManager.instance.GetItemData(newItem.id, out Data_Item.Param data))
+        if (DataManager.Inst.GetItemData(newItem.id, out Data_Item.Param data))
         {
             if (data != null)
             {

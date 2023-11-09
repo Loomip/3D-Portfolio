@@ -208,6 +208,12 @@ public class UIManager : SingletonDontDestroy<UIManager>
                 GameObject instanceance = Instantiate(prefab, Maun);
                 m_menu.Add(instanceance);
                 instanceance.SetActive(false);
+
+                if (i == e_MenuType.Enhance)
+                {
+                    Enhance enhance = instanceance.GetComponent<Enhance>();
+                    enhance.Initialize();
+                }
             }
         }
 

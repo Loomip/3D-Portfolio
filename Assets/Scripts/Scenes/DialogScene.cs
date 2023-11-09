@@ -6,9 +6,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DialogScene : GameManager
+public class School_building : GameManager
 {
-    private GameManager gameManager;
     public TextMeshProUGUI nameText; // 이름을 표시할 Text 컴포넌트
     public TextMeshProUGUI dialogText; // 대화창을 표시할 Text 컴포넌트
     public TextMeshProUGUI narrationText; // 나레이션을 표시할 Text 컴포넌트
@@ -22,14 +21,13 @@ public class DialogScene : GameManager
     // 대사 출력 중인지 나타내는 플래그
     private bool isPrinting = false;  
 
-    public override void OnInteract()
+    public override void Init()
     {
         base.Init();
-        base.OnInteract();
 
         SceneType = e_Scene.Dialog;
 
-        dialogData = DataManager.instance.GetDialogData(GetCurrentSceneIndex());
+        dialogData = DataManager.Inst.GetDialogData(GetCurrentSceneIndex());
 
         ShowDialog();
     }
@@ -91,7 +89,7 @@ public class DialogScene : GameManager
 
         if (currentDialogIndex > dialogData.Count)
         {
-            SceneManager.LoadScene("School");
+            LoadSceneManager.LoadScene("School");
         }
     }
 
@@ -105,10 +103,5 @@ public class DialogScene : GameManager
             yield return new WaitForSeconds(0.03f);  // 일정한 딜레이 후 다음 글자 표시
         }
         isPrinting = false;
-    }
-
-    private void Awake()
-    {
-        gameManager = GameManager.instance;
     }
 }

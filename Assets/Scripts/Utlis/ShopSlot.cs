@@ -18,7 +18,7 @@ public class ShopSlot : MonoBehaviour
         shopData = shopdata;
 
         img_Icon.sprite = Resources.Load<Sprite>("Itemicons/" + shopdata.Name);
-        txt_ItemName.text = DataManager.instance.GetShopLocalizeData(shopdata.ID).TooltipName;
+        txt_ItemName.text = DataManager.Inst.GetShopLocalizeData(shopdata.ID).TooltipName;
         txt_Prise.text = shopData.AddPrise.ToString();
     }
 
