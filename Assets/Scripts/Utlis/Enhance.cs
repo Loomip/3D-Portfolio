@@ -38,9 +38,9 @@ public class Enhance : MonoBehaviour
 
     public void InitSlots()
     {
-        dataList = InventoryManager.Inst.GetItemList();
+        dataList = InventoryManager.instance.GetItemList();
 
-        for (int i = 0; i < InventoryManager.Inst.MAXSLOTCOUNT; i++)
+        for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
             slot = Instantiate(enhanceSlotPrefab, enhanceContent).GetComponent<Slot>();
             slot.SLOTINDEX = i;
@@ -51,12 +51,12 @@ public class Enhance : MonoBehaviour
     //인벤토리의 아이템 아이콘을 갱신하는 메서드
     public void RefreshIcon()
     {
-        dataList = InventoryManager.Inst.GetItemList();
-        InventoryManager.Inst.CUR_SLOT_COUNT = dataList.Count;
+        dataList = InventoryManager.instance.GetItemList();
+        InventoryManager.instance.CUR_SLOT_COUNT = dataList.Count;
 
-        for (int i = 0; i < InventoryManager.Inst.MAXSLOTCOUNT; i++)
+        for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
-            if (i < InventoryManager.Inst.CUR_SLOT_COUNT && -1 < dataList[i].id)
+            if (i < InventoryManager.instance.CUR_SLOT_COUNT && -1 < dataList[i].id)
             {
                 slotList[i].Set_Icon(dataList[i]);
             }
@@ -69,7 +69,7 @@ public class Enhance : MonoBehaviour
 
     public void RecordItem()
     {
-        for (int i = 0; i < InventoryManager.Inst.GetItemList().Count; ++i)
+        for (int i = 0; i < InventoryManager.instance.GetItemList().Count; ++i)
         {
             if (i < dataList.Count)
             {
@@ -78,13 +78,9 @@ public class Enhance : MonoBehaviour
         }
     }
 
-    public void Initialize()
-    {
-        InitSlots();
-    }
-
     private void Awake()
     {
+        InitSlots();
         tooltip_Icon.enabled = true;
         // 강화 단계별 능력치 증가량 초기화
         enhanceStats.Add(e_StatType.HP, new List<int> { 10, 20, 30, 40, 50 });

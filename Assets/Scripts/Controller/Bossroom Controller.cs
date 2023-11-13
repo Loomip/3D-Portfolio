@@ -22,7 +22,6 @@ public class BossroomController : MonoBehaviour
     // 클리어하기 위해 필요한 몬스터 수
     public int monstersToClear; 
 
-
     public void MonsterDied()
     {
         // 모든 몬스터가 사망하여 클리어 상태
@@ -54,7 +53,6 @@ public class BossroomController : MonoBehaviour
         {
             StartCoroutine(AppearEffectAndSpawn());
         }
-
     }
     //몬스터 소환
     // 여기서 연출이 들어가면 되나?

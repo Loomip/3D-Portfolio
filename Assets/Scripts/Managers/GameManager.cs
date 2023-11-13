@@ -1,25 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class GameData
-{
-    public Player player;
-
-    public GameData(Player player)
-    {
-        this.player = player;
-    }
-}
-
-public class GameManager : SingletonDontDestroy<GameManager>
+public class GameManager : MonoBehaviour
 {
     public e_Scene SceneType { get; protected set; } = e_Scene.None;
+
+    public List<Data_Messages.Param> dialogData;
 
     public void SetSceneType(e_Scene scene)
     {
@@ -70,33 +59,10 @@ public class GameManager : SingletonDontDestroy<GameManager>
         Init();
     }
 
-    public void SaveGame()
+
+    //플레이어를 언제 생성할지에 대한 bool값
+    protected virtual bool ShouldCreatePlayer()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream stream = new FileStream(Application.persistentDataPath + "/save.dat", FileMode.Create);
-
-        GameData data = new GameData(player);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
-    }
-
-    public void LoadGame()
-    {
-        string path = Application.persistentDataPath + "/save.dat";
-        if (File.Exists(path))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            GameData data = formatter.Deserialize(stream) as GameData;
-            stream.Close();
-
-            player = data.player;
-        }
-        else
-        {
-            Debug.LogWarning("Save file not found in " + path);
-        }
+        return false;
     }
 }

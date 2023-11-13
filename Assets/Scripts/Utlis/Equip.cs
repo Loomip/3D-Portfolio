@@ -53,7 +53,7 @@ public class Equip : MonoBehaviour
     //인벤토리의 슬롯을 초기화 하는 메서드
     public void InitSlots()
     {
-        for (int i = 0; i < InventoryManager.Inst.MAXSLOTCOUNT; i++)
+        for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
             slot = Instantiate(itemslotPrefab, itemContent).GetComponent<Slot>();
             slot.SLOTINDEX = i;
@@ -89,7 +89,7 @@ public class Equip : MonoBehaviour
         }
         else
         {
-            m_localizeData = DataManager.Inst.GetLocalizeData(item.id);
+            m_localizeData = DataManager.instance.GetLocalizeData(item.id);
             tooltip_Icon.color = Color.white;
             tooltip_Icon.sprite = Resources.Load<Sprite>("Itemicons/" + m_localizeData.Name);
             itemExplanText.text = m_localizeData.Explan;
@@ -100,11 +100,11 @@ public class Equip : MonoBehaviour
     //인벤토리의 아이템 아이콘을 갱신하는 메서드
     public void RefreshIcon()
     {
-        inventoy = InventoryManager.Inst;
+        inventoy = InventoryManager.instance;
         dataList = inventoy.GetItemList();
         inventoy.CUR_SLOT_COUNT = dataList.Count;
 
-        for (int i = 0; i < InventoryManager.Inst.MAXSLOTCOUNT; i++)
+        for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
             if (i < inventoy.CUR_SLOT_COUNT && -1 < dataList[i].id)
             {
@@ -151,22 +151,22 @@ public class Equip : MonoBehaviour
 
         btn_Discard.SetActive(true);
 
-        if (DataManager.Inst.GetItemDataParams(item.id) != null)
+        if (DataManager.instance.GetItemDataParams(item.id) != null)
         {
-            string ItemType = DataManager.Inst.GetItemDataParams(item.id).ItemType;
+            string ItemType = DataManager.instance.GetItemDataParams(item.id).ItemType;
             e_ItemType itemType = BaseData.ToEnum<e_ItemType>(ItemType);
 
             switch (itemType)
             {
                 case e_ItemType.Spend:
-                    btn_Use.text = DataManager.Inst.GetWordData("Use");
+                    btn_Use.text = DataManager.instance.GetWordData("Use");
                     useButton = () => Button_Use(item);
                     break;
                 case e_ItemType.Weapon:
                     if (slot is EquipSlot)
                     {
                         EquipSlot equipSlot = slot as EquipSlot;
-                        btn_Use.text = DataManager.Inst.GetWordData("Unbind");
+                        btn_Use.text = DataManager.instance.GetWordData("Unbind");
                         useButton = () => { equipSlot.Detach(); };
                         // 기존에 장착되어 있던 모든 무기들을 비활성화
                         foreach (int index in currentWeaponIndices)
@@ -179,7 +179,7 @@ public class Equip : MonoBehaviour
                         }
                         return;
                     }
-                    btn_Use.text = DataManager.Inst.GetWordData("Wear");
+                    btn_Use.text = DataManager.instance.GetWordData("Wear");
                     useButton = () => Button_Equip(item);
                     break;
                 case e_ItemType.Item:
@@ -196,8 +196,8 @@ public class Equip : MonoBehaviour
     //사용하기
     private void Button_Use(ItemData itemData)
     {
-        var Name = DataManager.Inst.GetItemDataParams(itemData.id).Name;
-        var status = DataManager.Inst.GetItemDataStatus(itemData.id);
+        var Name = DataManager.instance.GetItemDataParams(itemData.id).Name;
+        var status = DataManager.instance.GetItemDataStatus(itemData.id);
         e_Spend spend = BaseData.ToEnum<e_Spend>(Name);
         foreach (var item in status)
         {
@@ -205,28 +205,28 @@ public class Equip : MonoBehaviour
             {
                 case e_Spend.Bread:
                     player.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.Inst.Refresh_HP(player);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.Croissant:
                     player.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.Inst.Refresh_HP(player);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.Donut:
                     player.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.Inst.Refresh_HP(player);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.HamburgerM:
                     player.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.Inst.Refresh_HP(player);
+                    UIManager.instance.Refresh_HP(player);
                     break;
                 case e_Spend.Pizza:
                     player.stat.AddStat(e_StatType.HP, item.Value);
-                    UIManager.Inst.Refresh_HP(player);
+                    UIManager.instance.Refresh_HP(player);
                     break;
             }
         }
 
-        InventoryManager.Inst.RemoveItem(itemData);
+        InventoryManager.instance.RemoveItem(itemData);
     }
 
     // 장비하기
@@ -234,7 +234,7 @@ public class Equip : MonoBehaviour
     {
         // 슬롯 종류를 비교
         // 선택한 장비의 타입
-        Data_Item.Param itemData = DataManager.Inst.GetItemDataParams(item.id);
+        Data_Item.Param itemData = DataManager.instance.GetItemDataParams(item.id);
 
         if (item == null)
         {
@@ -295,7 +295,7 @@ public class Equip : MonoBehaviour
                         equipSlot.Set(item);
 
                         // 선택한 아이템의 개수 감소
-                        InventoryManager.Inst.RemoveItem(item);
+                        InventoryManager.instance.RemoveItem(item);
                     }
                     else
                     {
@@ -303,13 +303,13 @@ public class Equip : MonoBehaviour
                         ItemData detachedItem = equipSlot.Detach();
 
                         // 해제된 아이템을 인벤토리에 추가
-                        InventoryManager.Inst.AddItem(detachedItem);
+                        InventoryManager.instance.AddItem(detachedItem);
 
                         // 선택한 장비를 장착
                         equipSlot.Set(item);
 
                         // 선택한 아이템의 개수 감소
-                        InventoryManager.Inst.RemoveItem(item);
+                        InventoryManager.instance.RemoveItem(item);
                     }
                     return;
                 }
@@ -328,7 +328,7 @@ public class Equip : MonoBehaviour
         }
 
         // 아이템을 인벤토리에서 제거
-        InventoryManager.Inst.RemoveItem(slot.GetItem());
+        InventoryManager.instance.RemoveItem(slot.GetItem());
 
         // 선택된 아이템 초기화
         slot = null;
@@ -399,7 +399,7 @@ public class Equip : MonoBehaviour
     public void Btu()
     {
         // 랜덤한 아이템 데이터 가져오기
-        Data_Item.Param randomItemData = DataManager.Inst.GetRandomItemDataParams();
+        Data_Item.Param randomItemData = DataManager.instance.GetRandomItemDataParams();
 
         // 가져온 아이템 데이터로 새 아이템 생성
         if (randomItemData != null)
@@ -409,7 +409,7 @@ public class Equip : MonoBehaviour
             ++newItem.amount;
 
             // 새 아이템을 인벤토리에 추가
-            InventoryManager.Inst.AddItem(newItem);
+            InventoryManager.instance.AddItem(newItem);
             RefreshIcon();
         }
         else

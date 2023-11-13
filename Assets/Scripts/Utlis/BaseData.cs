@@ -33,7 +33,7 @@ public class Stat
     {
         for (int i = 1; i < (int)e_StatType.Length; ++i)
         {
-            int value = DataManager.Inst.GetCharacterData(character, (e_StatType)i);
+            int value = DataManager.instance.GetCharacterData(character, (e_StatType)i);
             StatData.Add((e_StatType)i, value);
         }
     }

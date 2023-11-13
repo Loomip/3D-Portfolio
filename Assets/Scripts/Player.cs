@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //전역변수는 무조건 소문자 시작 (암묵적 약속)
 // CTRL + K,D 줄 정리
@@ -230,7 +231,7 @@ public class Player : MonoBehaviour
         float length = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(length);
         --gaugeCount;
-        UIManager.Inst.Refresh_Gauge(this);
+        UIManager.instance.Refresh_Gauge(this);
         isUseSkill = false;
 
         canUseSkill = true;
@@ -250,7 +251,7 @@ public class Player : MonoBehaviour
         }
 
         // 게이지 리프레시
-        UIManager.Inst.Refresh_Gauge(this);
+        UIManager.instance.Refresh_Gauge(this);
     }
 
 
@@ -346,7 +347,7 @@ public class Player : MonoBehaviour
             {
                 CurHealth -= damage;
                 Debug.Log("Player Health: " + CurHealth);
-                UIManager.Inst.Refresh_HP(this);
+                UIManager.instance.Refresh_HP(this);
                 StartCoroutine(OnDamage());
             }
 
@@ -393,7 +394,7 @@ public class Player : MonoBehaviour
     public void InteractWithCurrentTarget()
     {
         // 대화창이 이미 열려있는 경우, 새로운 대화를 시작하지 않음
-        if (UIManager.Inst.isAction) return;
+        if (UIManager.instance.isAction) return;
 
         float interactRange = 1.5f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
@@ -403,7 +404,7 @@ public class Player : MonoBehaviour
             {
                 npc.OnInteract();
 
-                UIManager.Inst.Refresh_Talk(gameObject);
+                UIManager.instance.Refresh_Talk(gameObject);
             }
         }
     }
@@ -462,5 +463,25 @@ public class Player : MonoBehaviour
             MoveControl();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // PlayerPrefs에서 플레이어의 위치를 불러옴
+        float x = PlayerPrefs.GetFloat("PlayerPosX");
+        float y = PlayerPrefs.GetFloat("PlayerPosY");
+        float z = PlayerPrefs.GetFloat("PlayerPosZ");
+
+        // 플레이어의 위치를 설정
+        transform.position = new Vector3(x, y, z);
+    }
 
 }

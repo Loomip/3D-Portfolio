@@ -56,7 +56,7 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
     {
         int index = FindItemIndex(newItem);
 
-        if (DataManager.Inst.GetItemData(newItem.id, out Data_Item.Param item))
+        if (DataManager.instance.GetItemData(newItem.id, out Data_Item.Param item))
         {
             if (-1 < index) //인벤토리에 있던 아이템
             {
@@ -112,7 +112,7 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
 
     public List<ItemData> GetEquipmentItems()
     {
-        return items.Where(item => DataManager.Inst.GetItemDataParams(item.id).ItemType == "Weapon").ToList();
+        return items.Where(item => DataManager.instance.GetItemDataParams(item.id).ItemType == "Weapon").ToList();
     }
 
     protected override void DoAwake()

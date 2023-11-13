@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-
 public class KingSlime : Enemy
 {
     // 보스의 패턴 개수
@@ -13,9 +12,13 @@ public class KingSlime : Enemy
     private bool isExecutingPattern2 = false;
     [SerializeField] LayerMask layerMask;
     int meleeAttackRange = 3;
+    // 보스룸 컨트롤러
+    private BossroomController bossroomController;
 
     void Start()
     {
+        // "BossRoom" 태그를 가진 게임 오브젝트의 BossroomController 컴포넌트를 찾아 참조 설정
+        bossroomController = GameObject.FindGameObjectWithTag("BossRoom").GetComponent<BossroomController>();
         Init();
         StartCoroutine(Think());
         nav.enabled = true;
@@ -118,5 +121,15 @@ public class KingSlime : Enemy
         base.Init();
         collider = GetComponent<BoxCollider>();
         nav.enabled = false;
+    }
+
+    protected override void Die(Vector3 reactvec)
+    {
+        base.Die(reactvec);  // Enemy 클래스의 Die 함수 호출
+
+        if (bossroomController != null)
+        {
+            bossroomController.MonsterDied();  // 보스가 죽었을 때 MonsterDied 함수 호출
+        }
     }
 }

@@ -12,8 +12,8 @@ public class NPC_Base : MonoBehaviour
 
     public virtual void OnInteract()
     {
-        dialogData = DataManager.Inst.GetNPCDialogData(gameManager.GetCurrentSceneIndex(), npcNameCode);
-        StartCoroutine(NpcManager.Inst.DialogueCoroutine(this));
+        dialogData = DataManager.instance.GetNPCDialogData(gameManager.GetCurrentSceneIndex(), npcNameCode);
+        StartCoroutine(NpcManager.instance.DialogueCoroutine(this));
     }
 
     // 현재 대화 인덱스 설정 메서드

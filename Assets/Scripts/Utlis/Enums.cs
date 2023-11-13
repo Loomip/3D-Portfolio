@@ -3,7 +3,6 @@ public enum e_MenuType
     None,
     Equip,      //장비창
     Enhance,    //강화창
-    Collection, //수집컨텐츠창
     Quest,      //퀘스트창
     Option,     //옵션창
     Length

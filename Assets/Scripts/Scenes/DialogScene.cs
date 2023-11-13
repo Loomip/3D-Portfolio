@@ -15,8 +15,8 @@ public class School_building : GameManager
     public GameObject narrationBox; // 나레이션 UI
     public GameObject nameBox; //이름 UI
 
-    public List<Data_Messages.Param> dialogData;
-    public int currentDialogIndex = 0;
+    //대화 인덱스
+    private int currentDialogIndex = 0;
 
     // 대사 출력 중인지 나타내는 플래그
     private bool isPrinting = false;  
@@ -27,7 +27,7 @@ public class School_building : GameManager
 
         SceneType = e_Scene.Dialog;
 
-        dialogData = DataManager.Inst.GetDialogData(GetCurrentSceneIndex());
+        dialogData = DataManager.instance.GetDialogData(GetCurrentSceneIndex());
 
         ShowDialog();
     }

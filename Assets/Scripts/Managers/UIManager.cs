@@ -137,7 +137,7 @@ public class UIManager : SingletonDontDestroy<UIManager>
     public List<GameObject> m_menu = null;
 
     //기본적으로 켜있는 슬롯
-    e_MenuType CurMenu = e_MenuType.Equip;
+    e_MenuType CurMenu = e_MenuType.Enhance;
 
     //버튼이 들어갈 위치
     [SerializeField] Transform MaunButton;
@@ -208,12 +208,6 @@ public class UIManager : SingletonDontDestroy<UIManager>
                 GameObject instanceance = Instantiate(prefab, Maun);
                 m_menu.Add(instanceance);
                 instanceance.SetActive(false);
-
-                if (i == e_MenuType.Enhance)
-                {
-                    Enhance enhance = instanceance.GetComponent<Enhance>();
-                    enhance.Initialize();
-                }
             }
         }
 

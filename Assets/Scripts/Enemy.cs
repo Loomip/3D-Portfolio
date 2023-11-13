@@ -299,7 +299,7 @@ public class Enemy : MonoBehaviour
     }
 
     //4-3 Á×À½¸ð¼Ç
-    void Die(Vector3 reactvec)
+    protected virtual void Die(Vector3 reactvec)
     {
         StopAllCoroutines();
 

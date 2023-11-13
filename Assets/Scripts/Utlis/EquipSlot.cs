@@ -28,7 +28,7 @@ public class EquipSlot : Slot
         Set_Icon(data);
 
         // 플레이어 상태 업데이트
-        var status = DataManager.Inst.GetItemDataStatus(data.id);
+        var status = DataManager.instance.GetItemDataStatus(data.id);
 
         foreach (var s in status)
         {
@@ -41,7 +41,7 @@ public class EquipSlot : Slot
         // 장착 해제되는 아이템 정보를 임시 변수에 저장
         ItemData detachedItem = EquippedItem;
 
-        var status = DataManager.Inst.GetItemDataStatus(detachedItem.id);
+        var status = DataManager.instance.GetItemDataStatus(detachedItem.id);
 
         foreach (var s in status)
         {

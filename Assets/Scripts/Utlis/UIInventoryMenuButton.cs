@@ -27,19 +27,16 @@ public class UIInventoryMenuButton : MonoBehaviour
                 meun.text = string.Empty;
                 break;
             case e_MenuType.Quest:
-                meun.text = DataManager.Inst.GetWordData("Quest");
+                meun.text = DataManager.instance.GetWordData("Quest");
                 break;
             case e_MenuType.Equip:
-                meun.text = DataManager.Inst.GetWordData("Equip");
-                break;
-            case e_MenuType.Collection:
-                meun.text = DataManager.Inst.GetWordData("Collection");
+                meun.text = DataManager.instance.GetWordData("Equip");
                 break;
             case e_MenuType.Enhance:
-                meun.text = DataManager.Inst.GetWordData("Enhance");
+                meun.text = DataManager.instance.GetWordData("Enhance");
                 break;
             case e_MenuType.Option:
-                meun.text = DataManager.Inst.GetWordData("Option");
+                meun.text = DataManager.instance.GetWordData("Option");
                 break;
             case e_MenuType.Length:
                 break;
