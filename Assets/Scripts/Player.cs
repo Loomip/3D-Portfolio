@@ -35,6 +35,21 @@ public class Player : MonoBehaviour
     //플레이어 위치 정보
     public Vector3 position;
 
+    // 이동 중인지 여부를 나타내는 변수
+    bool isMoving = true;
+    public bool isUseSkill = false;
+
+    //회피
+    bool isDodge;
+
+    // 무기를 들었는지 여부를 나타내는 변수
+    public bool isWeaponEquipped = false;
+    // 스킬 사용 가능 여부를 나타내는 플래그
+    public bool canUseSkill = false;
+
+    //공격중인지 
+    public bool isAttacking = false;
+
     public Player(Vector3 position)
     {
         this.position = position;
@@ -80,12 +95,10 @@ public class Player : MonoBehaviour
 
     // 2. 이동, 애니메이션
 
-    // 이동 중인지 여부를 나타내는 변수
-    bool isMoving = true;
-    public bool isUseSkill = false;
-
     void Locomotion()
     {
+        if (isAttacking) return;
+
         float x = Input.GetAxisRaw("Horizontal") * stat.GetStat(e_StatType.Spd);
         float z = Input.GetAxisRaw("Vertical") * stat.GetStat(e_StatType.Spd);
 
@@ -150,19 +163,28 @@ public class Player : MonoBehaviour
         }
     }
 
-    //회피
-    bool isDodge;
-
+    
     void Dodge()
     {
         // "Dodge" 버튼이 처음 눌렸을 때만 처리
         if (Input.GetButtonDown("Dodge") && !isDodge)
         {
+            isAttacking = false;
             //무적상태
             isDamage = true;
-
+            foreach (var weapon in weapons)
+            {
+                if (weapon != null)
+                {
+                    Weapons weapons = weapon.GetComponent<Weapons>();
+                    if (weapons != null && weapons.trailEffect != null)
+                    {
+                        weapons.trailEffect.enabled = false;
+                    }
+                }
+            }
             //회피 이동 고정
-            dodgeDir = MoveDir;
+            dodgeDir = transform.forward;
 
             // 현재 스피드 저장
             int originalSpeed = stat.GetStat(e_StatType.Spd);
@@ -199,25 +221,22 @@ public class Player : MonoBehaviour
 
     //================================================================================================================
 
-    // 무기를 들었는지 여부를 나타내는 변수
-    public bool isWeaponEquipped = false;
-    // 스킬 사용 가능 여부를 나타내는 플래그
-    private bool canUseSkill = true;
+    
 
     //3. 공격
     void Attack()
     {
         if (Input.GetMouseButtonDown(0) && !isMoving && isWeaponEquipped)
         {
+            isAttacking = true;
             animator.SetTrigger("isAtk");
         }
-        if (Input.GetMouseButtonDown(1) && !isMoving && isWeaponEquipped)
+        if (Input.GetMouseButtonDown(1) && !isMoving && isWeaponEquipped && !canUseSkill)
         {
-            if (gaugeCount > 0)
+            canUseSkill = true;
+            if (gaugeCount > 0 && canUseSkill)
             {
                 // 스킬 사용 중
-                canUseSkill = false;
-
                 StartCoroutine(SkillLength());
             }
         }
@@ -228,13 +247,11 @@ public class Player : MonoBehaviour
         animator.SetTrigger("isSkill");
         yield return new WaitForEndOfFrame();
         isUseSkill = true;
-        float length = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(length);
         --gaugeCount;
         UIManager.instance.Refresh_Gauge(this);
+        yield return new WaitForSeconds(2f);
         isUseSkill = false;
-
-        canUseSkill = true;
+        canUseSkill = false;
     }
 
 
@@ -253,6 +270,8 @@ public class Player : MonoBehaviour
         // 게이지 리프레시
         UIManager.instance.Refresh_Gauge(this);
     }
+
+   
 
 
     //================================================================================================================

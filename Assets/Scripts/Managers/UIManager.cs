@@ -74,6 +74,12 @@ public class UIManager : SingletonDontDestroy<UIManager>
     }
     public ChoiceUI[] choices;
 
+    // 페이드 아웃을 위한 이미지
+    public Image fadeOutImage;
+
+    // 게임 종료 메시지를 표시할 텍스트
+    public TextMeshProUGUI gameEndText;
+
     // 대화창 리프레쉬
     public void Refresh_Talk(GameObject scanObj)
     {
@@ -105,6 +111,7 @@ public class UIManager : SingletonDontDestroy<UIManager>
         }
     }
 
+    //상호작용
     void InteractableObject()
     {
         if (player != null)
@@ -123,6 +130,39 @@ public class UIManager : SingletonDontDestroy<UIManager>
     private void InteractableHide()
     {
         InteractText.SetActive(false);
+    }
+
+    //대화 선택창 끄기
+    public void DisableChoices()
+    {
+        foreach (var choice in choices)
+        {
+            choice.button.gameObject.SetActive(false);
+            choice.text.gameObject.SetActive(false);
+        }
+    }
+
+    //엔딩 씬
+    public void ShowBossDiedScreen()
+    {
+        StartCoroutine(BossDiedScreenCoroutine());
+    }
+
+    private IEnumerator BossDiedScreenCoroutine()
+    {
+        // 페이드 아웃
+        for (float i = 0; i <= 1; i += Time.deltaTime)
+        {
+            fadeOutImage.color = new Color(0, 0, 0, i);
+            yield return null;
+        }
+
+        // 텍스트 표시
+        gameEndText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f); // 텍스트를 2초 동안 표시
+
+        // 씬 전환
+        LoadSceneManager.LoadScene("School");
     }
 
     //===========================================================================================================================
@@ -147,6 +187,8 @@ public class UIManager : SingletonDontDestroy<UIManager>
 
     //메뉴 프리펩이 들어갈 위치
     [SerializeField] Transform Maun;
+
+    
 
     public void InvenShow()
     {

@@ -11,9 +11,14 @@ public class ShiiDeathing : Enemy
     public GameObject Skill_2;
 
     [SerializeField] LayerMask layerMask;
-    
+
+    // 보스룸 컨트롤러
+    private BossroomController bossroomController;
+
     void Start()
     {
+        // "BossRoom" 태그를 가진 게임 오브젝트의 BossroomController 컴포넌트를 찾아 참조 설정
+        bossroomController = GameObject.FindGameObjectWithTag("BossRoom").GetComponent<BossroomController>();
         Init();
         StartCoroutine(Think());
     }
@@ -83,5 +88,17 @@ public class ShiiDeathing : Enemy
     public override void Init()
     {
         base.Init();
+    }
+
+    protected override void Die(Vector3 reactvec)
+    {
+        base.Die(reactvec);  // Enemy 클래스의 Die 함수 호출
+
+        bossroomController.isFinalBossRoom = true;
+
+        if (bossroomController != null)
+        {
+            bossroomController.MonsterDied();  // 보스가 죽었을 때 MonsterDied 함수 호출
+        }
     }
 }

@@ -127,6 +127,13 @@ public class ClassroomController : MonoBehaviour
         }
 
     }
+
+    //소환 영역 표시
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(spawnAreaCenter, spawnAreaSize);
+    }
     //몬스터 소환
     // 여기서 연출이 들어가면 되나?
     //1. 플레이어가 방에 들어갓다는 인식

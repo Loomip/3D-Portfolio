@@ -50,11 +50,16 @@ public class School_buildingScene : GameManager
             UIManager.instance.Refresh_Talk(gameObject);
             UIManager.instance.talkText.text = dialog.Text;
             UIManager.instance.nameText.text = dialog.Name;
+            UIManager.instance.DisableChoices();
             StartCoroutine(ShowTextEffect(UIManager.instance.talkText, dialog.Text));
             isPrinting = true;
 
             // 다음 대사를 위해 인덱스 증가
             currentDialogIndex++;
+        }
+        else
+        {
+            UIManager.instance.Close_Talk();
         }
     }
 
@@ -65,7 +70,7 @@ public class School_buildingScene : GameManager
         foreach (char letter in fullText.ToCharArray())
         {
             textUI.text += letter;  // 한 글자씩 추가
-            yield return new WaitForSecondsRealtime(0.03f);  // 일정한 딜레이 후 다음 글자 표시
+            yield return new WaitForSecondsRealtime(0.01f);  // 일정한 딜레이 후 다음 글자 표시
         }
         isPrinting = false;
     }

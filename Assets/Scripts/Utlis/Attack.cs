@@ -56,6 +56,6 @@ public class Attack : MonoBehaviour
 
     void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player = GetComponentInParent<Player>();
     }
 }

@@ -88,8 +88,6 @@ public class PlayerSkillEvent : MonoBehaviour
         StartCoroutine(DamageWithDelay(rangeInstant, effect.collider, 0.5f, 5.5f));
     }
 
-
-
     IEnumerator DamageWithDelay(GameObject gameObject, Collider collider, float delay, float duration)
     {
         while (duration > 0f)
@@ -102,4 +100,10 @@ public class PlayerSkillEvent : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // 공격 애니메이션 종료 이벤트
+    void OnAttackEnd()
+    {
+        Player player = GetComponentInParent<Player>();
+        player.isAttacking = false;
+    }
 }

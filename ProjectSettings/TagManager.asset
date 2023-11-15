@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - Door
   - Skill
+  - BossRoom
   layers:
   - Default
   - TransparentFX

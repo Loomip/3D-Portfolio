@@ -19,8 +19,9 @@ public class BossroomController : MonoBehaviour
     // 보스 소환 위치
     public Vector3 spawnAreaCenter;
 
-    // 클리어하기 위해 필요한 몬스터 수
-    public int monstersToClear; 
+    // 마지막 보스 방인지 판단하는 플래그
+    public bool isFinalBossRoom = false;
+
 
     public void MonsterDied()
     {
@@ -28,6 +29,12 @@ public class BossroomController : MonoBehaviour
 
         doorin.SetActive(false); // 문을 염
         doorOut.SetActive(false); // 문을 염
+
+        // 마지막 보스 방인 경우에만 특별한 처리를 합니다.
+        if (isFinalBossRoom)
+        {
+            UIManager.instance.ShowBossDiedScreen(); // UIManager의 메서드 호출
+        }
 
         Debug.Log("구역 클리어!");
     }

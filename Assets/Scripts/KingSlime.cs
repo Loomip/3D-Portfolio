@@ -127,6 +127,8 @@ public class KingSlime : Enemy
     {
         base.Die(reactvec);  // Enemy 클래스의 Die 함수 호출
 
+        bossroomController.isFinalBossRoom = false;
+
         if (bossroomController != null)
         {
             bossroomController.MonsterDied();  // 보스가 죽었을 때 MonsterDied 함수 호출
