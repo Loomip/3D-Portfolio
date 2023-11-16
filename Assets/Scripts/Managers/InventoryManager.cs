@@ -10,6 +10,7 @@ public class ItemData
 {
     public int id; //아이템 고유 ID
     public int amount; //아이템 갯수
+    public Dictionary<e_StatType, int> enhanceStats; // 강화 단계별 능력치
 }
 
 public class InventoryManager : SingletonDontDestroy<InventoryManager>

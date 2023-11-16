@@ -40,7 +40,6 @@ public enum e_ItemType
 {
     Spend,      //소모품
     Weapon,     //무기
-    Item,       //재료아이템
     Length
 }
 

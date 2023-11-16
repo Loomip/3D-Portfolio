@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4909563420985647390}
   - component: {fileID: 8022859928542393389}
   - component: {fileID: 1190034655992981787}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: MeleeArea
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 5684232483640298253}
   - component: {fileID: 5326139576751371915}
   - component: {fileID: 9073926609766325738}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TauntArea
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1455893352317029815}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bone.003_L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5603591750047322166}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 6267454379760556184}
   - component: {fileID: 1160267751241348612}
   - component: {fileID: 3256921765084322275}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6763797068170433875}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bone.003_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754197260517993111}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bone.003_R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7565124348508698419}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477254034871223514}
   - component: {fileID: 3016938324071294594}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Slime_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1661612445098046229}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bone.003_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

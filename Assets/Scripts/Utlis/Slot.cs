@@ -109,9 +109,14 @@ public class Slot : MonoBehaviour
             SelectSlot(isSelect);
 
             Equip equip = FindObjectOfType<Equip>();
+            Enhance enhance = FindObjectOfType<Enhance>();
             if (equip != null)
             {
                 equip.SelectSlot(this);
+            }
+            if(enhance != null)
+            {
+                enhance.SelectSlot(this);
             }
 
             onItemClick?.Invoke(currentItem);

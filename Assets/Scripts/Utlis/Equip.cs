@@ -51,7 +51,7 @@ public class Equip : MonoBehaviour
     List<ItemData> dataList;
 
     //인벤토리의 슬롯을 초기화 하는 메서드
-    public void InitSlots()
+    private void InitSlots()
     {
         for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
@@ -65,7 +65,7 @@ public class Equip : MonoBehaviour
     }
 
     //장비 슬롯 생성
-    public void InitEquipSlots()
+    private void InitEquipSlots()
     {
         for (int i = 0; i < (int)e_EquipType.Length; ++i)
         {
@@ -78,7 +78,7 @@ public class Equip : MonoBehaviour
     }
 
     //아이템의 정보를 표시해주는 함수
-    public void Refresh_Tooltip(ItemData item)
+    private void Refresh_Tooltip(ItemData item)
     {
         if (item == null)
         {
@@ -98,7 +98,7 @@ public class Equip : MonoBehaviour
     }
 
     //인벤토리의 아이템 아이콘을 갱신하는 메서드
-    public void RefreshIcon()
+    private void RefreshIcon()
     {
         inventoy = InventoryManager.instance;
         dataList = inventoy.GetItemList();
@@ -117,7 +117,7 @@ public class Equip : MonoBehaviour
         }
     }
 
-    public ItemData GetSelectedItem()
+    private ItemData GetSelectedItem()
     {
         ItemData selectedItem = null;
 
@@ -138,7 +138,7 @@ public class Equip : MonoBehaviour
     public void ItemButton() => useButton.Invoke();
 
     //버튼을 바꿔주는 함수
-    public void Refresh_Button(ItemData item)
+    private void Refresh_Button(ItemData item)
     {
         if (item == null)
         {
@@ -181,9 +181,6 @@ public class Equip : MonoBehaviour
                     }
                     btn_Use.text = DataManager.instance.GetWordData("Wear");
                     useButton = () => Button_Equip(item);
-                    break;
-                case e_ItemType.Item:
-                    btn_Use.transform.parent.gameObject.SetActive(false);
                     break;
             }
         }

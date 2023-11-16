@@ -150,19 +150,30 @@ public class UIManager : SingletonDontDestroy<UIManager>
 
     private IEnumerator BossDiedScreenCoroutine()
     {
+        // 이펙트 활성화
+        fadeOutImage.gameObject.SetActive(true);
+
         // 페이드 아웃
-        for (float i = 0; i <= 1; i += Time.deltaTime)
+        for (float i = 0; i <= 5; i += Time.deltaTime)
         {
             fadeOutImage.color = new Color(0, 0, 0, i);
             yield return null;
         }
 
-        // 텍스트 표시
         gameEndText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(2f); // 텍스트를 2초 동안 표시
+
+        for (float i = 0; i <= 3; i += Time.deltaTime)
+        {
+            gameEndText.color = new Color(gameEndText.color.r, gameEndText.color.g, gameEndText.color.b, i);
+            yield return null;
+        }
+        yield return new WaitForSeconds(5f); //대사 출력 후 다음 장면 넘어가기
 
         // 씬 전환
         LoadSceneManager.LoadScene("School");
+
+        fadeOutImage.gameObject.SetActive(false);
+        gameEndText.gameObject.SetActive(false);
     }
 
     //===========================================================================================================================

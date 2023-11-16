@@ -51,6 +51,8 @@ public class ClassroomController : MonoBehaviour
             // 몬스터 생성
             GameObject monsterInstance = Instantiate(selectedMonsterPrefab, randomSpawnPosition, Quaternion.identity);
 
+            Destroy(effectInstance, 5f);
+
             // Enemy 스크립트의 SetClassroomController 메서드를 호출하여 ClassroomController 인스턴스 전달
             Enemy enemy = monsterInstance.GetComponent<Enemy>();
             if (enemy != null)
