@@ -61,7 +61,7 @@ public class Slot : MonoBehaviour
         {
             if (data != null)
             {
-                img_Icon.sprite = Resources.Load<Sprite>("Itemicons/" + data.Name);
+                img_Icon.sprite = Resources.Load<Sprite>("Itemicons/" + data.SpritName);
                 ChangeAmount(newItem.amount);
                 txt_Amount.enabled = true;
                 isEmpty = false;
@@ -118,7 +118,6 @@ public class Slot : MonoBehaviour
             {
                 enhance.SelectSlot(this);
             }
-
             onItemClick?.Invoke(currentItem);
         }
     }

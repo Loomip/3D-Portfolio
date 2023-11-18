@@ -188,7 +188,12 @@ public class UIManager : SingletonDontDestroy<UIManager>
     public List<GameObject> m_menu = null;
 
     //기본적으로 켜있는 슬롯
-    e_MenuType CurMenu = e_MenuType.Enhance;
+    private e_MenuType CurMenu = e_MenuType.Enhance;
+
+    public e_MenuType CURMENU
+    {
+        get => CurMenu;
+    }
 
     //버튼이 들어갈 위치
     [SerializeField] Transform MaunButton;

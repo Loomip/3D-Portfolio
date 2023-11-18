@@ -12,6 +12,8 @@ public class SchoolScene : GameManager
 
         player = FindObjectOfType<Player>();
 
+        UpdateDialogData();
+
         if (player == null)
         {
             GameObject playerObject = Instantiate(playerPrefab);

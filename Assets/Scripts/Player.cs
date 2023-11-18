@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 
     // 무기를 들었는지 여부를 나타내는 변수
     public bool isWeaponEquipped = false;
+
     // 스킬 사용 가능 여부를 나타내는 플래그
     public bool canUseSkill = false;
 
@@ -82,14 +83,8 @@ public class Player : MonoBehaviour
     }
     public int Atk
         => stat.GetStat(e_StatType.Atk);
-    public int Def
-        => stat.GetStat(e_StatType.Def);
     public int Speed
         => stat.GetStat(e_StatType.Spd);
-    public int Acc
-        => stat.GetStat(e_StatType.Acc);
-    public int Del
-        => stat.GetStat(e_StatType.Del);
 
     //================================================================================================================
 
@@ -247,9 +242,9 @@ public class Player : MonoBehaviour
         animator.SetTrigger("isSkill");
         yield return new WaitForEndOfFrame();
         isUseSkill = true;
-        --gaugeCount;
+        gaugeCount -= stat.GetStat(e_StatType.Skill_Gauge);
         UIManager.instance.Refresh_Gauge(this);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(stat.GetStat(e_StatType.CoolTime));
         isUseSkill = false;
         canUseSkill = false;
     }

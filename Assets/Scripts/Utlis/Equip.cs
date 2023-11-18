@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class Equip : MonoBehaviour
 {
@@ -32,11 +33,19 @@ public class Equip : MonoBehaviour
     //버리기 버튼
     public GameObject btn_Discard;
 
+    [Header("플레이어 스텟")]
+    //체력
+    public TextMeshProUGUI healthText;
+    //공격력
+    public TextMeshProUGUI attackPowerText;
+    //스피드
+    public TextMeshProUGUI speedText;
+
+
     //버튼용 Delegate(대리자)
     delegate void UseButton();
 
     UseButton useButton;
-
     InventoryManager inventoy;
     Player player;
 
@@ -91,14 +100,14 @@ public class Equip : MonoBehaviour
         {
             m_localizeData = DataManager.instance.GetLocalizeData(item.id);
             tooltip_Icon.color = Color.white;
-            tooltip_Icon.sprite = Resources.Load<Sprite>("Itemicons/" + m_localizeData.Name);
+            tooltip_Icon.sprite = Resources.Load<Sprite>("Itemicons/" + m_localizeData.SpritName);
             itemExplanText.text = m_localizeData.Explan;
             itemNameText.text = m_localizeData.TooltipName;
         }
     }
 
     //인벤토리의 아이템 아이콘을 갱신하는 메서드
-    private void RefreshIcon()
+    public void RefreshIcon()
     {
         inventoy = InventoryManager.instance;
         dataList = inventoy.GetItemList();
@@ -112,8 +121,17 @@ public class Equip : MonoBehaviour
             }
             else
                 slotList[i].ClearSlot();
+        }
+    }
 
-            slotList[i].SelectSlot(false);
+    private void RecordItem()
+    {
+        for (int i = 0; i < InventoryManager.instance.GetItemList().Count; ++i)
+        {
+            if (i < dataList.Count)
+            {
+                RefreshIcon();
+            }
         }
     }
 
@@ -258,7 +276,7 @@ public class Equip : MonoBehaviour
             }
 
             // 무기 타입을 가져옴
-            e_Weapon weaponType = GetWeaponType(itemData.Name);
+            e_Weapon weaponType = GetWeaponType(itemData);
 
             // 해당 무기 타입에 대한 인덱스 리스트를 가져옴
             List<int> indexList = GetWeaponIndexList(weaponType);
@@ -290,23 +308,13 @@ public class Equip : MonoBehaviour
                     {
                         // 선택한 장비를 장착
                         equipSlot.Set(item);
-
-                        // 선택한 아이템의 개수 감소
-                        InventoryManager.instance.RemoveItem(item);
                     }
                     else
                     {
-                        // 이미 장착한 장비를 해제
-                        ItemData detachedItem = equipSlot.Detach();
-
-                        // 해제된 아이템을 인벤토리에 추가
-                        InventoryManager.instance.AddItem(detachedItem);
+                        equipSlot.Detach();
 
                         // 선택한 장비를 장착
                         equipSlot.Set(item);
-
-                        // 선택한 아이템의 개수 감소
-                        InventoryManager.instance.RemoveItem(item);
                     }
                     return;
                 }
@@ -331,9 +339,30 @@ public class Equip : MonoBehaviour
         slot = null;
     }
 
-    private e_Weapon GetWeaponType(string itemName)
+    private e_Weapon GetWeaponType(Data_Item.Param item)
     {
-        return (e_Weapon)Enum.Parse(typeof(e_Weapon), itemName);
+        // SpritName에 따라 무기 유형을 결정
+        switch (item.SpritName)
+        {
+            case "One_handed_sword":
+                return e_Weapon.One_handed_sword;
+            case "Two_handed_sword":
+                return e_Weapon.Two_handed_sword;
+            case "Karate":
+                return e_Weapon.Karate;
+            case "Glove":
+                return e_Weapon.Glove;
+            case "Bag":
+                return e_Weapon.Bag;
+            case "Bead":
+                return e_Weapon.Bead;
+            case "Musical_instruments":
+                return e_Weapon.Musical_instruments;
+            case "Dance":
+                return e_Weapon.Dance;
+            default:
+                return e_Weapon.None;
+        }
     }
 
     private List<int> GetWeaponIndexList(e_Weapon weaponType)
@@ -415,6 +444,13 @@ public class Equip : MonoBehaviour
         }
     }
 
+    public void Refresh_Stat()
+    {
+        healthText.text = "HP: " + player.CurHealth + " / " + player.MaxHealth;
+        attackPowerText.text = "Attack : " + player.Atk;
+        speedText.text = "Speed: " + player.Speed;
+    }
+
     private void Start()
     {
         player = FindObjectOfType<Player>();
@@ -423,5 +459,11 @@ public class Equip : MonoBehaviour
         ItemData selectedItem = GetSelectedItem();
         Refresh_Tooltip(selectedItem);
         Refresh_Button(selectedItem);
+    }
+
+    private void Update()
+    {
+        Refresh_Stat();
+        RecordItem();
     }
 }

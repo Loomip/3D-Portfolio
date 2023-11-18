@@ -19,6 +19,7 @@ public class Data_Lacalize : ScriptableObject
 		
 		public int ID;
 		public string Name;
+		public string SpritName;
 		public string TooltipName;
 		public string Explan;
 	}

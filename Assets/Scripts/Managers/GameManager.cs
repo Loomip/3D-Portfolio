@@ -8,7 +8,13 @@ public class GameManager : MonoBehaviour
 {
     public e_Scene SceneType { get; protected set; } = e_Scene.None;
 
-    public List<Data_Messages.Param> dialogData;
+    public List<Data_Messages.Param> dialogData { get; private set; }
+
+    // dialogData를 갱신하는 메서드
+    public void UpdateDialogData() 
+    {
+        dialogData = DataManager.instance.GetDialogData(GetCurrentSceneIndex());
+    }
 
     public void SetSceneType(e_Scene scene)
     {

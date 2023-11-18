@@ -10,7 +10,7 @@ public class ItemData
 {
     public int id; //아이템 고유 ID
     public int amount; //아이템 갯수
-    public Dictionary<e_StatType, int> enhanceStats; // 강화 단계별 능력치
+    public int enhanceLevel; // 아이템의 강화 레벨
 }
 
 public class InventoryManager : SingletonDontDestroy<InventoryManager>
@@ -50,6 +50,11 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
     {
         CUR_SLOT_COUNT = items.Count;
         return items;
+    }
+
+    public bool ItemExist(ItemData item)
+    {
+        return GetItemList().Contains(item);
     }
 
     //인벤토리에 새 아이템을 추가하는 메서드

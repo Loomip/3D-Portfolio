@@ -53,16 +53,17 @@ public class Data_Item_importer : AssetPostprocessor {
 					cell = row.GetCell(0); p.ID = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(1); p.ItemType = (cell == null ? "" : cell.ToString());
 					cell = row.GetCell(2); p.Name = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(3); p.Skill_Gauge = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(4); p.CoolTime = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(5); p.Fill_HP = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(6); p.MHP = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(7); p.Atk = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(8); p.Def = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(9); p.Spd = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(10); p.Acc = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(11); p.Eva = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(12); p.Del = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(3); p.SpritName = (cell == null ? "" : cell.ToString());
+					cell = row.GetCell(4); p.Skill_Gauge = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(5); p.CoolTime = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(6); p.Fill_HP = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(7); p.MHP = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(8); p.Atk = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(9); p.Def = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(10); p.Spd = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(11); p.Acc = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(12); p.Eva = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(13); p.Del = (int)(cell == null ? 0 : cell.NumericCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);

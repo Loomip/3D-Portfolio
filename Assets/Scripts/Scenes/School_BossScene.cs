@@ -17,7 +17,7 @@ public class School_BossScene : GameManager
 
         SceneType = e_Scene.Schoo_Building;
 
-        dialogData = DataManager.instance.GetDialogData(GetCurrentSceneIndex());
+        UpdateDialogData();
 
         ShowDialog();
     }

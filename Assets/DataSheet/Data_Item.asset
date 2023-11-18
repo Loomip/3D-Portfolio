@@ -15,9 +15,10 @@ MonoBehaviour:
   sheets:
   - name: Sheet1
     list:
-    - ID: 1
+    - ID: 1000
       ItemType: Weapon
       Name: One_handed_sword
+      SpritName: One_handed_sword
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
@@ -28,9 +29,80 @@ MonoBehaviour:
       Acc: 10
       Eva: 3
       Del: 0
-    - ID: 2
+    - ID: 1001
+      ItemType: Weapon
+      Name: One_handed_sword + 1
+      SpritName: One_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 25
+      Def: 10
+      Spd: 0
+      Acc: 10
+      Eva: 3
+      Del: 0
+    - ID: 1002
+      ItemType: Weapon
+      Name: One_handed_sword + 2
+      SpritName: One_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 35
+      Def: 10
+      Spd: 0
+      Acc: 10
+      Eva: 3
+      Del: 0
+    - ID: 1003
+      ItemType: Weapon
+      Name: One_handed_sword + 3
+      SpritName: One_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 45
+      Def: 10
+      Spd: 0
+      Acc: 10
+      Eva: 3
+      Del: 0
+    - ID: 1004
+      ItemType: Weapon
+      Name: One_handed_sword + 4
+      SpritName: One_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 55
+      Def: 10
+      Spd: 0
+      Acc: 10
+      Eva: 3
+      Del: 0
+    - ID: 1005
+      ItemType: Weapon
+      Name: One_handed_sword + 5
+      SpritName: One_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 65
+      Def: 10
+      Spd: 0
+      Acc: 10
+      Eva: 3
+      Del: 0
+    - ID: 2000
       ItemType: Weapon
       Name: Two_handed_sword
+      SpritName: Two_handed_sword
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
@@ -41,61 +113,416 @@ MonoBehaviour:
       Acc: 5
       Eva: 3
       Del: 0
-    - ID: 3
+    - ID: 2001
+      ItemType: Weapon
+      Name: Two_handed_sword + 1
+      SpritName: Two_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 30
+      Def: 10
+      Spd: 0
+      Acc: 5
+      Eva: 3
+      Del: 0
+    - ID: 2002
+      ItemType: Weapon
+      Name: Two_handed_sword + 2
+      SpritName: Two_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 40
+      Def: 10
+      Spd: 0
+      Acc: 5
+      Eva: 3
+      Del: 0
+    - ID: 2003
+      ItemType: Weapon
+      Name: Two_handed_sword + 3
+      SpritName: Two_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 50
+      Def: 10
+      Spd: 0
+      Acc: 5
+      Eva: 3
+      Del: 0
+    - ID: 2004
+      ItemType: Weapon
+      Name: Two_handed_sword + 4
+      SpritName: Two_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 60
+      Def: 10
+      Spd: 0
+      Acc: 5
+      Eva: 3
+      Del: 0
+    - ID: 2005
+      ItemType: Weapon
+      Name: Two_handed_sword + 5
+      SpritName: Two_handed_sword
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 70
+      Def: 10
+      Spd: 0
+      Acc: 5
+      Eva: 3
+      Del: 0
+    - ID: 3000
       ItemType: Weapon
       Name: Musical_instruments
+      SpritName: Musical_instruments
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
       MHP: 0
       Atk: 20
       Def: 0
-      Spd: 5
+      Spd: 2
       Acc: 0
       Eva: 5
       Del: 0
-    - ID: 4
+    - ID: 3001
+      ItemType: Weapon
+      Name: Musical_instruments + 1
+      SpritName: Musical_instruments
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 30
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 3002
+      ItemType: Weapon
+      Name: Musical_instruments + 2
+      SpritName: Musical_instruments
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 40
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 3003
+      ItemType: Weapon
+      Name: Musical_instruments + 3
+      SpritName: Musical_instruments
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 50
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 3004
+      ItemType: Weapon
+      Name: Musical_instruments + 4
+      SpritName: Musical_instruments
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 60
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 3005
+      ItemType: Weapon
+      Name: Musical_instruments + 5
+      SpritName: Musical_instruments
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 70
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 4000
       ItemType: Weapon
       Name: Dance
+      SpritName: Dance
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
       MHP: 100
       Atk: 20
       Def: 0
-      Spd: 5
+      Spd: 2
       Acc: 0
       Eva: 5
       Del: 0
-    - ID: 5
+    - ID: 4001
+      ItemType: Weapon
+      Name: Dance + 1
+      SpritName: Dance
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 30
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 4002
+      ItemType: Weapon
+      Name: Dance + 2
+      SpritName: Dance
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 40
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 4003
+      ItemType: Weapon
+      Name: Dance + 3
+      SpritName: Dance
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 50
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 4004
+      ItemType: Weapon
+      Name: Dance + 4
+      SpritName: Dance
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 60
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 4005
+      ItemType: Weapon
+      Name: Dance + 5
+      SpritName: Dance
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 70
+      Def: 0
+      Spd: 2
+      Acc: 0
+      Eva: 5
+      Del: 0
+    - ID: 5000
       ItemType: Weapon
       Name: Karate
+      SpritName: Karate
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
       MHP: 0
       Atk: 20
       Def: 5
-      Spd: 5
+      Spd: 2
       Acc: 5
       Eva: 0
       Del: 0
-    - ID: 6
+    - ID: 5001
+      ItemType: Weapon
+      Name: Karate + 1
+      SpritName: Karate
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 30
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 5002
+      ItemType: Weapon
+      Name: Karate + 2
+      SpritName: Karate
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 40
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 5003
+      ItemType: Weapon
+      Name: Karate + 3
+      SpritName: Karate
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 50
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 5004
+      ItemType: Weapon
+      Name: Karate + 4
+      SpritName: Karate
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 60
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 5005
+      ItemType: Weapon
+      Name: Karate + 5
+      SpritName: Karate
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 70
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 6000
       ItemType: Weapon
       Name: Glove
+      SpritName: Glove
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
       MHP: 0
       Atk: 25
       Def: 5
-      Spd: 3
+      Spd: 2
       Acc: 5
       Eva: 0
       Del: 0
-    - ID: 7
+    - ID: 6001
+      ItemType: Weapon
+      Name: Glove + 1
+      SpritName: Glove
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 35
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 6002
+      ItemType: Weapon
+      Name: Glove + 2
+      SpritName: Glove
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 45
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 6003
+      ItemType: Weapon
+      Name: Glove + 3
+      SpritName: Glove
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 55
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 6004
+      ItemType: Weapon
+      Name: Glove + 4
+      SpritName: Glove
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 65
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 6005
+      ItemType: Weapon
+      Name: Glove + 5
+      SpritName: Glove
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 75
+      Def: 5
+      Spd: 2
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 7000
       ItemType: Weapon
       Name: Bag
+      SpritName: Bag
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
@@ -106,9 +533,80 @@ MonoBehaviour:
       Acc: 5
       Eva: 0
       Del: 0
-    - ID: 8
+    - ID: 7001
+      ItemType: Weapon
+      Name: Bag + 1
+      SpritName: Bag
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 40
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 7002
+      ItemType: Weapon
+      Name: Bag + 2
+      SpritName: Bag
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 50
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 7003
+      ItemType: Weapon
+      Name: Bag + 3
+      SpritName: Bag
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 60
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 7004
+      ItemType: Weapon
+      Name: Bag + 4
+      SpritName: Bag
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 70
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 7005
+      ItemType: Weapon
+      Name: Bag + 5
+      SpritName: Bag
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 100
+      Atk: 80
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 8000
       ItemType: Weapon
       Name: Bead
+      SpritName: Bead
       Skill_Gauge: 1
       CoolTime: 5
       Fill_HP: 0
@@ -119,9 +617,80 @@ MonoBehaviour:
       Acc: 5
       Eva: 0
       Del: 0
-    - ID: 1001
+    - ID: 8001
+      ItemType: Weapon
+      Name: Bead + 1
+      SpritName: Bead
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 40
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 8002
+      ItemType: Weapon
+      Name: Bead + 2
+      SpritName: Bead
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 50
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 8003
+      ItemType: Weapon
+      Name: Bead + 3
+      SpritName: Bead
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 60
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 8004
+      ItemType: Weapon
+      Name: Bead + 4
+      SpritName: Bead
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 70
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 8005
+      ItemType: Weapon
+      Name: Bead + 5
+      SpritName: Bead
+      Skill_Gauge: 1
+      CoolTime: 5
+      Fill_HP: 0
+      MHP: 0
+      Atk: 80
+      Def: 0
+      Spd: 3
+      Acc: 5
+      Eva: 0
+      Del: 0
+    - ID: 10000
       ItemType: Spend
       Name: Bread
+      SpritName: Bread
       Skill_Gauge: 0
       CoolTime: 10
       Fill_HP: 20
@@ -132,9 +701,10 @@ MonoBehaviour:
       Acc: 0
       Eva: 0
       Del: 0
-    - ID: 1002
+    - ID: 10001
       ItemType: Spend
       Name: Croissant
+      SpritName: Croissant
       Skill_Gauge: 0
       CoolTime: 10
       Fill_HP: 40
@@ -145,9 +715,10 @@ MonoBehaviour:
       Acc: 0
       Eva: 0
       Del: 0
-    - ID: 1003
+    - ID: 10002
       ItemType: Spend
       Name: Donut
+      SpritName: Donut
       Skill_Gauge: 0
       CoolTime: 10
       Fill_HP: 80
@@ -158,9 +729,10 @@ MonoBehaviour:
       Acc: 0
       Eva: 0
       Del: 0
-    - ID: 1004
+    - ID: 10003
       ItemType: Spend
       Name: Hamburger
+      SpritName: Hamburger
       Skill_Gauge: 0
       CoolTime: 10
       Fill_HP: 120
@@ -171,9 +743,10 @@ MonoBehaviour:
       Acc: 0
       Eva: 0
       Del: 0
-    - ID: 1005
+    - ID: 10004
       ItemType: Spend
       Name: Pizza
+      SpritName: Pizza
       Skill_Gauge: 0
       CoolTime: 10
       Fill_HP: 200

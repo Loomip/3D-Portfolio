@@ -52,8 +52,9 @@ public class Data_Lacalize_importer : AssetPostprocessor {
 						
 					cell = row.GetCell(0); p.ID = (int)(cell == null ? 0 : cell.NumericCellValue);
 					cell = row.GetCell(1); p.Name = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(2); p.TooltipName = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(3); p.Explan = (cell == null ? "" : cell.ToString());
+					cell = row.GetCell(2); p.SpritName = (cell == null ? "" : cell.ToString());
+					cell = row.GetCell(3); p.TooltipName = (cell == null ? "" : cell.ToString());
+					cell = row.GetCell(4); p.Explan = (cell == null ? "" : cell.ToString());
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);

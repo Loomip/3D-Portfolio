@@ -68,7 +68,6 @@ public class DataManager : SingletonDontDestroy<DataManager>
         {
             itemData.Add(item.sheets[0].list[i].ID, new Dictionary<e_StatType, int>());
             itemDataParamDics.Add(item.sheets[0].list[i].ID, item.sheets[0].list[i]);
-            ShopDataParamDics.Add(shop.sheets[0].list[i].ID, shop.sheets[0].list[i]);
 
             for (int ii = 1; ii < (int)e_StatType.Length; ++ii)
             {
@@ -84,6 +83,11 @@ public class DataManager : SingletonDontDestroy<DataManager>
 
                 itemData[item.sheets[0].list[i].ID].Add((e_StatType)ii, value);
             }
+        }
+
+        for (int i = 0; i < shop.sheets[0].list.Count; ++i)
+        {
+            ShopDataParamDics.Add(shop.sheets[0].list[i].ID, shop.sheets[0].list[i]);
         }
     }
 
@@ -105,7 +109,16 @@ public class DataManager : SingletonDontDestroy<DataManager>
 
     public Data_Item.Param GetRandomItemDataParams()
     {
-        return itemDataParamDics.Values.OrderBy(o => Guid.NewGuid()).FirstOrDefault();
+        //강화된 장비를 불러오지 못하게 + 소모품은 10000번대로 바꿈
+        var unenhancedOrConsumableItems = itemDataParamDics.Values.Where(item => (item.ID % 1000 == 0 && item.ItemType != "Spend") || (item.ID >= 10000 && item.ItemType == "Spend")).ToList();
+
+        if (unenhancedOrConsumableItems.Count == 0)
+        {
+            Debug.Log("No unenhanced or consumable items available for random selection.");
+            return null;
+        }
+
+        return unenhancedOrConsumableItems.OrderBy(o => Guid.NewGuid()).FirstOrDefault();
     }
 
     public Data_Shop.Param GetShopParams(int _itemKey)

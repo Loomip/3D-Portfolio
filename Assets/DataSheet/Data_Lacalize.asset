@@ -15,165 +15,814 @@ MonoBehaviour:
   sheets:
   - name: Eng
     list:
-    - ID: 1
+    - ID: 1000
       Name: One_handed_sword
+      SpritName: One_handed_sword
       TooltipName: One_handed_sword
       Explan: a fast sword held with one hand
-    - ID: 2
+    - ID: 1001
+      Name: One_handed_sword + 1
+      SpritName: One_handed_sword
+      TooltipName: One_handed_sword + 1
+      Explan: a fast sword held with one hand
+    - ID: 1002
+      Name: One_handed_sword + 2
+      SpritName: One_handed_sword
+      TooltipName: One_handed_sword + 2
+      Explan: a fast sword held with one hand
+    - ID: 1003
+      Name: One_handed_sword + 3
+      SpritName: One_handed_sword
+      TooltipName: One_handed_sword + 3
+      Explan: a fast sword held with one hand
+    - ID: 1004
+      Name: One_handed_sword + 4
+      SpritName: One_handed_sword
+      TooltipName: One_handed_sword + 4
+      Explan: a fast sword held with one hand
+    - ID: 1005
+      Name: One_handed_sword + 5
+      SpritName: One_handed_sword
+      TooltipName: One_handed_sword + 5
+      Explan: a fast sword held with one hand
+    - ID: 2000
       Name: Two_handed_sword
+      SpritName: Two_handed_sword
       TooltipName: Two_handed_sword
       Explan: a slow sword held with two hands
-    - ID: 3
+    - ID: 2001
+      Name: Two_handed_sword + 1
+      SpritName: Two_handed_sword
+      TooltipName: Two_handed_sword + 1
+      Explan: a slow sword held with two hands
+    - ID: 2002
+      Name: Two_handed_sword + 2
+      SpritName: Two_handed_sword
+      TooltipName: Two_handed_sword + 2
+      Explan: a slow sword held with two hands
+    - ID: 2003
+      Name: Two_handed_sword + 3
+      SpritName: Two_handed_sword
+      TooltipName: Two_handed_sword + 3
+      Explan: a slow sword held with two hands
+    - ID: 2004
+      Name: Two_handed_sword + 4
+      SpritName: Two_handed_sword
+      TooltipName: Two_handed_sword + 4
+      Explan: a slow sword held with two hands
+    - ID: 2005
+      Name: Two_handed_sword + 5
+      SpritName: Two_handed_sword
+      TooltipName: Two_handed_sword + 5
+      Explan: a slow sword held with two hands
+    - ID: 3000
       Name: Musical_instruments
+      SpritName: Musical_instruments
       TooltipName: Musical_instruments
       Explan: a guitar-like instrument
-    - ID: 4
+    - ID: 3001
+      Name: Musical_instruments + 1
+      SpritName: Musical_instruments
+      TooltipName: Musical_instruments + 1
+      Explan: a guitar-like instrument
+    - ID: 3002
+      Name: Musical_instruments + 2
+      SpritName: Musical_instruments
+      TooltipName: Musical_instruments + 2
+      Explan: a guitar-like instrument
+    - ID: 3003
+      Name: Musical_instruments + 3
+      SpritName: Musical_instruments
+      TooltipName: Musical_instruments + 3
+      Explan: a guitar-like instrument
+    - ID: 3004
+      Name: Musical_instruments + 4
+      SpritName: Musical_instruments
+      TooltipName: Musical_instruments + 4
+      Explan: a guitar-like instrument
+    - ID: 3005
+      Name: Musical_instruments + 5
+      SpritName: Musical_instruments
+      TooltipName: Musical_instruments + 5
+      Explan: a guitar-like instrument
+    - ID: 4000
       Name: Dance
+      SpritName: Dance
       TooltipName: Dance
       Explan: Basic clothes that you see in any club
-    - ID: 5
+    - ID: 4001
+      Name: Dance + 1
+      SpritName: Dance
+      TooltipName: Dance + 1
+      Explan: Basic clothes that you see in any club
+    - ID: 4002
+      Name: Dance + 2
+      SpritName: Dance
+      TooltipName: Dance + 2
+      Explan: Basic clothes that you see in any club
+    - ID: 4003
+      Name: Dance + 3
+      SpritName: Dance
+      TooltipName: Dance + 3
+      Explan: Basic clothes that you see in any club
+    - ID: 4004
+      Name: Dance + 4
+      SpritName: Dance
+      TooltipName: Dance + 4
+      Explan: Basic clothes that you see in any club
+    - ID: 4005
+      Name: Dance + 5
+      SpritName: Dance
+      TooltipName: Dance + 5
+      Explan: Basic clothes that you see in any club
+    - ID: 5000
       Name: Karate
-      TooltipName: Knuckle
+      SpritName: Karate
+      TooltipName: Karate
       Explan: a light knuckle with a gong in the front
-    - ID: 6
+    - ID: 5001
+      Name: Karate + 1
+      SpritName: Karate
+      TooltipName: Karate + 1
+      Explan: a light knuckle with a gong in the front
+    - ID: 5002
+      Name: Karate + 2
+      SpritName: Karate
+      TooltipName: Karate + 2
+      Explan: a light knuckle with a gong in the front
+    - ID: 5003
+      Name: Karate + 3
+      SpritName: Karate
+      TooltipName: Karate + 3
+      Explan: a light knuckle with a gong in the front
+    - ID: 5004
+      Name: Karate + 4
+      SpritName: Karate
+      TooltipName: Karate + 4
+      Explan: a light knuckle with a gong in the front
+    - ID: 5005
+      Name: Karate + 5
+      SpritName: Karate
+      TooltipName: Karate + 5
+      Explan: a light knuckle with a gong in the front
+    - ID: 6000
       Name: Glove
+      SpritName: Glove
       TooltipName: Glove
       Explan: a boxing glove
-    - ID: 7
+    - ID: 6001
+      Name: Glove + 1
+      SpritName: Glove
+      TooltipName: Glove + 1
+      Explan: a boxing glove
+    - ID: 6002
+      Name: Glove + 2
+      SpritName: Glove
+      TooltipName: Glove + 2
+      Explan: a boxing glove
+    - ID: 6003
+      Name: Glove + 3
+      SpritName: Glove
+      TooltipName: Glove + 3
+      Explan: a boxing glove
+    - ID: 6004
+      Name: Glove + 4
+      SpritName: Glove
+      TooltipName: Glove + 4
+      Explan: a boxing glove
+    - ID: 6005
+      Name: Glove + 5
+      SpritName: Glove
+      TooltipName: Glove + 5
+      Explan: a boxing glove
+    - ID: 7000
       Name: Bag
+      SpritName: Bag
       TooltipName: Bag
       Explan: a school bag that students always wear
-    - ID: 8
+    - ID: 7001
+      Name: Bag + 1
+      SpritName: Bag
+      TooltipName: Bag + 1
+      Explan: a school bag that students always wear
+    - ID: 7002
+      Name: Bag + 2
+      SpritName: Bag
+      TooltipName: Bag + 2
+      Explan: a school bag that students always wear
+    - ID: 7003
+      Name: Bag + 3
+      SpritName: Bag
+      TooltipName: Bag + 3
+      Explan: a school bag that students always wear
+    - ID: 7004
+      Name: Bag + 4
+      SpritName: Bag
+      TooltipName: Bag + 4
+      Explan: a school bag that students always wear
+    - ID: 7005
+      Name: Bag + 5
+      SpritName: Bag
+      TooltipName: Bag + 5
+      Explan: a school bag that students always wear
+    - ID: 8000
       Name: Bead
+      SpritName: Bead
       TooltipName: Bead
       Explan: a bead that looks strange
-    - ID: 1001
+    - ID: 8001
+      Name: Bead + 1
+      SpritName: Bead
+      TooltipName: Bead + 1
+      Explan: a bead that looks strange
+    - ID: 8002
+      Name: Bead + 2
+      SpritName: Bead
+      TooltipName: Bead + 2
+      Explan: a bead that looks strange
+    - ID: 8003
+      Name: Bead + 3
+      SpritName: Bead
+      TooltipName: Bead + 3
+      Explan: a bead that looks strange
+    - ID: 8004
+      Name: Bead + 4
+      SpritName: Bead
+      TooltipName: Bead + 4
+      Explan: a bead that looks strange
+    - ID: 8005
+      Name: Bead + 5
+      SpritName: Bead
+      TooltipName: Bead + 5
+      Explan: a bead that looks strange
+    - ID: 10000
       Name: Bread
+      SpritName: Bread
       TooltipName: Bread
       Explan: a freshly baked bread
-    - ID: 1002
+    - ID: 10001
       Name: Croissant
+      SpritName: Croissant
       TooltipName: Croissant
       Explan: a freshly baked croissant
-    - ID: 1003
+    - ID: 10002
       Name: Donut
+      SpritName: Donut
       TooltipName: Donut
       Explan: a delicious-looking doughnut
-    - ID: 1004
+    - ID: 10003
       Name: Hamburger
+      SpritName: Hamburger
       TooltipName: Hamburger
       Explan: a hamburger for students
-    - ID: 1005
+    - ID: 10004
       Name: Pizza
+      SpritName: Pizza
       TooltipName: Pizza
       Explan: It looks like a lot to eat alone.
   - name: Kor
     list:
-    - ID: 1
+    - ID: 1000
       Name: One_handed_sword
+      SpritName: One_handed_sword
       TooltipName: "\uD55C\uC190\uAC80"
       Explan: "\uD55C \uC190\uC73C\uB85C \uC7A1\uB294 \uBE60\uB978 \uAC80"
-    - ID: 2
+    - ID: 1001
+      Name: One_handed_sword + 1
+      SpritName: One_handed_sword
+      TooltipName: "\uD55C\uC190\uAC80 + 1"
+      Explan: "\uD55C \uC190\uC73C\uB85C \uC7A1\uB294 \uBE60\uB978 \uAC80"
+    - ID: 1002
+      Name: One_handed_sword + 2
+      SpritName: One_handed_sword
+      TooltipName: "\uD55C\uC190\uAC80 + 2"
+      Explan: "\uD55C \uC190\uC73C\uB85C \uC7A1\uB294 \uBE60\uB978 \uAC80"
+    - ID: 1003
+      Name: One_handed_sword + 3
+      SpritName: One_handed_sword
+      TooltipName: "\uD55C\uC190\uAC80 + 3"
+      Explan: "\uD55C \uC190\uC73C\uB85C \uC7A1\uB294 \uBE60\uB978 \uAC80"
+    - ID: 1004
+      Name: One_handed_sword + 4
+      SpritName: One_handed_sword
+      TooltipName: "\uD55C\uC190\uAC80 + 4"
+      Explan: "\uD55C \uC190\uC73C\uB85C \uC7A1\uB294 \uBE60\uB978 \uAC80"
+    - ID: 1005
+      Name: One_handed_sword + 5
+      SpritName: One_handed_sword
+      TooltipName: "\uD55C\uC190\uAC80 + 5"
+      Explan: "\uD55C \uC190\uC73C\uB85C \uC7A1\uB294 \uBE60\uB978 \uAC80"
+    - ID: 2000
       Name: Two_handed_sword
+      SpritName: Two_handed_sword
       TooltipName: "\uB450\uC190\uAC80"
       Explan: "\uB450 \uC190\uC73C\uB85C \uC7A1\uB294 \uB290\uB9B0 \uAC80"
-    - ID: 3
+    - ID: 2001
+      Name: Two_handed_sword + 1
+      SpritName: Two_handed_sword
+      TooltipName: "\uB450\uC190\uAC80 + 1"
+      Explan: "\uB450 \uC190\uC73C\uB85C \uC7A1\uB294 \uB290\uB9B0 \uAC80"
+    - ID: 2002
+      Name: Two_handed_sword + 2
+      SpritName: Two_handed_sword
+      TooltipName: "\uB450\uC190\uAC80 + 2"
+      Explan: "\uB450 \uC190\uC73C\uB85C \uC7A1\uB294 \uB290\uB9B0 \uAC80"
+    - ID: 2003
+      Name: Two_handed_sword + 3
+      SpritName: Two_handed_sword
+      TooltipName: "\uB450\uC190\uAC80 + 3"
+      Explan: "\uB450 \uC190\uC73C\uB85C \uC7A1\uB294 \uB290\uB9B0 \uAC80"
+    - ID: 2004
+      Name: Two_handed_sword + 4
+      SpritName: Two_handed_sword
+      TooltipName: "\uB450\uC190\uAC80 + 4"
+      Explan: "\uB450 \uC190\uC73C\uB85C \uC7A1\uB294 \uB290\uB9B0 \uAC80"
+    - ID: 2005
+      Name: Two_handed_sword + 5
+      SpritName: Two_handed_sword
+      TooltipName: "\uB450\uC190\uAC80 + 5"
+      Explan: "\uB450 \uC190\uC73C\uB85C \uC7A1\uB294 \uB290\uB9B0 \uAC80"
+    - ID: 3000
       Name: Musical_instruments
+      SpritName: Musical_instruments
       TooltipName: "\uC545\uAE30"
       Explan: "\uAE30\uD0C0\uCC98\uB7FC \uC0DD\uAE34 \uC545\uAE30"
-    - ID: 4
+    - ID: 3001
+      Name: Musical_instruments + 1
+      SpritName: Musical_instruments
+      TooltipName: "\uC545\uAE30 + 1"
+      Explan: "\uAE30\uD0C0\uCC98\uB7FC \uC0DD\uAE34 \uC545\uAE30"
+    - ID: 3002
+      Name: Musical_instruments + 2
+      SpritName: Musical_instruments
+      TooltipName: "\uC545\uAE30 + 2"
+      Explan: "\uAE30\uD0C0\uCC98\uB7FC \uC0DD\uAE34 \uC545\uAE30"
+    - ID: 3003
+      Name: Musical_instruments + 3
+      SpritName: Musical_instruments
+      TooltipName: "\uC545\uAE30 + 3"
+      Explan: "\uAE30\uD0C0\uCC98\uB7FC \uC0DD\uAE34 \uC545\uAE30"
+    - ID: 3004
+      Name: Musical_instruments + 4
+      SpritName: Musical_instruments
+      TooltipName: "\uC545\uAE30 + 4"
+      Explan: "\uAE30\uD0C0\uCC98\uB7FC \uC0DD\uAE34 \uC545\uAE30"
+    - ID: 3005
+      Name: Musical_instruments + 5
+      SpritName: Musical_instruments
+      TooltipName: "\uC545\uAE30 + 5"
+      Explan: "\uAE30\uD0C0\uCC98\uB7FC \uC0DD\uAE34 \uC545\uAE30"
+    - ID: 4000
       Name: Dance
+      SpritName: Dance
       TooltipName: "\uC720\uB2C8\uD3FC"
       Explan: "\uC5B4\uB290 \uB3D9\uC544\uB9AC\uC5D0\uC11C\uB098 \uBCF4\uB294 \uAE30\uBCF8
         \uC637"
-    - ID: 5
+    - ID: 4001
+      Name: Dance + 1
+      SpritName: Dance
+      TooltipName: "\uC720\uB2C8\uD3FC + 1"
+      Explan: "\uC5B4\uB290 \uB3D9\uC544\uB9AC\uC5D0\uC11C\uB098 \uBCF4\uB294 \uAE30\uBCF8
+        \uC637"
+    - ID: 4002
+      Name: Dance + 2
+      SpritName: Dance
+      TooltipName: "\uC720\uB2C8\uD3FC + 2"
+      Explan: "\uC5B4\uB290 \uB3D9\uC544\uB9AC\uC5D0\uC11C\uB098 \uBCF4\uB294 \uAE30\uBCF8
+        \uC637"
+    - ID: 4003
+      Name: Dance + 3
+      SpritName: Dance
+      TooltipName: "\uC720\uB2C8\uD3FC + 3"
+      Explan: "\uC5B4\uB290 \uB3D9\uC544\uB9AC\uC5D0\uC11C\uB098 \uBCF4\uB294 \uAE30\uBCF8
+        \uC637"
+    - ID: 4004
+      Name: Dance + 4
+      SpritName: Dance
+      TooltipName: "\uC720\uB2C8\uD3FC + 4"
+      Explan: "\uC5B4\uB290 \uB3D9\uC544\uB9AC\uC5D0\uC11C\uB098 \uBCF4\uB294 \uAE30\uBCF8
+        \uC637"
+    - ID: 4005
+      Name: Dance + 5
+      SpritName: Dance
+      TooltipName: "\uC720\uB2C8\uD3FC + 5"
+      Explan: "\uC5B4\uB290 \uB3D9\uC544\uB9AC\uC5D0\uC11C\uB098 \uBCF4\uB294 \uAE30\uBCF8
+        \uC637"
+    - ID: 5000
       Name: Karate
+      SpritName: Karate
       TooltipName: "\uB108\uD074"
       Explan: "\uC55E\uC5D0 \uC9D5\uC774 \uB2EC\uB824\uC788\uB294 \uAC00\uBCBC\uC6B4
         \uB108\uD074"
-    - ID: 6
+    - ID: 5001
+      Name: Karate + 1
+      SpritName: Karate
+      TooltipName: "\uB108\uD074 + 1"
+      Explan: "\uC55E\uC5D0 \uC9D5\uC774 \uB2EC\uB824\uC788\uB294 \uAC00\uBCBC\uC6B4
+        \uB108\uD074"
+    - ID: 5002
+      Name: Karate + 2
+      SpritName: Karate
+      TooltipName: "\uB108\uD074 + 2"
+      Explan: "\uC55E\uC5D0 \uC9D5\uC774 \uB2EC\uB824\uC788\uB294 \uAC00\uBCBC\uC6B4
+        \uB108\uD074"
+    - ID: 5003
+      Name: Karate + 3
+      SpritName: Karate
+      TooltipName: "\uB108\uD074 + 3"
+      Explan: "\uC55E\uC5D0 \uC9D5\uC774 \uB2EC\uB824\uC788\uB294 \uAC00\uBCBC\uC6B4
+        \uB108\uD074"
+    - ID: 5004
+      Name: Karate + 4
+      SpritName: Karate
+      TooltipName: "\uB108\uD074 + 4"
+      Explan: "\uC55E\uC5D0 \uC9D5\uC774 \uB2EC\uB824\uC788\uB294 \uAC00\uBCBC\uC6B4
+        \uB108\uD074"
+    - ID: 5005
+      Name: Karate + 5
+      SpritName: Karate
+      TooltipName: "\uB108\uD074 + 5"
+      Explan: "\uC55E\uC5D0 \uC9D5\uC774 \uB2EC\uB824\uC788\uB294 \uAC00\uBCBC\uC6B4
+        \uB108\uD074"
+    - ID: 6000
       Name: Glove
+      SpritName: Glove
       TooltipName: "\uAE00\uB7EC\uBE0C"
       Explan: "\uAD8C\uD22C\uAE00\uB7EC\uBE0C"
-    - ID: 7
+    - ID: 6001
+      Name: Glove + 1
+      SpritName: Glove
+      TooltipName: "\uAE00\uB7EC\uBE0C + 1"
+      Explan: "\uAD8C\uD22C\uAE00\uB7EC\uBE0C"
+    - ID: 6002
+      Name: Glove + 2
+      SpritName: Glove
+      TooltipName: "\uAE00\uB7EC\uBE0C + 2"
+      Explan: "\uAD8C\uD22C\uAE00\uB7EC\uBE0C"
+    - ID: 6003
+      Name: Glove + 3
+      SpritName: Glove
+      TooltipName: "\uAE00\uB7EC\uBE0C + 3"
+      Explan: "\uAD8C\uD22C\uAE00\uB7EC\uBE0C"
+    - ID: 6004
+      Name: Glove + 4
+      SpritName: Glove
+      TooltipName: "\uAE00\uB7EC\uBE0C + 4"
+      Explan: "\uAD8C\uD22C\uAE00\uB7EC\uBE0C"
+    - ID: 6005
+      Name: Glove + 5
+      SpritName: Glove
+      TooltipName: "\uAE00\uB7EC\uBE0C + 5"
+      Explan: "\uAD8C\uD22C\uAE00\uB7EC\uBE0C"
+    - ID: 7000
       Name: Bag
+      SpritName: Bag
       TooltipName: "\uAC00\uBC29"
       Explan: "\uD559\uC0DD\uB4E4\uC774 \uB298 \uB9E4\uB294 \uCC45\uAC00\uBC29"
-    - ID: 8
+    - ID: 7001
+      Name: Bag + 1
+      SpritName: Bag
+      TooltipName: "\uAC00\uBC29 + 1"
+      Explan: "\uD559\uC0DD\uB4E4\uC774 \uB298 \uB9E4\uB294 \uCC45\uAC00\uBC29"
+    - ID: 7002
+      Name: Bag + 2
+      SpritName: Bag
+      TooltipName: "\uAC00\uBC29 + 2"
+      Explan: "\uD559\uC0DD\uB4E4\uC774 \uB298 \uB9E4\uB294 \uCC45\uAC00\uBC29"
+    - ID: 7003
+      Name: Bag + 3
+      SpritName: Bag
+      TooltipName: "\uAC00\uBC29 + 3"
+      Explan: "\uD559\uC0DD\uB4E4\uC774 \uB298 \uB9E4\uB294 \uCC45\uAC00\uBC29"
+    - ID: 7004
+      Name: Bag + 4
+      SpritName: Bag
+      TooltipName: "\uAC00\uBC29 + 4"
+      Explan: "\uD559\uC0DD\uB4E4\uC774 \uB298 \uB9E4\uB294 \uCC45\uAC00\uBC29"
+    - ID: 7005
+      Name: Bag + 5
+      SpritName: Bag
+      TooltipName: "\uAC00\uBC29 + 5"
+      Explan: "\uD559\uC0DD\uB4E4\uC774 \uB298 \uB9E4\uB294 \uCC45\uAC00\uBC29"
+    - ID: 8000
       Name: Bead
+      SpritName: Bead
       TooltipName: "\uAD6C\uC2AC"
       Explan: "\uBB34\uC5B8\uAC00 \uAE30\uBB18\uD558\uAC8C \uC0DD\uAE34 \uAD6C\uC2AC"
-    - ID: 1001
+    - ID: 8001
+      Name: Bead + 1
+      SpritName: Bead
+      TooltipName: "\uAD6C\uC2AC + 1"
+      Explan: "\uBB34\uC5B8\uAC00 \uAE30\uBB18\uD558\uAC8C \uC0DD\uAE34 \uAD6C\uC2AC"
+    - ID: 8002
+      Name: Bead + 2
+      SpritName: Bead
+      TooltipName: "\uAD6C\uC2AC + 2"
+      Explan: "\uBB34\uC5B8\uAC00 \uAE30\uBB18\uD558\uAC8C \uC0DD\uAE34 \uAD6C\uC2AC"
+    - ID: 8003
+      Name: Bead + 3
+      SpritName: Bead
+      TooltipName: "\uAD6C\uC2AC + 3"
+      Explan: "\uBB34\uC5B8\uAC00 \uAE30\uBB18\uD558\uAC8C \uC0DD\uAE34 \uAD6C\uC2AC"
+    - ID: 8004
+      Name: Bead + 4
+      SpritName: Bead
+      TooltipName: "\uAD6C\uC2AC + 4"
+      Explan: "\uBB34\uC5B8\uAC00 \uAE30\uBB18\uD558\uAC8C \uC0DD\uAE34 \uAD6C\uC2AC"
+    - ID: 8005
+      Name: Bead + 5
+      SpritName: Bead
+      TooltipName: "\uAD6C\uC2AC + 5"
+      Explan: "\uBB34\uC5B8\uAC00 \uAE30\uBB18\uD558\uAC8C \uC0DD\uAE34 \uAD6C\uC2AC"
+    - ID: 10000
       Name: Bread
+      SpritName: Bread
       TooltipName: "\uBE75"
       Explan: "\uAC13 \uAD6C\uC6B4 \uBE75"
-    - ID: 1002
+    - ID: 10001
       Name: Croissant
+      SpritName: Croissant
       TooltipName: "\uD06C\uB85C\uC640\uC0C1"
       Explan: "\uAC13 \uAD6C\uC6B4 \uD06C\uB85C\uC640\uC0C1"
-    - ID: 1003
+    - ID: 10002
       Name: Donut
+      SpritName: Donut
       TooltipName: "\uB3C4\uB11B"
       Explan: "\uB9DB\uC788\uC5B4 \uBCF4\uC774\uB294 \uB3C4\uB11B"
-    - ID: 1004
+    - ID: 10003
       Name: Hamburger
+      SpritName: Hamburger
       TooltipName: "\uD584\uBC84\uAC70"
       Explan: "\uD559\uC0DD\uB4E4\uC744 \uC0DD\uAC01\uD55C \uD584\uBC84\uAC70"
-    - ID: 1005
+    - ID: 10004
       Name: Pizza
+      SpritName: Pizza
       TooltipName: "\uD53C\uC790"
       Explan: "\uD63C\uC790 \uBA39\uAE30\uC5D0\uB294 \uB9CE\uC544 \uBCF4\uC778\uB2E4."
   - name: Jpn
     list:
-    - ID: 1
+    - ID: 1000
       Name: One_handed_sword
+      SpritName: One_handed_sword
       TooltipName: "\u4E00\u5200\u5263"
       Explan: "\u4E00\u624B\u3067\u6271\u3046\u901F\u3044\u5263"
-    - ID: 2
+    - ID: 1001
+      Name: One_handed_sword + 1
+      SpritName: One_handed_sword
+      TooltipName: "\u4E00\u5200\u5263 + 1"
+      Explan: "\u4E00\u624B\u3067\u6271\u3046\u901F\u3044\u5263"
+    - ID: 1002
+      Name: One_handed_sword + 2
+      SpritName: One_handed_sword
+      TooltipName: "\u4E00\u5200\u5263 + 2"
+      Explan: "\u4E00\u624B\u3067\u6271\u3046\u901F\u3044\u5263"
+    - ID: 1003
+      Name: One_handed_sword + 3
+      SpritName: One_handed_sword
+      TooltipName: "\u4E00\u5200\u5263 + 3"
+      Explan: "\u4E00\u624B\u3067\u6271\u3046\u901F\u3044\u5263"
+    - ID: 1004
+      Name: One_handed_sword + 4
+      SpritName: One_handed_sword
+      TooltipName: "\u4E00\u5200\u5263 + 4"
+      Explan: "\u4E00\u624B\u3067\u6271\u3046\u901F\u3044\u5263"
+    - ID: 1005
+      Name: One_handed_sword + 5
+      SpritName: One_handed_sword
+      TooltipName: "\u4E00\u5200\u5263 + 5"
+      Explan: "\u4E00\u624B\u3067\u6271\u3046\u901F\u3044\u5263"
+    - ID: 2000
       Name: Two_handed_sword
+      SpritName: Two_handed_sword
       TooltipName: " \u4E21\u624B\u5263"
       Explan: "\u4E21\u624B\u3067\u6271\u3046\u9045\u3044\u5263"
-    - ID: 3
+    - ID: 2001
+      Name: Two_handed_sword + 1
+      SpritName: Two_handed_sword
+      TooltipName: "\u4E21\u624B\u5263+ 1"
+      Explan: "\u4E21\u624B\u3067\u6271\u3046\u9045\u3044\u5263"
+    - ID: 2002
+      Name: Two_handed_sword + 2
+      SpritName: Two_handed_sword
+      TooltipName: "\u4E21\u624B\u5263+ 2"
+      Explan: "\u4E21\u624B\u3067\u6271\u3046\u9045\u3044\u5263"
+    - ID: 2003
+      Name: Two_handed_sword + 3
+      SpritName: Two_handed_sword
+      TooltipName: "\u4E21\u624B\u5263+ 3"
+      Explan: "\u4E21\u624B\u3067\u6271\u3046\u9045\u3044\u5263"
+    - ID: 2004
+      Name: Two_handed_sword + 4
+      SpritName: Two_handed_sword
+      TooltipName: "\u4E21\u624B\u5263+ 4"
+      Explan: "\u4E21\u624B\u3067\u6271\u3046\u9045\u3044\u5263"
+    - ID: 2005
+      Name: Two_handed_sword + 5
+      SpritName: Two_handed_sword
+      TooltipName: "\u4E21\u624B\u5263+ 5"
+      Explan: "\u4E21\u624B\u3067\u6271\u3046\u9045\u3044\u5263"
+    - ID: 3000
       Name: Musical_instruments
+      SpritName: Musical_instruments
       TooltipName: "\u697D\u5668"
       Explan: "\u30AE\u30BF\u30FC\u306B\u4F3C\u305F\u697D\u5668"
-    - ID: 4
+    - ID: 3001
+      Name: Musical_instruments + 1
+      SpritName: Musical_instruments
+      TooltipName: "\u697D\u5668 + 1"
+      Explan: "\u30AE\u30BF\u30FC\u306B\u4F3C\u305F\u697D\u5668"
+    - ID: 3002
+      Name: Musical_instruments + 2
+      SpritName: Musical_instruments
+      TooltipName: "\u697D\u5668 + 2"
+      Explan: "\u30AE\u30BF\u30FC\u306B\u4F3C\u305F\u697D\u5668"
+    - ID: 3003
+      Name: Musical_instruments + 3
+      SpritName: Musical_instruments
+      TooltipName: "\u697D\u5668 + 3"
+      Explan: "\u30AE\u30BF\u30FC\u306B\u4F3C\u305F\u697D\u5668"
+    - ID: 3004
+      Name: Musical_instruments + 4
+      SpritName: Musical_instruments
+      TooltipName: "\u697D\u5668 + 4"
+      Explan: "\u30AE\u30BF\u30FC\u306B\u4F3C\u305F\u697D\u5668"
+    - ID: 3005
+      Name: Musical_instruments + 5
+      SpritName: Musical_instruments
+      TooltipName: "\u697D\u5668 + 5"
+      Explan: "\u30AE\u30BF\u30FC\u306B\u4F3C\u305F\u697D\u5668"
+    - ID: 4000
       Name: Dance
+      SpritName: Dance
       TooltipName: "\u30C0\u30F3\u30B9 "
       Explan: "\u3069\u306E\u30AF\u30E9\u30D6\u3067\u3082\u898B\u304B\u3051\u308B\u57FA\u672C\u7684\u306A\u670D\u88C5 "
-    - ID: 5
+    - ID: 4001
+      Name: Dance + 1
+      SpritName: Dance
+      TooltipName: "\u30C0\u30F3\u30B9  + 1"
+      Explan: "\u3069\u306E\u30AF\u30E9\u30D6\u3067\u3082\u898B\u304B\u3051\u308B\u57FA\u672C\u7684\u306A\u670D\u88C5 "
+    - ID: 4002
+      Name: Dance + 2
+      SpritName: Dance
+      TooltipName: "\u30C0\u30F3\u30B9  + 2"
+      Explan: "\u3069\u306E\u30AF\u30E9\u30D6\u3067\u3082\u898B\u304B\u3051\u308B\u57FA\u672C\u7684\u306A\u670D\u88C5 "
+    - ID: 4003
+      Name: Dance + 3
+      SpritName: Dance
+      TooltipName: "\u30C0\u30F3\u30B9  + 3"
+      Explan: "\u3069\u306E\u30AF\u30E9\u30D6\u3067\u3082\u898B\u304B\u3051\u308B\u57FA\u672C\u7684\u306A\u670D\u88C5 "
+    - ID: 4004
+      Name: Dance + 4
+      SpritName: Dance
+      TooltipName: "\u30C0\u30F3\u30B9  + 4"
+      Explan: "\u3069\u306E\u30AF\u30E9\u30D6\u3067\u3082\u898B\u304B\u3051\u308B\u57FA\u672C\u7684\u306A\u670D\u88C5 "
+    - ID: 4005
+      Name: Dance + 5
+      SpritName: Dance
+      TooltipName: "\u30C0\u30F3\u30B9  + 5"
+      Explan: "\u3069\u306E\u30AF\u30E9\u30D6\u3067\u3082\u898B\u304B\u3051\u308B\u57FA\u672C\u7684\u306A\u670D\u88C5 "
+    - ID: 5000
       Name: Karate
+      SpritName: Karate
       TooltipName: "\u30CA\u30C3\u30AF\u30EB"
       Explan: "\u524D\u9762\u306B\u30B4\u30F3\u30B0\u306E\u3064\u3044\u305F\u8EFD\u3044\u30CA\u30C3\u30AF\u30EB "
-    - ID: 6
+    - ID: 5001
+      Name: Karate + 1
+      SpritName: Karate
+      TooltipName: "\u30CA\u30C3\u30AF\u30EB + 1"
+      Explan: "\u524D\u9762\u306B\u30B4\u30F3\u30B0\u306E\u3064\u3044\u305F\u8EFD\u3044\u30CA\u30C3\u30AF\u30EB "
+    - ID: 5002
+      Name: Karate + 2
+      SpritName: Karate
+      TooltipName: "\u30CA\u30C3\u30AF\u30EB + 2"
+      Explan: "\u524D\u9762\u306B\u30B4\u30F3\u30B0\u306E\u3064\u3044\u305F\u8EFD\u3044\u30CA\u30C3\u30AF\u30EB "
+    - ID: 5003
+      Name: Karate + 3
+      SpritName: Karate
+      TooltipName: "\u30CA\u30C3\u30AF\u30EB + 3"
+      Explan: "\u524D\u9762\u306B\u30B4\u30F3\u30B0\u306E\u3064\u3044\u305F\u8EFD\u3044\u30CA\u30C3\u30AF\u30EB "
+    - ID: 5004
+      Name: Karate + 4
+      SpritName: Karate
+      TooltipName: "\u30CA\u30C3\u30AF\u30EB + 4"
+      Explan: "\u524D\u9762\u306B\u30B4\u30F3\u30B0\u306E\u3064\u3044\u305F\u8EFD\u3044\u30CA\u30C3\u30AF\u30EB "
+    - ID: 5005
+      Name: Karate + 5
+      SpritName: Karate
+      TooltipName: "\u30CA\u30C3\u30AF\u30EB + 5"
+      Explan: "\u524D\u9762\u306B\u30B4\u30F3\u30B0\u306E\u3064\u3044\u305F\u8EFD\u3044\u30CA\u30C3\u30AF\u30EB "
+    - ID: 6000
       Name: Glove
+      SpritName: Glove
       TooltipName: "\u30B0\u30ED\u30FC\u30D6"
       Explan: "\u30DC\u30AF\u30B7\u30F3\u30B0\u30B0\u30ED\u30FC\u30D6 "
-    - ID: 7
+    - ID: 6001
+      Name: Glove + 1
+      SpritName: Glove
+      TooltipName: "\u30B0\u30ED\u30FC\u30D6 + 1"
+      Explan: "\u30DC\u30AF\u30B7\u30F3\u30B0\u30B0\u30ED\u30FC\u30D6 "
+    - ID: 6002
+      Name: Glove + 2
+      SpritName: Glove
+      TooltipName: "\u30B0\u30ED\u30FC\u30D6 + 2"
+      Explan: "\u30DC\u30AF\u30B7\u30F3\u30B0\u30B0\u30ED\u30FC\u30D6 "
+    - ID: 6003
+      Name: Glove + 3
+      SpritName: Glove
+      TooltipName: "\u30B0\u30ED\u30FC\u30D6 + 3"
+      Explan: "\u30DC\u30AF\u30B7\u30F3\u30B0\u30B0\u30ED\u30FC\u30D6 "
+    - ID: 6004
+      Name: Glove + 4
+      SpritName: Glove
+      TooltipName: "\u30B0\u30ED\u30FC\u30D6 + 4"
+      Explan: "\u30DC\u30AF\u30B7\u30F3\u30B0\u30B0\u30ED\u30FC\u30D6 "
+    - ID: 6005
+      Name: Glove + 5
+      SpritName: Glove
+      TooltipName: "\u30B0\u30ED\u30FC\u30D6 + 5"
+      Explan: "\u30DC\u30AF\u30B7\u30F3\u30B0\u30B0\u30ED\u30FC\u30D6 "
+    - ID: 7000
       Name: Bag
+      SpritName: Bag
       TooltipName: " \u30D0\u30C3\u30B0"
       Explan: "\u751F\u5F92\u304C\u3044\u3064\u3082\u6301\u3063\u3066\u3044\u308B\u5B66\u751F\u304B\u3070\u3093"
-    - ID: 8
+    - ID: 7001
+      Name: Bag + 1
+      SpritName: Bag
+      TooltipName: "\u30D0\u30C3\u30B0 + 1"
+      Explan: "\u751F\u5F92\u304C\u3044\u3064\u3082\u6301\u3063\u3066\u3044\u308B\u5B66\u751F\u304B\u3070\u3093"
+    - ID: 7002
+      Name: Bag + 2
+      SpritName: Bag
+      TooltipName: "\u30D0\u30C3\u30B0 + 2"
+      Explan: "\u751F\u5F92\u304C\u3044\u3064\u3082\u6301\u3063\u3066\u3044\u308B\u5B66\u751F\u304B\u3070\u3093"
+    - ID: 7003
+      Name: Bag + 3
+      SpritName: Bag
+      TooltipName: "\u30D0\u30C3\u30B0 + 3"
+      Explan: "\u751F\u5F92\u304C\u3044\u3064\u3082\u6301\u3063\u3066\u3044\u308B\u5B66\u751F\u304B\u3070\u3093"
+    - ID: 7004
+      Name: Bag + 4
+      SpritName: Bag
+      TooltipName: "\u30D0\u30C3\u30B0 + 4"
+      Explan: "\u751F\u5F92\u304C\u3044\u3064\u3082\u6301\u3063\u3066\u3044\u308B\u5B66\u751F\u304B\u3070\u3093"
+    - ID: 7005
+      Name: Bag + 5
+      SpritName: Bag
+      TooltipName: "\u30D0\u30C3\u30B0 + 5"
+      Explan: "\u751F\u5F92\u304C\u3044\u3064\u3082\u6301\u3063\u3066\u3044\u308B\u5B66\u751F\u304B\u3070\u3093"
+    - ID: 8000
       Name: Bead
+      SpritName: Bead
       TooltipName: " \u30D3\u30FC\u30BA"
       Explan: " \u5947\u5999\u306B\u898B\u3048\u308B\u30D3\u30FC\u30BA ("
-    - ID: 1001
+    - ID: 8001
+      Name: Bead + 1
+      SpritName: Bead
+      TooltipName: "\u30D3\u30FC\u30BA + 1"
+      Explan: " \u5947\u5999\u306B\u898B\u3048\u308B\u30D3\u30FC\u30BA ("
+    - ID: 8002
+      Name: Bead + 2
+      SpritName: Bead
+      TooltipName: "\u30D3\u30FC\u30BA + 2"
+      Explan: " \u5947\u5999\u306B\u898B\u3048\u308B\u30D3\u30FC\u30BA ("
+    - ID: 8003
+      Name: Bead + 3
+      SpritName: Bead
+      TooltipName: "\u30D3\u30FC\u30BA + 3"
+      Explan: " \u5947\u5999\u306B\u898B\u3048\u308B\u30D3\u30FC\u30BA ("
+    - ID: 8004
+      Name: Bead + 4
+      SpritName: Bead
+      TooltipName: "\u30D3\u30FC\u30BA + 4"
+      Explan: " \u5947\u5999\u306B\u898B\u3048\u308B\u30D3\u30FC\u30BA ("
+    - ID: 8005
+      Name: Bead + 5
+      SpritName: Bead
+      TooltipName: "\u30D3\u30FC\u30BA + 5"
+      Explan: " \u5947\u5999\u306B\u898B\u3048\u308B\u30D3\u30FC\u30BA ("
+    - ID: 10000
       Name: Bread
+      SpritName: Bread
       TooltipName: "\u30D1\u30F3"
       Explan: "\u713C\u304D\u305F\u3066\u306E\u30D1\u30F3"
-    - ID: 1002
+    - ID: 10001
       Name: Croissant
+      SpritName: Croissant
       TooltipName: "\u30AF\u30ED\u30EF\u30C3\u30B5\u30F3"
       Explan: "\u713C\u304D\u305F\u3066\u306E\u30AF\u30ED\u30EF\u30C3\u30B5\u30F3"
-    - ID: 1003
+    - ID: 10002
       Name: Donut
+      SpritName: Donut
       TooltipName: "\u30C9\u30FC\u30CA\u30C4"
       Explan: "\u304A\u3044\u3057\u305D\u3046\u306A\u30C9\u30FC\u30CA\u30C4"
-    - ID: 1004
+    - ID: 10003
       Name: Hamburger
+      SpritName: Hamburger
       TooltipName: "\u30CF\u30F3\u30D0\u30FC\u30AC\u30FC "
       Explan: "\u5B66\u751F\u5411\u3051\u306E\u30CF\u30F3\u30D0\u30FC\u30AC\u30FC"
-    - ID: 1005
+    - ID: 10004
       Name: Pizza
+      SpritName: Pizza
       TooltipName: "\u30D4\u30B6"
       Explan: " \u4E00\u4EBA\u3067\u98DF\u3079\u308B\u306B\u306F\u305F\u304F\u3055\u3093\u3042\u308A\u305D\u3046\u3067\u3059"

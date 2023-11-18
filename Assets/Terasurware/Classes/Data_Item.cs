@@ -20,6 +20,7 @@ public class Data_Item : ScriptableObject
 		public int ID;
 		public string ItemType;
 		public string Name;
+		public string SpritName;
 		public int Skill_Gauge;
 		public int CoolTime;
 		public int Fill_HP;

@@ -3100,7 +3100,6 @@ Transform:
   - {fileID: 5572068394328739057}
   - {fileID: 5443196718037392597}
   - {fileID: 2894587772253851296}
-  - {fileID: 8682954229660421511}
   - {fileID: 4257579226822426743}
   - {fileID: 7090699492056051598}
   m_Father: {fileID: 4477854493587563838}
@@ -3323,10 +3322,13 @@ MonoBehaviour:
   rotationSpeed: 5.13
   dash: 5
   gravity: 5
-  Name: Player
-  gaugeCount: 0
+  position: {x: 0, y: 0, z: 0}
   isUseSkill: 0
   isWeaponEquipped: 0
+  canUseSkill: 0
+  isAttacking: 0
+  Name: Player
+  gaugeCount: 0
 --- !u!114 &4741395579056108198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5772,6 +5774,7 @@ Transform:
   - {fileID: 8940762467958465793}
   - {fileID: 2020028470423796073}
   - {fileID: 2107242391661377978}
+  - {fileID: 8682954229660421511}
   m_Father: {fileID: 1665430267090158689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7513423723116728463
@@ -6783,6 +6786,7 @@ GameObject:
   - component: {fileID: 1745424728648585848}
   - component: {fileID: 8522237586043710471}
   - component: {fileID: 7617498056687009412}
+  - component: {fileID: 811888200371449802}
   m_Layer: 7
   m_Name: Bead
   m_TagString: Player
@@ -6798,13 +6802,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8448215824229215157}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.3, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.5, y: 2, z: 0}
+  m_LocalScale: {x: 0.99998647, y: 0.9999888, z: 0.9999887}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 806908612200062646}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2717613361868019838}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &1745424728648585848
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6868,6 +6872,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailEffect: {fileID: 0}
+--- !u!114 &811888200371449802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448215824229215157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3c6b4333acef94abbc1ceb5bd86fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.05
+  frequency: 5
 --- !u!1 &8459811960155796314
 GameObject:
   m_ObjectHideFlags: 0

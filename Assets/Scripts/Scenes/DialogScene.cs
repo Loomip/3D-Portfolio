@@ -27,7 +27,7 @@ public class School_building : GameManager
 
         SceneType = e_Scene.Dialog;
 
-        dialogData = DataManager.instance.GetDialogData(GetCurrentSceneIndex());
+        UpdateDialogData();
 
         ShowDialog();
     }

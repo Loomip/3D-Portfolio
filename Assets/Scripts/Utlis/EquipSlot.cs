@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 
 public class EquipSlot : Slot
@@ -24,6 +25,9 @@ public class EquipSlot : Slot
 
         // 장착 상태 변경
         IsEquipped = true;
+        
+        // 원본 아이템 제거
+        InventoryManager.instance.RemoveItem(data);
 
         Set_Icon(data);
 
@@ -50,6 +54,9 @@ public class EquipSlot : Slot
     
         // 장착된 아이템을 제거함
         img_Icon.sprite = null;
+
+        // 해제된 아이템을 인벤토리에 추가
+        InventoryManager.instance.AddItem(detachedItem);
 
         EquippedItem = null;
         IsEquipped = false;
