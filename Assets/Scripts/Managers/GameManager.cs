@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour
         dialogData = DataManager.instance.GetDialogData(GetCurrentSceneIndex());
     }
 
+    //씬의 인덱스
+    private int currentSceneIndex;
+    // 다른 스크립트에서 현재 Scene 인덱스를 얻기 위한 메서드
+    public int GetCurrentSceneIndex()
+    {
+        return currentSceneIndex;
+    }
+
     public void SetSceneType(e_Scene scene)
     {
         SceneType = scene;
@@ -23,17 +31,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject eventSystemPrefab;
 
-    //씬의 인덱스
-    private int currentSceneIndex;
+   
 
     public GameObject playerPrefab;
     public Player player;
 
-    // 다른 스크립트에서 현재 Scene 인덱스를 얻기 위한 메서드
-    public int GetCurrentSceneIndex()
-    {
-        return currentSceneIndex;
-    }
+    
 
     //UI는 꼭 EventSystem이 필요함으로 객체가 존재하지 않으면 생성
     public virtual void Init()

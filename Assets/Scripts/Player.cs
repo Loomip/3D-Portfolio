@@ -221,11 +221,14 @@ public class Player : MonoBehaviour
     //3. 공격
     void Attack()
     {
+        //기본공격
         if (Input.GetMouseButtonDown(0) && !isMoving && isWeaponEquipped)
         {
             isAttacking = true;
             animator.SetTrigger("isAtk");
         }
+
+        //스킬
         if (Input.GetMouseButtonDown(1) && !isMoving && isWeaponEquipped && !canUseSkill)
         {
             canUseSkill = true;
@@ -244,6 +247,7 @@ public class Player : MonoBehaviour
         isUseSkill = true;
         gaugeCount -= stat.GetStat(e_StatType.Skill_Gauge);
         UIManager.instance.Refresh_Gauge(this);
+        //스킬 쿨타임
         yield return new WaitForSeconds(stat.GetStat(e_StatType.CoolTime));
         isUseSkill = false;
         canUseSkill = false;
