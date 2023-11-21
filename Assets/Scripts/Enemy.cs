@@ -31,14 +31,8 @@ public class Enemy : MonoBehaviour
     }
     public int atk
         => stat.GetStat(e_StatType.Atk);
-    public int def
-        => stat.GetStat(e_StatType.Def);
     public int speed
         => stat.GetStat(e_StatType.Spd);
-    public int acc
-        => stat.GetStat(e_StatType.Acc);
-    public int del
-        => stat.GetStat(e_StatType.Del);
 
 
     //======================================================================================

@@ -19,13 +19,20 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
     [SerializeField] TextMeshProUGUI goldText;
 
     // 현재 골드
-    public int gold = 1000;
+    public int gold;
 
     //골드 UI를 리프레쉬 해주는 함수
     public void Refresh_Gold(int gold)
     {
         goldText.text = string.Format("{0: #,##0} 골드", gold);
     }
+
+
+    public void StartGold()
+    {
+        gold = Consts.START_GOLD;
+    }
+
 
     //============================================================================================================
     [Header("인벤토리 최대 개수")]

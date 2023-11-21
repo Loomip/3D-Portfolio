@@ -74,7 +74,32 @@ public class NPC_Shop : NPC_Base
 
     public void Buy()
     {
+        if (selectedItem != null)
+        {
+            // 아이템의 가격이 현재 골드보다 많은지 확인
+            if (selectedItem.AddPrise <= InventoryManager.instance.gold)
+            {
+                // 현재 골드에서 아이템의 가격을 차감
+                InventoryManager.instance.gold -= selectedItem.AddPrise;
+                InventoryManager.instance.Refresh_Gold(InventoryManager.instance.gold); // 골드 UI 업데이트
 
+                // 선택된 아이템 데이터로 새 아이템 생성
+                ItemData newItem = new ItemData();
+                newItem.id = selectedItem.ID;
+                ++newItem.amount;
+
+                // 새 아이템을 인벤토리에 추가
+                InventoryManager.instance.AddItem(newItem);
+            }
+            else
+            {
+                Debug.Log("Not enough gold.");
+            }
+        }
+        else
+        {
+            Debug.Log("No item selected.");
+        }
     }
 
     //나가기 

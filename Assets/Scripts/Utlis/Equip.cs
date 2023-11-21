@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Equip : MonoBehaviour
 {
@@ -46,7 +45,6 @@ public class Equip : MonoBehaviour
     delegate void UseButton();
 
     UseButton useButton;
-    InventoryManager inventoy;
     Player player;
 
     //인벤토리 슬롯
@@ -57,7 +55,7 @@ public class Equip : MonoBehaviour
 
     Dictionary<e_EquipType, EquipSlot> equipSlotList = new Dictionary<e_EquipType, EquipSlot>();
 
-    List<ItemData> dataList;
+    List<ItemData> dataList = new List<ItemData>();
 
     //인벤토리의 슬롯을 초기화 하는 메서드
     private void InitSlots()
@@ -109,13 +107,13 @@ public class Equip : MonoBehaviour
     //인벤토리의 아이템 아이콘을 갱신하는 메서드
     public void RefreshIcon()
     {
-        inventoy = InventoryManager.instance;
-        dataList = inventoy.GetItemList();
-        inventoy.CUR_SLOT_COUNT = dataList.Count;
+        dataList = InventoryManager.instance.GetItemList();
+
+        InventoryManager.instance.CUR_SLOT_COUNT = dataList.Count;
 
         for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
-            if (i < inventoy.CUR_SLOT_COUNT && -1 < dataList[i].id)
+            if (i < InventoryManager.instance.CUR_SLOT_COUNT && -1 < dataList[i].id)
             {
                 slotList[i].Set_Icon(dataList[i]);
             }
@@ -308,13 +306,16 @@ public class Equip : MonoBehaviour
                     {
                         // 선택한 장비를 장착
                         equipSlot.Set(item);
+                        RefreshIcon();
                     }
                     else
                     {
                         equipSlot.Detach();
+                        RefreshIcon();
 
                         // 선택한 장비를 장착
                         equipSlot.Set(item);
+                        RefreshIcon();
                     }
                     return;
                 }
@@ -337,6 +338,8 @@ public class Equip : MonoBehaviour
 
         // 선택된 아이템 초기화
         slot = null;
+
+        RefreshIcon();
     }
 
     private e_Weapon GetWeaponType(Data_Item.Param item)

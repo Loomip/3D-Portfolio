@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
+    Data_Item.Param m_ItemData;
     Image img_Frame;
     protected Image img_Icon;
     TextMeshProUGUI txt_Amount;

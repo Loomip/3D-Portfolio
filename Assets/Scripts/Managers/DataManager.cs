@@ -246,6 +246,7 @@ public class DataManager : SingletonDontDestroy<DataManager>
         }
     }
 
+    //엠피씨 마다 대화를 나눠 넣어주는 기능
     public List<Data_Messages.Param> GetNPCDialogData(int scene, string name)
     {
         if (DialogData.ContainsKey(language))
@@ -262,6 +263,7 @@ public class DataManager : SingletonDontDestroy<DataManager>
         return null;
     }
 
+    //대화만 가져오는 기능
     public List<Data_Messages.Param> GetDialogData(int scene)
     {
         if (DialogData.ContainsKey(language))

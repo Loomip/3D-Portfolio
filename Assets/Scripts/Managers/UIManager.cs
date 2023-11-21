@@ -188,7 +188,7 @@ public class UIManager : SingletonDontDestroy<UIManager>
     public List<GameObject> m_menu = null;
 
     //기본적으로 켜있는 슬롯
-    private e_MenuType CurMenu = e_MenuType.Enhance;
+    private e_MenuType CurMenu = e_MenuType.Equip;
 
     public e_MenuType CURMENU
     {
@@ -337,11 +337,21 @@ public class UIManager : SingletonDontDestroy<UIManager>
             menuinstanceance.SetActive(enable);
         }
     }
+    private void Start()
+    {
+        //돈 초기화
+        InventoryManager.instance.StartGold();
+        //인벤토리 초기화후 꺼줌
+        inven.SetActive(false);
+        player = FindObjectOfType<Player>();
+
+    }
 
     protected override void DoAwake()
     {
-        player = FindObjectOfType<Player>();
-        inven.SetActive(false);
+        Initialize();
+        //인벤토리 초기화
+        inven.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -350,7 +360,7 @@ public class UIManager : SingletonDontDestroy<UIManager>
         // 현재 씬의 이름
         string sceneName = SceneManager.GetActiveScene().name;
 
-        if (sceneName != "Title" /*&& sceneName != "Menu"*/)
+        if (sceneName != "Title")
         {
             // HP와 게이지 활성화
             hp.SetActive(true);
