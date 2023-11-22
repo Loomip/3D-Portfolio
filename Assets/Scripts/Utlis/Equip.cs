@@ -108,14 +108,20 @@ public class Equip : MonoBehaviour
     public void RefreshIcon()
     {
         dataList = InventoryManager.instance.GetItemList();
-
         InventoryManager.instance.CUR_SLOT_COUNT = dataList.Count;
 
         for (int i = 0; i < InventoryManager.instance.MAXSLOTCOUNT; i++)
         {
-            if (i < InventoryManager.instance.CUR_SLOT_COUNT && -1 < dataList[i].id)
+            if (i < InventoryManager.instance.CUR_SLOT_COUNT)
             {
-                slotList[i].Set_Icon(dataList[i]);
+                if (dataList[i] != null)
+                {
+                    slotList[i].Set_Icon(dataList[i]);
+                }
+                else
+                {
+                    slotList[i].ClearSlot();
+                }
             }
             else
                 slotList[i].ClearSlot();
@@ -240,6 +246,13 @@ public class Equip : MonoBehaviour
         }
 
         InventoryManager.instance.RemoveItem(itemData);
+
+        // 아이템을 사용한 후에 아이템의 개수를 확인
+        if (itemData.amount == 0)
+        {
+            Refresh_Tooltip(null);
+            Refresh_Button(null);
+        }
     }
 
     // 장비하기
@@ -336,8 +349,16 @@ public class Equip : MonoBehaviour
         // 아이템을 인벤토리에서 제거
         InventoryManager.instance.RemoveItem(slot.GetItem());
 
-        // 선택된 아이템 초기화
-        slot = null;
+        // 아이템을 버린 후에 아이템의 개수를 확인
+        // 선택된 태두리가 안꺼짐 (수정사항)
+        ItemData remainingItem = slot.GetItem();
+        if (remainingItem == null || remainingItem.amount == 0)
+        {
+            Refresh_Tooltip(null);
+            Refresh_Button(null);
+            // 선택된 아이템 초기화
+            slot = null;
+        }
 
         RefreshIcon();
     }
@@ -462,6 +483,7 @@ public class Equip : MonoBehaviour
         ItemData selectedItem = GetSelectedItem();
         Refresh_Tooltip(selectedItem);
         Refresh_Button(selectedItem);
+        RefreshIcon();
     }
 
     private void Update()

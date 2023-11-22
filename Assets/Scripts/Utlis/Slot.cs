@@ -129,7 +129,7 @@ public class Slot : MonoBehaviour
         img_Frame.enabled = isSelect;
     }
 
-    private void Start()
+    private void Awake()
     {
         InitData();
     }

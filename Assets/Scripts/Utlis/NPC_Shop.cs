@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,12 +17,22 @@ public class NPC_Shop : NPC_Base
     public bool shopOpen = false;
     private List<GameObject> shopSlots = new List<GameObject>(); // 생성된 슬롯을 저장할 리스트
     private Data_Shop.Param selectedItem; // 현재 선택된 아이템
+    private ShopSlot selectedSlot;
 
     public void SetSelectedItem(Data_Shop.Param item)  // 선택된 아이템을 설정하는 함수
     {
+        if (selectedSlot != null)
+        {
+            selectedSlot.Deselect();
+        }
+
         selectedItem = item;
-        Debug.Log("선택 " + gameObject.name);
-        Debug.Log("선택된 아이템: " + (selectedItem != null ? selectedItem.Name : "null"));
+        selectedSlot = shopSlots.Find(slot => slot.GetComponent<ShopSlot>().shopData == item).GetComponent<ShopSlot>();
+
+        if (selectedSlot != null)
+        {
+            selectedSlot.Select();
+        }
     }
 
     public override void OnInteract()

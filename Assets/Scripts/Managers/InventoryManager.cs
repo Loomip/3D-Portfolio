@@ -123,6 +123,7 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
         return result;
     }
 
+
     public List<ItemData> GetEquipmentItems()
     {
         return items.Where(item => DataManager.instance.GetItemDataParams(item.id).ItemType == "Weapon").ToList();
