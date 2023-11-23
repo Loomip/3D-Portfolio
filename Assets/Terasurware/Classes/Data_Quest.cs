@@ -17,22 +17,10 @@ public class Data_Quest : ScriptableObject
 	public class Param
 	{
 		
-		public int Scene;
-		public int Code;
-		public string Name;
-		public int Artor;
-		public string Text;
-		public int Return;
-		public int Quest;
-		public int Select_Code_1;
-		public int Select_Code_2;
-		public int Select_Code_3;
-		public int Select_Code_4;
-		public string Select_Txt_1;
-		public string Select_Txt_2;
-		public string Select_Txt_3;
-		public string Select_Txt_4;
-		public int Reward;
+		public int ID;
+		public string Explanation;
+		public string TargetType;
+		public int TargetCount;
 	}
 }
 

@@ -325,6 +325,8 @@ public class Enemy : MonoBehaviour
             classroomController.MonsterDied(this);
         }
 
+        QuestManager.instance.UpdateQuestStatus();
+
         if (monsterType != e_MonsterType.Boss)
         {
             Destroy(gameObject, 4); // 몬스터 오브젝트 삭제

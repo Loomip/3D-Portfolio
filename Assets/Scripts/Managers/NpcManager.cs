@@ -28,54 +28,61 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                 UIManager.instance.choices[i].button.onClick.RemoveAllListeners();
             }
 
-            if (currentDialogue.Quest > 0)
+            //선택지가 존재한다
+            for (int i = 0; i < 4; ++i)
             {
-                //퀘스트의 조건을 확인하는 부분
+                int selectCode =
+                    (int)currentDialogue.GetType().GetField($"Select_Code_{i + 1}").GetValue(currentDialogue);
 
-
-            }
-            else
-            {
-                //선택지가 존재한다
-                for (int i = 0; i < 4; ++i)
+                if (selectCode != 0)
                 {
-                    int selectCode =
-                        (int)currentDialogue.GetType().GetField($"Select_Code_{i + 1}").GetValue(currentDialogue);
+                    UIManager.instance.choices[i].button.gameObject.SetActive(true);
 
-                    if (selectCode != 0)
+                    UIManager.instance.choices[i].text.text =
+                        currentDialogue.GetType().GetField($"Select_Txt_{i + 1}").GetValue(currentDialogue).ToString();
+
+                    hasSelectOptions = true;
+
+                    UIManager.instance.choices[i].button.onClick.AddListener(() =>
                     {
-                        UIManager.instance.choices[i].button.gameObject.SetActive(true);
-
-                        UIManager.instance.choices[i].text.text =
-                            currentDialogue.GetType().GetField($"Select_Txt_{i + 1}").GetValue(currentDialogue).ToString();
-
-                        hasSelectOptions = true;
-
-                        UIManager.instance.choices[i].button.onClick.AddListener(() =>
+                        hasSelectOptions = false;
+                        if (selectCode == -1)
                         {
-                            hasSelectOptions = false;
-                            if (selectCode == -1)
+                            UIManager.instance.Close_Talk();
+                        }
+                        else
+                        {
+                            //상점 열기
+                            if (npc.TryGetComponent(out NPC_Shop shop))
                             {
                                 UIManager.instance.Close_Talk();
+                                shop.OnInteract();
                             }
                             else
-                            { 
-                                //상점 열기
-                                if (npc.TryGetComponent(out NPC_Shop shop))
+                            {
+                                isDialogueFinished = true;
+                                // 퀘스트의 조건을 확인하는 부분
+                                if (currentDialogue.Quest > 0)
                                 {
-                                    UIManager.instance.Close_Talk();
-                                    shop.OnInteract();
+                                    QuestManager.instance.StartQuest(currentDialogue.Quest);
+
+                                    if (QuestManager.instance.IsQuestCompleted(currentDialogue.Quest))
+                                    {
+                                        //그퀘스트의 ID가 보상 숫자와 같은지 
+                                        if(currentDialogue.Quest == currentDialogue.Reward)
+                                        {
+                                            QuestManager.instance.CompleteQuest(currentDialogue.Reward);
+                                            // 퀘스트 완료 처리
+                                            currentDialogue.Quest = 0;
+                                        }
+                                    }
                                 }
-                                else
-                                {
-                                    isDialogueFinished = true;
-                                    npc.SetCurrentDialogIndex(selectCode);
-                                    //선택지가 켜지면 실행됬던 코루틴이 삭제가 되서 다시 실행 시켜줘야함
-                                    StartCoroutine(DialogueCoroutine(npc));
-                                }
+                                npc.SetCurrentDialogIndex(selectCode);
+                                //선택지가 켜지면 실행됬던 코루틴이 삭제가 되서 다시 실행 시켜줘야함
+                                StartCoroutine(DialogueCoroutine(npc));
                             }
-                        });
-                    }
+                        }
+                    });
                 }
             }
 
@@ -90,7 +97,7 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
             }
 
             yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Return) || Input.GetMouseButton(0));
-            
+
             // 대화 데이터의 마지막 부분에 도달한 경우
             if (npc.GetCurrentDialogIndex() >= npc.dialogData.Count - 1)
             {

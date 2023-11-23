@@ -252,6 +252,7 @@ public class Equip : MonoBehaviour
         {
             Refresh_Tooltip(null);
             Refresh_Button(null);
+            slot.ClearSlot();
         }
     }
 
@@ -356,6 +357,7 @@ public class Equip : MonoBehaviour
         {
             Refresh_Tooltip(null);
             Refresh_Button(null);
+            slot.ClearSlot();
             // 선택된 아이템 초기화
             slot = null;
         }

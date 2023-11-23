@@ -50,22 +50,10 @@ public class Data_Quest_importer : AssetPostprocessor {
 						
 						Data_Quest.Param p = new Data_Quest.Param ();
 						
-					cell = row.GetCell(0); p.Scene = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(1); p.Code = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(2); p.Name = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(3); p.Artor = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(4); p.Text = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(5); p.Return = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(6); p.Quest = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(7); p.Select_Code_1 = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(8); p.Select_Code_2 = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(9); p.Select_Code_3 = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(10); p.Select_Code_4 = (int)(cell == null ? 0 : cell.NumericCellValue);
-					cell = row.GetCell(11); p.Select_Txt_1 = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(12); p.Select_Txt_2 = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(13); p.Select_Txt_3 = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(14); p.Select_Txt_4 = (cell == null ? "" : cell.ToString());
-					cell = row.GetCell(15); p.Reward = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(0); p.ID = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(1); p.Explanation = (cell == null ? "" : cell.ToString());
+					cell = row.GetCell(2); p.TargetType = (cell == null ? "" : cell.ToString());
+					cell = row.GetCell(3); p.TargetCount = (int)(cell == null ? 0 : cell.NumericCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);

@@ -469,7 +469,7 @@ MonoBehaviour:
       Name: "\uC18C\uC5F0"
       Actor: 5
       Text: "\uBB50\uC57C? \uAC70\uC9D3\uB9D0 \uD558\uB294\uAC70\uC57C?"
-      Return: 0
+      Return: 1
       Quest: 0
       Select_Code_1: 0
       Select_Code_2: 0

@@ -223,8 +223,10 @@ public class DataManager : SingletonDontDestroy<DataManager>
 
     //대화를 저장할 딕셔너리
     public Data_Messages _massages;
+    public Data_Quest _quest;
 
     Dictionary<e_Language, List<Data_Messages.Param>> DialogData = new Dictionary<e_Language, List<Data_Messages.Param>>();
+    Dictionary<e_Language, Dictionary<int, Data_Quest.Param>> QuestData = new Dictionary<e_Language, Dictionary<int, Data_Quest.Param>>();
 
     //중복된 키를 가져올때는 리스트를 써야함 <<< *** 중요 ***
     void InitDialogData()
@@ -242,6 +244,21 @@ public class DataManager : SingletonDontDestroy<DataManager>
             {
                 // 중복되는 Scene 값이 있어도 모두 추가
                 DialogData[k.Key].Add(v);
+            }
+        }
+    }
+
+    //퀘스트 데이터
+    void InitQuestData()
+    {
+        var Quest = _quest.sheets.ToDictionary(key => (e_Language)Enum.Parse(typeof(e_Language), key.name), value => value.list);
+
+        foreach (var d in Quest)
+        {
+            QuestData.Add(d.Key, new Dictionary<int, Data_Quest.Param>());
+            foreach(var I in d.Value)
+            {
+                QuestData[d.Key].Add(I.ID, I);
             }
         }
     }
@@ -280,6 +297,16 @@ public class DataManager : SingletonDontDestroy<DataManager>
         return null;
     }
 
+    //ID에 대한 퀘스트 정보 가져오기
+    public Data_Quest.Param GetQuestData(int _itemKey)
+    {
+        if (QuestData.ContainsKey(language))
+        {
+            return QuestData[language].TryGetValue(_itemKey, out var result) ? result : null;
+        }
+        return null;
+    }
+
 
     protected override void DoAwake()
     {
@@ -288,6 +315,7 @@ public class DataManager : SingletonDontDestroy<DataManager>
         InitLacalizeData();
         InitwordData();
         InitDialogData();
+        InitQuestData();
     }
 }
 
