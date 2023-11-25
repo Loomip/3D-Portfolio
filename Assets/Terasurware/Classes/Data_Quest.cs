@@ -21,6 +21,8 @@ public class Data_Quest : ScriptableObject
 		public string Explanation;
 		public string TargetType;
 		public int TargetCount;
+		public int Reward1;
+		public int Reward1Amount;
 	}
 }
 

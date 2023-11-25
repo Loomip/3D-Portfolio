@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -135,7 +136,7 @@ public class Enemy : MonoBehaviour
 
     Vector3 RandomNavmeshLocation()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * 10f;
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * 10f;
         randomDirection += transform.position;
 
         NavMeshHit navHit;
@@ -292,6 +293,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Enemy가 사망했을 때 호출되는 이벤트
+    public static event Action OnEnemyDied = delegate { };
+
     //4-3 죽음모션
     protected virtual void Die(Vector3 reactvec)
     {
@@ -325,10 +329,9 @@ public class Enemy : MonoBehaviour
             classroomController.MonsterDied(this);
         }
 
-        QuestManager.instance.UpdateQuestStatus();
-
         if (monsterType != e_MonsterType.Boss)
         {
+            OnEnemyDied.Invoke();
             Destroy(gameObject, 4); // 몬스터 오브젝트 삭제
         }
     }

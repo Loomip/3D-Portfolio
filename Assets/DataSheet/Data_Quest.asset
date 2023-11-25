@@ -19,3 +19,5 @@ MonoBehaviour:
       Explanation: "\uBAAC\uC2A4\uD130\uB97C \uC7A1\uC790!"
       TargetType: Enamy
       TargetCount: 10
+      Reward1: 1
+      Reward1Amount: 1000

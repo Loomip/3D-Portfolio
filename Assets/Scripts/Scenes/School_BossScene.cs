@@ -52,7 +52,7 @@ public class School_BossScene : GameManager
         }
         else
         {
-            UIManager.instance.Close_Talk();
+            UIManager.instance.Close_Talk(gameObject);
         }
     }
 

@@ -54,6 +54,8 @@ public class Data_Quest_importer : AssetPostprocessor {
 					cell = row.GetCell(1); p.Explanation = (cell == null ? "" : cell.ToString());
 					cell = row.GetCell(2); p.TargetType = (cell == null ? "" : cell.ToString());
 					cell = row.GetCell(3); p.TargetCount = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(4); p.Reward1 = (int)(cell == null ? 0 : cell.NumericCellValue);
+					cell = row.GetCell(5); p.Reward1Amount = (int)(cell == null ? 0 : cell.NumericCellValue);
 						s.list.Add (p);
 					}
 					data.sheets.Add(s);

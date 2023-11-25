@@ -4,49 +4,77 @@ using UnityEngine;
 
 public class QuestManager : SingletonDontDestroy<QuestManager>
 {
-    // 현재 진행 중인 퀘스트 목록
-    private Dictionary<int, Data_Quest.Param> activeQuests = new Dictionary<int, Data_Quest.Param>();
+    //퀘스트 ID에 따른 데이터를 가져오는 딕셔너리
+    private Dictionary<int, Data_Quest.Param> quests = new Dictionary<int, Data_Quest.Param>();
 
-    // 퀘스트를 추가합니다.
-    public void StartQuest(int questId)
+    //퀘스트 ID에 따른 각 퀘스트의 진행 상태를 개별적으로 관리하는 딕셔너리
+    private Dictionary<int, int> questClearValues = new Dictionary<int, int>();
+
+    // 퀘스트를 딕셔너리에 추가하는 메서드
+    public void AddQuest(int questId, Data_Quest.Param questData)
     {
-        Data_Quest.Param questData = DataManager.instance.GetQuestData(questId);
-        if (questData != null)
+        quests.Add(questId, questData);
+        questClearValues.Add(questId, 0);
+    }
+
+    // 모든 퀘스트를 불러오는 메서드
+    public Dictionary<int, Data_Quest.Param> GetAllQuests()
+    {
+        return quests;
+    }
+
+    private void OnEnable()
+    {
+        // Enemy 사망 이벤트에 메서드를 등록
+        Enemy.OnEnemyDied += OnEnemyDied;
+    }
+
+    private void OnDisable()
+    {
+        // Enemy 사망 이벤트에서 메서드를 해제
+        Enemy.OnEnemyDied -= OnEnemyDied;
+    }
+
+    public void IncreaseClearValue(int questId)
+    {
+        if (questClearValues.ContainsKey(questId))
         {
-            activeQuests.Add(questId, questData);
+            questClearValues[questId]++;
         }
     }
 
-    // 퀘스트 진행 상태 업데이트 메서드
-    public void UpdateQuestStatus()
+    //전투 퀘스트 업데이트 메서드
+    public void OnEnemyDied()
     {
-        foreach (var quest in activeQuests.Values)
+        foreach (var questId in quests.Keys)
         {
-            if (quest.TargetType == "Enamy")
-            {
-                quest.TargetCount--;
-                if (quest.TargetCount <= 0)
-                {
-                    CompleteQuest(quest.ID);  // 퀘스트 완료 처리
-                }
-            }
+            IncreaseClearValue(questId);
         }
     }
 
-    // 퀘스트를 완료합니다.
-    public void CompleteQuest(int questId)
+    // 퀘스트의 currentClearValue를 반환하는 메서드
+    public int GetQuestClearValue(int questId)
     {
-        if (activeQuests.ContainsKey(questId))
+        if (questClearValues.ContainsKey(questId))
         {
-            // 보상을 주는 등의 추가적인 처리를 이곳에서 합니다.
-            activeQuests.Remove(questId); // 퀘스트를 완료 목록에서 제거합니다.
+            return questClearValues[questId];
+        }
+        else
+        {
+            return 0;
         }
     }
 
-    // 퀘스트의 완료 상태를 확인합니다.
-    public bool IsQuestCompleted(int questId)
+    //골드 보상
+    public void GoldReward(int questId)
     {
-        // 완료된 퀘스트는 activeQuests에서 제거되므로, 해당 퀘스트가 목록에 없다면 완료된 것으로 간주합니다.
-        return !activeQuests.ContainsKey(questId);
+        if (quests.ContainsKey(questId))
+        {
+            Data_Quest.Param quest = quests[questId];
+            int gold = DataManager.instance.GetQuestData(questId).Reward1Amount;
+            InventoryManager.instance.gold += gold;
+            InventoryManager.instance.Refresh_Gold();
+        }
     }
+
 }

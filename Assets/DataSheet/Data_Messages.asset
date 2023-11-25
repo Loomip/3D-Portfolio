@@ -440,11 +440,11 @@ MonoBehaviour:
       Return: 0
       Quest: 1
       Select_Code_1: 2
-      Select_Code_2: 3
+      Select_Code_2: -1
       Select_Code_3: 0
       Select_Code_4: 0
-      Select_Txt_1: 
-      Select_Txt_2: 
+      Select_Txt_1: " \uC751!"
+      Select_Txt_2: "\uC544\uB2C8?"
       Select_Txt_3: 
       Select_Txt_4: 
       Reward: 0
@@ -464,22 +464,6 @@ MonoBehaviour:
       Select_Txt_3: 
       Select_Txt_4: 
       Reward: 1
-    - Scene: 4
-      DialogIndex: 3
-      Name: "\uC18C\uC5F0"
-      Actor: 5
-      Text: "\uBB50\uC57C? \uAC70\uC9D3\uB9D0 \uD558\uB294\uAC70\uC57C?"
-      Return: 1
-      Quest: 0
-      Select_Code_1: 0
-      Select_Code_2: 0
-      Select_Code_3: 0
-      Select_Code_4: 0
-      Select_Txt_1: 
-      Select_Txt_2: 
-      Select_Txt_3: 
-      Select_Txt_4: 
-      Reward: 0
     - Scene: 5
       DialogIndex: 0
       Name: "\uD604\uC6B0"

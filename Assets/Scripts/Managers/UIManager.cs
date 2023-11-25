@@ -97,11 +97,12 @@ public class UIManager : SingletonDontDestroy<UIManager>
     }
 
     //¥Î»≠√¢ ≤Ù±‚
-    public void Close_Talk()
+    public void Close_Talk(GameObject scanObj)
     {
         if (isAction)
         {
             isAction = false;
+            scanObject = scanObj;
             Time.timeScale = 1;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

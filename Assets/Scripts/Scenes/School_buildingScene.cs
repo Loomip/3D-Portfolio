@@ -6,7 +6,7 @@ using UnityEngine;
 public class School_buildingScene : GameManager
 {
     //대화 인덱스
-    private int currentDialogIndex = 0;
+    public int currentDialogIndex = 0;
 
     // 대사 출력 중인지 나타내는 플래그
     private bool isPrinting = false;
@@ -38,7 +38,7 @@ public class School_buildingScene : GameManager
         // 3번째 대화가 끝나면 메서드를 종료
         if (currentDialogIndex == 3)
         {
-            UIManager.instance.Close_Talk();
+            UIManager.instance.Close_Talk(gameObject);
             return;
         }
 
@@ -59,7 +59,7 @@ public class School_buildingScene : GameManager
         }
         else
         {
-            UIManager.instance.Close_Talk();
+            UIManager.instance.Close_Talk(gameObject);
         }
     }
 

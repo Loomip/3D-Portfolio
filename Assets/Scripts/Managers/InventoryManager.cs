@@ -22,7 +22,7 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
     public int gold;
 
     //골드 UI를 리프레쉬 해주는 함수
-    public void Refresh_Gold(int gold)
+    public void Refresh_Gold()
     {
         goldText.text = string.Format("{0: #,##0} 골드", gold);
     }
@@ -131,6 +131,6 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
 
     protected override void DoAwake()
     {
-        Refresh_Gold(gold);
+        Refresh_Gold();
     }
 }

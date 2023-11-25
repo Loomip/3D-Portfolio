@@ -71,3 +71,7 @@ MonoBehaviour:
       Kor: "\uD574\uC81C\uD558\uAE30"
       Eng: Unbind
       Jpn: "\u89E3\u9664\u3059\u308B"
+    - Type: Complete
+      Kor: "\uC644\uB8CC!"
+      Eng: complete!
+      Jpn: "\u30B3\u30F3\u30D7\u30EA\u30FC\u30C8!"

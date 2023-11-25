@@ -19,6 +19,12 @@ public class NPC_Shop : NPC_Base
     private Data_Shop.Param selectedItem; // 현재 선택된 아이템
     private ShopSlot selectedSlot;
 
+    // 상점이 열려있는지 확인하는 메서드
+    public override bool IsShopOpen()
+    {
+        return shopOpen;
+    }
+
     public void SetSelectedItem(Data_Shop.Param item)  // 선택된 아이템을 설정하는 함수
     {
         if (selectedSlot != null)
@@ -92,7 +98,7 @@ public class NPC_Shop : NPC_Base
             {
                 // 현재 골드에서 아이템의 가격을 차감
                 InventoryManager.instance.gold -= selectedItem.AddPrise;
-                InventoryManager.instance.Refresh_Gold(InventoryManager.instance.gold); // 골드 UI 업데이트
+                InventoryManager.instance.Refresh_Gold(); // 골드 UI 업데이트
 
                 // 선택된 아이템 데이터로 새 아이템 생성
                 ItemData newItem = new ItemData();

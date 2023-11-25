@@ -10,10 +10,20 @@ public class NPC_Base : MonoBehaviour
 
     public List<Data_Messages.Param> dialogData;
 
+    // 상점이 열려있는지 확인하는 메서드
+    public virtual bool IsShopOpen()
+    {
+        return false;
+    }
+
     public virtual void OnInteract()
     {
-        dialogData = DataManager.instance.GetNPCDialogData(gameManager.GetCurrentSceneIndex(), npcNameCode);
-        StartCoroutine(NpcManager.instance.DialogueCoroutine(this));
+        // 상점이 열려있지 않을 때만 대화창을 엽니다.
+        if (!IsShopOpen())
+        {
+            dialogData = DataManager.instance.GetNPCDialogData(gameManager.GetCurrentSceneIndex(), npcNameCode);
+            StartCoroutine(NpcManager.instance.DialogueCoroutine(this));
+        }
     }
 
     // 현재 대화 인덱스 설정 메서드
@@ -34,6 +44,15 @@ public class NPC_Base : MonoBehaviour
         if (currentDialogIndex < dialogData.Count - 1)
         {
             currentDialogIndex++;
+        }
+    }
+
+    //퀘스트 초기화 매서드
+    public void ResetCurrentDialogueQuest()
+    {
+        if (GetCurrentDialogIndex() < dialogData.Count)
+        {
+            dialogData[GetCurrentDialogIndex()].Quest = 0;
         }
     }
 

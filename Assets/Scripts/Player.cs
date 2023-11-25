@@ -415,6 +415,7 @@ public class Player : MonoBehaviour
         if (UIManager.instance.isAction) return;
 
         float interactRange = 1.5f;
+
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray)
         {
@@ -422,7 +423,11 @@ public class Player : MonoBehaviour
             {
                 npc.OnInteract();
 
-                UIManager.instance.Refresh_Talk(gameObject);
+                // 상점이 열리지 않은 경우에만 대화창을 업데이트합니다.
+                if (!npc.IsShopOpen())
+                {
+                    UIManager.instance.Refresh_Talk(gameObject);
+                }
             }
         }
     }
