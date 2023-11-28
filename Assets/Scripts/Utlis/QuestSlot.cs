@@ -12,8 +12,9 @@ public class QuestSlot : MonoBehaviour
 
 
     // 퀘스트 슬롯을 설정
-    public void SetQuestSlot(NPC_Quest quest)
+    public void SetQuestSlot()
     {
+        NPC_Quest quest = FindObjectOfType<NPC_Quest>();
         explanationText.text = DataManager.instance.GetQuestData(quest.questId).Explanation;
         int currentClearValue = QuestManager.instance.GetQuestClearValue(quest.questId);  // QuestManager에서 currentClearValue를 가져옵니다.
         UpdateProgressText(currentClearValue, DataManager.instance.GetQuestData(quest.questId).TargetCount);

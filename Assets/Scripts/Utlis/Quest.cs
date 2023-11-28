@@ -8,11 +8,11 @@ public class Quest : MonoBehaviour
     public Transform content; // QuestSlot을 추가할 위치
 
     // 퀘스트 슬롯을 추가
-    public void AddQuestSlot(NPC_Quest quest)
+    public void AddQuestSlot()
     {
         GameObject slot = Instantiate(questSlotPrefab, content);
         QuestSlot questSlot = slot.GetComponent<QuestSlot>();
-        questSlot.SetQuestSlot(quest);
+        questSlot.SetQuestSlot();
     }
 
     // 퀘스트 진행 상태를 업데이트
@@ -41,9 +41,10 @@ public class Quest : MonoBehaviour
         Dictionary<int, Data_Quest.Param> quests = QuestManager.instance.GetAllQuests();
         foreach (KeyValuePair<int, Data_Quest.Param> quest in quests)
         {
-            NPC_Quest npcQuest = new NPC_Quest();
-            npcQuest.questId = quest.Key;
-            AddQuestSlot(npcQuest);
+            if (QuestManager.instance.isStartQuest)
+            {
+                AddQuestSlot();
+            }
         }
     }
 

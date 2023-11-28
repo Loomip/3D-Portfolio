@@ -63,18 +63,6 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                 }
             }
 
-            //선택지가 켜지면 다음 대화로 넘어가지 않게 막음
-            if (hasSelectOptions)
-                yield break;
-
-            //선택지가 클릭된 경우 currentDialogue값을 Return값으로 변경
-            if (isDialogueFinished)
-            {
-                npc.SetCurrentDialogIndex(currentDialogue.Return);
-                isDialogueFinished = false;
-                hasSelectOptions = false;
-            }
-
             if (currentDialogue.Quest != lastQuestId)
             {
                 // 퀘스트 ID가 변경된 경우 퀘스트를 시작
@@ -86,6 +74,18 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                 }
 
                 lastQuestId = currentDialogue.Quest;
+            }
+
+            //선택지가 켜지면 다음 대화로 넘어가지 않게 막음
+            if (hasSelectOptions)
+                yield break;
+
+            //선택지가 클릭된 경우 currentDialogue값을 Return값으로 변경
+            if (isDialogueFinished)
+            {
+                npc.SetCurrentDialogIndex(currentDialogue.Return);
+                isDialogueFinished = false;
+                hasSelectOptions = false;
             }
 
             yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Return) || Input.GetMouseButton(0));
@@ -110,7 +110,7 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                     if (questNpc != null)
                     {
                         int currentClearValue = QuestManager.instance.GetQuestClearValue(questNpc.questId);
-                        if (currentClearValue == DataManager.instance.GetQuestData(questNpc.questId).TargetCount)
+                        if (currentClearValue >= DataManager.instance.GetQuestData(questNpc.questId).TargetCount)
                         {
                             questNpc.ReportQuest();
                             npc.ResetCurrentDialogueQuest();

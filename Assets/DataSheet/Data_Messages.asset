@@ -443,8 +443,8 @@ MonoBehaviour:
       Select_Code_2: -1
       Select_Code_3: 0
       Select_Code_4: 0
-      Select_Txt_1: " \uC751!"
-      Select_Txt_2: "\uC544\uB2C8?"
+      Select_Txt_1: " \uC751"
+      Select_Txt_2: "\uC544\uB2C8"
       Select_Txt_3: 
       Select_Txt_4: 
       Reward: 0

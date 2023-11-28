@@ -11,6 +11,10 @@ public class School_buildingScene : GameManager
     // 대사 출력 중인지 나타내는 플래그
     private bool isPrinting = false;
 
+    //대사가 끝낫는지 
+    public bool isEndDialog = false;
+
+
     public override void Init()
     {
         base.Init();
@@ -18,15 +22,13 @@ public class School_buildingScene : GameManager
         SceneType = e_Scene.Schoo_Building;
 
         UpdateDialogData();
-
-        ShowDialog();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
         {
-            if (!isPrinting)
+            if (!isPrinting && !isEndDialog)
             {
                 ShowDialog();
             }
@@ -35,13 +37,6 @@ public class School_buildingScene : GameManager
 
     void ShowDialog()
     {
-        // 3번째 대화가 끝나면 메서드를 종료
-        if (currentDialogIndex == 3)
-        {
-            UIManager.instance.Close_Talk(gameObject);
-            return;
-        }
-
         // 현재 대사를 가져옵니다.
         if (currentDialogIndex < dialogData.Count)
         {
@@ -56,10 +51,14 @@ public class School_buildingScene : GameManager
 
             // 다음 대사를 위해 인덱스 증가
             currentDialogIndex++;
-        }
-        else
-        {
-            UIManager.instance.Close_Talk(gameObject);
+
+            // 대화창 닫기
+            if (currentDialogIndex == 4)
+            {
+                UIManager.instance.Close_Talk(gameObject);
+                currentDialogIndex = 0;
+                isEndDialog = true;
+            }
         }
     }
 
@@ -73,5 +72,10 @@ public class School_buildingScene : GameManager
             yield return new WaitForSecondsRealtime(0.01f);  // 일정한 딜레이 후 다음 글자 표시
         }
         isPrinting = false;
+    }
+
+    private void Start()
+    {
+        ShowDialog();
     }
 }
