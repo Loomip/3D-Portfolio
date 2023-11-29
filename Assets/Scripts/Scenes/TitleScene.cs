@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
-using UnityEngine.UI;
 
 public class TitleScene : GameManager
 {
     public GameObject inven;
     public GameObject titleUI;
+    public TextMeshProUGUI txt_Title;
+    public TextMeshProUGUI txt_Start;
+    public TextMeshProUGUI txt_Option;
+    public TextMeshProUGUI txt_Exit;
 
     //메뉴 프리펩이 들어갈 위치
     public Transform Maun;
 
     // 옵션 메뉴의 이름
-    private const string optionMenuName = "Option";
+    private e_MenuType OptionMenu = e_MenuType.Option;
 
     private GameObject currentOptionMenu;
 
@@ -44,7 +47,7 @@ public class TitleScene : GameManager
 
         else // 그렇지 않다면, 옵션 메뉴를 인스턴스화하고 활성화합니다.
         {
-            string prefabPath = "Maun/" + optionMenuName;
+            string prefabPath = "Maun/" + OptionMenu;
             GameObject prefab = Resources.Load<GameObject>(prefabPath);
             if (prefab != null)
             {
@@ -55,7 +58,7 @@ public class TitleScene : GameManager
             }
             else
             {
-                Debug.Log("메뉴 유형 " + optionMenuName + "에 대한 메뉴 프리팹이 없습니다.");
+                Debug.Log("메뉴 유형 " + OptionMenu + "에 대한 메뉴 프리팹이 없습니다.");
             }
         }
     }
@@ -71,6 +74,11 @@ public class TitleScene : GameManager
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        txt_Title.text = DataManager.instance.GetWordData("Title");
+        txt_Start.text = DataManager.instance.GetWordData("Start");
+        txt_Option.text = DataManager.instance.GetWordData("Option");
+        txt_Exit.text = DataManager.instance.GetWordData("Exit");
     }
 
     private void Update()

@@ -19,10 +19,10 @@ MonoBehaviour:
       Kor: 
       Eng: 
       Jpn: 
-    - Type: Title_Name
-      Kor: "\uC790\uAC01\uBABD"
+    - Type: Title
+      Kor: "\uC790\uAC01\uBABD(\uAC00\uC81C) : Lucid Dream"
       Eng: Lucid Dream
-      Jpn: "\u660E\u6670\u5922"
+      Jpn: "\u660E\u6670\u5922 : Lucid Dream"
     - Type: Quest
       Kor: "\uD018\uC2A4\uD2B8"
       Eng: Quest
@@ -75,3 +75,11 @@ MonoBehaviour:
       Kor: "\uC644\uB8CC!"
       Eng: complete!
       Jpn: "\u30B3\u30F3\u30D7\u30EA\u30FC\u30C8!"
+    - Type: Start
+      Kor: "\uC2DC\uC791\uD558\uAE30"
+      Eng: Start
+      Jpn: "\u59CB\u3081\u308B"
+    - Type: Exit
+      Kor: "\uB098\uAC00\uAE30"
+      Eng: Exit
+      Jpn: "\u51FA\u308B"

@@ -56,6 +56,19 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                         {
                             isDialogueFinished = true;
                             npc.SetCurrentDialogIndex(selectCode);
+                            
+                            // 퀘스트 보상을 주는 로직 추가
+                            NPC_Quest questNpc = npc as NPC_Quest;
+                            if (questNpc != null)
+                            {
+                                int currentClearValue = QuestManager.instance.GetQuestClearValue(questNpc.questId);
+                                if (currentClearValue >= DataManager.instance.GetQuestData(questNpc.questId).TargetCount)
+                                {
+                                    questNpc.ReportQuest();
+                                    npc.ResetCurrentDialogueQuest();
+                                }
+                            }
+
                             //선택지가 켜지면 실행됬던 코루틴이 삭제가 되서 다시 실행 시켜줘야함
                             StartCoroutine(DialogueCoroutine(npc));
                         }
@@ -105,17 +118,7 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                     isDialogueFinished = false;
                     hasSelectOptions = false;
 
-                    // 퀘스트 보상을 주는 로직 추가
-                    NPC_Quest questNpc = npc as NPC_Quest;
-                    if (questNpc != null)
-                    {
-                        int currentClearValue = QuestManager.instance.GetQuestClearValue(questNpc.questId);
-                        if (currentClearValue >= DataManager.instance.GetQuestData(questNpc.questId).TargetCount)
-                        {
-                            questNpc.ReportQuest();
-                            npc.ResetCurrentDialogueQuest();
-                        }
-                    }
+                    
 
                     yield break;
                 }
