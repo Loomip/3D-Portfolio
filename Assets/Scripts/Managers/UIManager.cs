@@ -139,7 +139,6 @@ public class UIManager : SingletonDontDestroy<UIManager>
         foreach (var choice in choices)
         {
             choice.button.gameObject.SetActive(false);
-            choice.text.gameObject.SetActive(false);
         }
     }
 

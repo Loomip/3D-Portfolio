@@ -22,6 +22,7 @@ public class School_buildingScene : GameManager
         SceneType = e_Scene.Schoo_Building;
 
         UpdateDialogData();
+        SoundManager.instance.PlayBgm(e_Bgm.FightSound);
     }
 
     private void Update()

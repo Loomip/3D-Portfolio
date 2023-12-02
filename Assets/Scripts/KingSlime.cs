@@ -102,7 +102,7 @@ public class KingSlime : Enemy
 
         // 이동이 완료될 때까지 대기
         yield return new WaitUntil(() => !nav.pathPending && nav.remainingDistance < 0.1f);
-
+        SoundManager.instance.PlaySfx(e_Sfx.KingSlimeSkillSound);
         animator.SetTrigger("isSkill_1_1");
         TauntArea.enabled = true;
 

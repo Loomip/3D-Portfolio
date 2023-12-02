@@ -20,6 +20,7 @@ public class School_BossScene : GameManager
         UpdateDialogData();
 
         ShowDialog();
+        SoundManager.instance.PlayBgm(e_Bgm.BossSound);
     }
 
     private void Update()

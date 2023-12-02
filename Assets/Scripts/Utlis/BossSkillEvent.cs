@@ -11,6 +11,7 @@ public class BossSkillEvent : MonoBehaviour
     void BossSkill_1()
     {
         GameObject rangeInstant = Instantiate(Skiil_1, BulletPos3.position, BulletPos3.rotation);
+        SoundManager.instance.PlaySfx(e_Sfx.BossSkillSound);
         Effect effect = rangeInstant.GetComponent<Effect>();
         ShiiDeathing boss = GetComponent<ShiiDeathing>();
         effect.Atk = boss.atk;

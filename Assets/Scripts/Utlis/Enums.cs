@@ -99,9 +99,30 @@ public enum e_Scene
     School_ShiiDeathing,
     Length
 }
+public enum e_Bgm
+{ 
+    TitleSound,
+    DialogSound,
+    SchoolSound,
+    FightSound,
+    BossSound
+}
 
 
-
+public enum e_Sfx
+{
+    DanceSound,
+    GuitarSound,
+    SwoedSound,
+    BulletSound,
+    Hit,
+    ExplosionSound = 8,
+    BossAtteckSound,
+    BossSkillSound,
+    BossSkill2Sound,
+    KingSlimeSkillSound,
+    EnemyDie
+}
 
 
 

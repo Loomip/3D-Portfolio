@@ -5790,7 +5790,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e25d6b7853554d44980d3a83e779295b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 1
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that

@@ -79,6 +79,8 @@ public class TitleScene : GameManager
         txt_Start.text = DataManager.instance.GetWordData("Start");
         txt_Option.text = DataManager.instance.GetWordData("Option");
         txt_Exit.text = DataManager.instance.GetWordData("Exit");
+
+        SoundManager.instance.PlayBgm(e_Bgm.TitleSound);
     }
 
     private void Update()

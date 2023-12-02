@@ -13793,8 +13793,9 @@ MonoBehaviour:
   bossPrefabs: {fileID: 2706541608322978610, guid: 72cf44dea454d8549b9dbe213522419a, type: 3}
   doorin: {fileID: 4573004490010841016}
   doorOut: {fileID: 4573004490010841016}
-  zone: {fileID: 0}
+  zone: {fileID: 1048393458}
   spawnAreaCenter: {x: 0, y: 0, z: 65}
+  isFinalBossRoom: 0
 --- !u!65 &1048393458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13843,7 +13844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a0f2d2fb3fc04c8eb1715372ea80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogData: []
   eventSystemPrefab: {fileID: 2593133662377607457, guid: e033c1edf6af1ab458643b0b42ee6fb4, type: 3}
   playerPrefab: {fileID: 3942389606128553389, guid: 075a9506ec533ec4b92123919da7a02b, type: 3}
   player: {fileID: 6597824623486835692, guid: 075a9506ec533ec4b92123919da7a02b, type: 3}

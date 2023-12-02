@@ -49,6 +49,7 @@ public class Attack : MonoBehaviour
                 if (weapons != null && weapons.trailEffect != null)
                 {
                     weapons.trailEffect.enabled = false;
+                    player.isUseSkill = false;
                 }
             }
         }

@@ -30,7 +30,7 @@ public class ExplosionEvent : MonoBehaviour
             // ¶¥°ú Ãæµ¹ÇßÀ» ¶§ Æø¹ß ÀÌÆåÆ® »ý¼º
             var evt = collisionEvents[0];
             GameObject explosionEffect = Instantiate(explosionEffectPrefab, evt.intersection, Quaternion.identity);
-
+            SoundManager.instance.PlaySfx(e_Sfx.ExplosionSound);
             Effect effect = explosionEffect.GetComponent<Effect>();
             ShiiDeathing boss = owner.GetComponent<ShiiDeathing>();
             effect.Atk = boss.atk;

@@ -76,7 +76,11 @@ public class PlayerSkillEvent : MonoBehaviour
         Effect effect = rangeInstant.GetComponent<Effect>();
         Player player = GetComponentInParent<Player>();
         effect.Atk = player.Atk + 50;
+        SoundManager.instance.PlaySfx(e_Sfx.GuitarSound);
         StartCoroutine(DamageWithDelay(rangeInstant, effect.collider, 0.5f, 5f));
+
+        // 5초 후에 효과음 멈추기
+        StartCoroutine(StopSoundAfterSeconds(5f));
     }
 
     void Dance_Skill()
@@ -85,7 +89,10 @@ public class PlayerSkillEvent : MonoBehaviour
         Effect effect = rangeInstant.GetComponent<Effect>();
         Player player = GetComponentInParent<Player>();
         effect.Atk = player.Atk + 50;
+        SoundManager.instance.PlaySfx(e_Sfx.DanceSound);
         StartCoroutine(DamageWithDelay(rangeInstant, effect.collider, 0.5f, 5.5f));
+        // 5초 후에 효과음 멈추기
+        StartCoroutine(StopSoundAfterSeconds(5.5f));
     }
 
     IEnumerator DamageWithDelay(GameObject gameObject, Collider collider, float delay, float duration)
@@ -98,6 +105,13 @@ public class PlayerSkillEvent : MonoBehaviour
         }
         yield return new WaitForSeconds(duration);
         Destroy(gameObject);
+    }
+
+    //음악이 필요한 무기 브금 멈추기
+    IEnumerator StopSoundAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SoundManager.instance.StopSfx();
     }
 
     // 공격 애니메이션 종료 이벤트

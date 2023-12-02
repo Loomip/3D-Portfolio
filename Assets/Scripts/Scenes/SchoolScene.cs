@@ -13,6 +13,7 @@ public class SchoolScene : GameManager
         player = FindObjectOfType<Player>();
 
         UpdateDialogData();
+        SoundManager.instance.PlayBgm(e_Bgm.SchoolSound);
 
         if (player == null)
         {

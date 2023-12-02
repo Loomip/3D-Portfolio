@@ -273,6 +273,9 @@ public class Enemy : MonoBehaviour
     // 대미지를 받을 수 있는 쿨다운 시간
     private float damageCooldown = 0.2f;
 
+    //=====(나중에 해보기)
+    //인터페이스 클레스
+    //====
 
     //4-2. 대미지를 받았을때
     public void TakeDamage(int damage, Vector3 reactvec)
@@ -300,7 +303,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Die(Vector3 reactvec)
     {
         StopAllCoroutines();
-
+        SoundManager.instance.PlaySfx(e_Sfx.EnemyDie);
         nav.isStopped = true;
         nav.enabled = false;
         foreach (SkinnedMeshRenderer mesh in meshs)
@@ -357,6 +360,7 @@ public class Enemy : MonoBehaviour
 
             mesh.materials = materialsCopy;
         }
+        SoundManager.instance.PlaySfx(e_Sfx.Hit);
         yield return new WaitForSeconds(0.2f);
         foreach (SkinnedMeshRenderer mesh in meshs)
         {

@@ -30,6 +30,7 @@ public class School_building : GameManager
         UpdateDialogData();
 
         ShowDialog();
+        SoundManager.instance.PlayBgm(e_Bgm.DialogSound);
     }
 
     void Update()

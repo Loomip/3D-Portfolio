@@ -16,6 +16,8 @@ public class BulletEvent : MonoBehaviour
         Bullets bullets = intantBullet.GetComponent<Bullets>();
         bulletRigid.velocity = bulletPos.forward * 20f;
         bullets.Atk = player.stat.GetStat(e_StatType.Atk);
+        SoundManager.instance.PlaySfx(e_Sfx.BulletSound);
+        player.isUseSkill = false;
     }
 
     void Awake()

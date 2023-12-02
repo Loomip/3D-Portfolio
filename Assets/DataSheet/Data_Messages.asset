@@ -436,10 +436,26 @@ MonoBehaviour:
       DialogIndex: 1
       Name: "\uC18C\uC5F0"
       Actor: 5
+      Text: "\uC5B4\uC11C\uC640"
+      Return: 0
+      Quest: 0
+      Select_Code_1: 0
+      Select_Code_2: 0
+      Select_Code_3: 0
+      Select_Code_4: 0
+      Select_Txt_1: 
+      Select_Txt_2: 
+      Select_Txt_3: 
+      Select_Txt_4: 
+      Reward: 0
+    - Scene: 4
+      DialogIndex: 2
+      Name: "\uC18C\uC5F0"
+      Actor: 5
       Text: "\uB2E4 \uC7A1\uC740\uAC70\uC57C??"
       Return: 0
       Quest: 1
-      Select_Code_1: 2
+      Select_Code_1: 3
       Select_Code_2: -1
       Select_Code_3: 0
       Select_Code_4: 0
@@ -449,7 +465,7 @@ MonoBehaviour:
       Select_Txt_4: 
       Reward: 0
     - Scene: 4
-      DialogIndex: 2
+      DialogIndex: 3
       Name: "\uC18C\uC5F0"
       Actor: 5
       Text: "\uACE0\uC0DD\uD588\uC5B4"

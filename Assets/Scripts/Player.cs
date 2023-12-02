@@ -103,9 +103,7 @@ public class Player : MonoBehaviour
         // 이동
         MoveDir = new Vector3(x, 0, z).normalized;
 
-        //회피 이동 고정
-        if (isDodge)
-            MoveDir = dodgeDir;
+       
 
         // 이동 중인지 여부 판단
         isMoving = (x != 0f || z != 0f);
@@ -135,17 +133,27 @@ public class Player : MonoBehaviour
         }
         if (isMoving)
         {
-            //캐릭터의 정면
-            Vector3 char_forward = new Vector3(camPoint.forward.x, MoveDir.y, camPoint.forward.z).normalized * stat.GetStat(e_StatType.Spd);
+            Vector3 dir;
 
-            //캐릭터의 측면
-            Vector3 char_right = new Vector3(camPoint.right.x, MoveDir.y, camPoint.right.z).normalized * stat.GetStat(e_StatType.Spd);
+            //회피 이동 고정
+            if (isDodge)
+            {
+                dir = Model.transform.forward * stat.GetStat(e_StatType.Spd);
+            }
+            else
+            {
+                //캐릭터의 정면
+                Vector3 char_forward = new Vector3(camPoint.forward.x, MoveDir.y, camPoint.forward.z).normalized * stat.GetStat(e_StatType.Spd);
 
-            //가는 방향을 바꿔줌
-            Vector3 dir = char_forward * MoveDir.z + char_right * MoveDir.x;
+                //캐릭터의 측면
+                Vector3 char_right = new Vector3(camPoint.right.x, MoveDir.y, camPoint.right.z).normalized * stat.GetStat(e_StatType.Spd);
 
-            //바라보는 방향을 내가 누르는 방향으로 바꿔줌
-            Model.transform.forward = Vector3.Lerp(Model.transform.forward, dir, rotationSpeed * Time.deltaTime);
+                //가는 방향을 바꿔줌
+                dir = char_forward * MoveDir.z + char_right * MoveDir.x;
+
+                //바라보는 방향을 내가 누르는 방향으로 바꿔줌
+                Model.transform.forward = Vector3.Lerp(Model.transform.forward, dir, rotationSpeed * Time.deltaTime);
+            }
 
             //중력
             if (character.isGrounded == false)
@@ -212,6 +220,8 @@ public class Player : MonoBehaviour
 
         //무적상태 해제
         isDamage = false;
+
+        isUseSkill = false;
     }
 
     //================================================================================================================
@@ -225,6 +235,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isMoving && isWeaponEquipped)
         {
             isAttacking = true;
+            isUseSkill = true;
             animator.SetTrigger("isAtk");
         }
 
@@ -247,9 +258,13 @@ public class Player : MonoBehaviour
         isUseSkill = true;
         gaugeCount -= stat.GetStat(e_StatType.Skill_Gauge);
         UIManager.instance.Refresh_Gauge(this);
-        //스킬 쿨타임
-        yield return new WaitForSeconds(stat.GetStat(e_StatType.CoolTime));
+
+        //스킬 사용중 이동 금지
+        yield return new WaitForSeconds(2f);
         isUseSkill = false;
+
+        //스킬 쿨타임
+        yield return new WaitForSeconds(stat.GetStat(e_StatType.CoolTime) - 2f);
         canUseSkill = false;
     }
 

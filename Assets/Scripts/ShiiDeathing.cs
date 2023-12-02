@@ -54,7 +54,7 @@ public class ShiiDeathing : Enemy
         animator.SetTrigger("isAttack");
 
         yield return new WaitForSeconds(1f);
-
+        SoundManager.instance.PlaySfx(e_Sfx.BossAtteckSound);
         GameObject rangeInstant = Instantiate(rangeBullet, bulletPos.position, bulletPos.rotation);
         Rigidbody bulletRigid = rangeInstant.GetComponent<Rigidbody>();
         Bullets bullets = bulletRigid.GetComponent<Bullets>();
@@ -76,7 +76,7 @@ public class ShiiDeathing : Enemy
         animator.SetTrigger("isSkill_2");
 
         yield return new WaitForSeconds(1f);
-
+        SoundManager.instance.PlaySfx(e_Sfx.BossSkill2Sound);
         GameObject rangeInstant = Instantiate(Skill_2, bulletPos2.position, bulletPos.rotation);
         var evt = rangeInstant.GetComponentInChildren<ExplosionEvent>();
         evt.SetOwner(gameObject);
