@@ -13,7 +13,7 @@ public class BulletEvent : MonoBehaviour
         // ÃÑ¾Ë ¹ß»ç
         GameObject intantBullet = Instantiate(bullet, bulletPos.position, bulletPos.rotation);
         Rigidbody bulletRigid = intantBullet.GetComponent<Rigidbody>();
-        Bullets bullets = intantBullet.GetComponent<Bullets>();
+        PlayerBullet bullets = intantBullet.GetComponent<PlayerBullet>();
         bulletRigid.velocity = bulletPos.forward * 20f;
         bullets.Atk = player.stat.GetStat(e_StatType.Atk);
         SoundManager.instance.PlaySfx(e_Sfx.BulletSound);

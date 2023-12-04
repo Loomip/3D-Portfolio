@@ -57,7 +57,7 @@ public class ShiiDeathing : Enemy
         SoundManager.instance.PlaySfx(e_Sfx.BossAtteckSound);
         GameObject rangeInstant = Instantiate(rangeBullet, bulletPos.position, bulletPos.rotation);
         Rigidbody bulletRigid = rangeInstant.GetComponent<Rigidbody>();
-        Bullets bullets = bulletRigid.GetComponent<Bullets>();
+        EnamyBullet bullets = bulletRigid.GetComponent<EnamyBullet>();
         bulletRigid.velocity = bulletPos.forward;
         bullets.Atk = atk;
         yield return new WaitForSeconds(3f);

@@ -244,7 +244,7 @@ public class Enemy : MonoBehaviour
 
                     GameObject rangeinstanceant = Instantiate(rangeBullet, bulletPos.position, bulletPos.rotation);
                     Rigidbody bulletRigid = rangeinstanceant.GetComponent<Rigidbody>();
-                    Bullets bullets = bulletRigid.GetComponent<Bullets>();
+                    EnamyBullet bullets = bulletRigid.GetComponent<EnamyBullet>();
                     bulletRigid.velocity = bulletPos.forward * 20f;
                     bullets.Atk = atk;
 
@@ -399,7 +399,7 @@ public class Enemy : MonoBehaviour
 
         else if (other.CompareTag("Bullet"))
         {
-            Bullets bullet = other.GetComponent<Bullets>();
+            EnamyBullet bullet = other.GetComponent<EnamyBullet>();
             Vector3 reactVec = transform.position - other.transform.position;
             player.FillGauge(player.fill_Gauge);
             TakeDamage(bullet.Atk, reactVec);

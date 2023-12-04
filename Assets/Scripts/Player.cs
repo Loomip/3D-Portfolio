@@ -305,7 +305,7 @@ public class Player : MonoBehaviour
             if (!isDamage && !isDeadAnimating)
             {
                 Attack enemyAttack = other.GetComponentInChildren<Attack>();
-                Bullets bullets = other.GetComponent<Bullets>();
+                EnamyBullet bullets = other.GetComponent<EnamyBullet>();
                 Effect effects = other.GetComponent<Effect>();
 
                 int damage = 0;
