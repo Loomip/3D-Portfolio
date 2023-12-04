@@ -55,6 +55,11 @@ public class Attack : MonoBehaviour
         }
     }
 
+    void SwoedSound()
+    {
+        SoundManager.instance.PlaySfx(e_Sfx.SwoedSound);
+    }
+
     void Awake()
     {
         player = GetComponentInParent<Player>();

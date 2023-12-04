@@ -83,3 +83,15 @@ MonoBehaviour:
       Kor: "\uB098\uAC00\uAE30"
       Eng: Exit
       Jpn: "\u51FA\u308B"
+    - Type: BGM
+      Kor: "\uBC30\uACBD\uC74C"
+      Eng: Background Sound
+      Jpn: "\u30D0\u30C3\u30AF\u30B0\u30E9\u30A6\u30F3\u30C9\u30B5\u30A6\u30F3\u30C9"
+    - Type: SFX
+      Kor: "\uD6A8\uACFC\uC74C"
+      Eng: Sound Effect
+      Jpn: "\u52B9\u679C\u97F3"
+    - Type: Mute
+      Kor: "\uC74C\uC18C\uAC70"
+      Eng: Mute
+      Jpn: "\u30DF\u30E5\u30FC\u30C8"

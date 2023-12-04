@@ -107,6 +107,56 @@ public class SoundManager : SingletonDontDestroy<SoundManager>
         }
     }
 
+    //음소거 중인지
+    bool isMuted = false;
+
+    public bool IsMuted()
+    {
+        return isMuted;
+    }
+
+    public void SetMute(bool mute)
+    {
+        isMuted = mute;
+
+        foreach (var bgmPlayer in bgmPlayers)
+        {
+            bgmPlayer.mute = isMuted;
+        }
+
+        foreach (var sfxPlayer in sfxPlayers)
+        {
+            sfxPlayer.mute = isMuted;
+        }
+    }
+
+    public float GetBgmVolume()
+    {
+        return bgmVolume; // 또는 sfxVolume
+    }
+    public float GetSfxVolume()
+    {
+        return sfxVolume;
+    }
+
+    public void SetBgmVolume(float volume)
+    {
+        bgmVolume = volume;
+        foreach (var bgmPlayer in bgmPlayers)
+        {
+            bgmPlayer.volume = bgmVolume;
+        }
+    }
+
+    public void SetSfxVolume(float volume)
+    {
+        sfxVolume = volume;
+        foreach (var sfxPlayer in sfxPlayers)
+        {
+            sfxPlayer.volume = sfxVolume;
+        }
+    }
+
     protected override void DoAwake()
     {
         Init();
