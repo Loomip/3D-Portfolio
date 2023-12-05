@@ -223,36 +223,36 @@ public class Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-            // 회전 후에 공격 애니메이션 실행
-            animator.SetTrigger("isAttack");
+        // 회전 후에 공격 애니메이션 실행
+        animator.SetTrigger("isAttack");
 
-            switch (monsterType)
-            {
-                case e_MonsterType.Melee:
-                    meleeArea.GetComponent<Attack>().Atk = atk;
+        switch (monsterType)
+        {
+            case e_MonsterType.Melee:
+                meleeArea.GetComponent<Attack>().Atk = atk;
 
-                    yield return new WaitForSeconds(0.5f);
-                    meleeArea.enabled = true;
+                yield return new WaitForSeconds(0.5f);
+                meleeArea.enabled = true;
 
-                    yield return new WaitForSeconds(1f);
-                    meleeArea.enabled = false;
+                yield return new WaitForSeconds(1f);
+                meleeArea.enabled = false;
 
-                    break;
+                break;
 
-                case e_MonsterType.Range:
-                    yield return new WaitForSeconds(0.5f);
+            case e_MonsterType.Range:
+                yield return new WaitForSeconds(0.5f);
 
-                    GameObject rangeinstanceant = Instantiate(rangeBullet, bulletPos.position, bulletPos.rotation);
-                    Rigidbody bulletRigid = rangeinstanceant.GetComponent<Rigidbody>();
-                    EnamyBullet bullets = bulletRigid.GetComponent<EnamyBullet>();
-                    bulletRigid.velocity = bulletPos.forward * 20f;
-                    bullets.Atk = atk;
+                GameObject rangeinstanceant = Instantiate(rangeBullet, bulletPos.position, bulletPos.rotation);
+                Rigidbody bulletRigid = rangeinstanceant.GetComponent<Rigidbody>();
+                EnamyBullet bullets = bulletRigid.GetComponent<EnamyBullet>();
+                bulletRigid.velocity = bulletPos.forward * 20f;
+                bullets.Atk = atk;
 
-                    yield return new WaitForSeconds(1f);
-                    DestroyImmediate(rangeinstanceant, true);
+                yield return new WaitForSeconds(1f);
+                DestroyImmediate(rangeinstanceant, true);
 
-                    break;
-            }
+                break;
+        }
         yield return new WaitForSeconds(1f);
 
         animator.SetBool("isWalk", true);
@@ -335,7 +335,7 @@ public class Enemy : MonoBehaviour
         if (monsterType != e_MonsterType.Boss)
         {
             OnEnemyDied.Invoke();
-            Destroy(gameObject, 4); // 몬스터 오브젝트 삭제
+            Destroy(gameObject, 2); // 몬스터 오브젝트 삭제
         }
     }
 
@@ -392,14 +392,14 @@ public class Enemy : MonoBehaviour
             player.FillGauge(player.fill_Gauge);
 
             TakeDamage(atk.Atk, reactVec);
-            
+
             //대미지 표기방식
             Debug.Log("Weapon : " + curHealth);
         }
 
         else if (other.CompareTag("Bullet"))
         {
-            EnamyBullet bullet = other.GetComponent<EnamyBullet>();
+            PlayerBullet bullet = other.GetComponent<PlayerBullet>();
             Vector3 reactVec = transform.position - other.transform.position;
             player.FillGauge(player.fill_Gauge);
             TakeDamage(bullet.Atk, reactVec);

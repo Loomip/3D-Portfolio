@@ -2,11 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : Bullets
+public class PlayerBullet : MonoBehaviour
 {
-    Player player;
+    // 무기의 공격력 값을 저장하는 변수
+    public int Atk
+    {
+        get;
+        set;
+    }
+
+    Rigidbody rigid;
+
     [SerializeField] LayerMask layerMask = 0;
-    Transform tfTarget = null;
+    Transform tfTarget;
+    //최고 스피드
+    public float speed = 0f;
+    //현재 스피드
     float currentSpeed = 0f;
 
     // 타겟이 설정되었는지 여부를 나타내는 플래그
@@ -51,21 +62,24 @@ public class PlayerBullet : Bullets
             {
                 SearchEnemy(bulletDirection);
 
-                // 타겟이 설정되지 않았을 때 일정 시간이 지나면 파괴
-                if (!isTargetSet && Time.time - targetSetTime >= 1f)
+                if (Time.time - targetSetTime >= 1f)
                 {
+                    // 타겟이 설정되지 않았을 때 일정 시간이 지나면 파괴
                     Destroy(gameObject);
-                    yield break; // 코루틴 종료
+                    yield break;
                 }
             }
+            else
+            {
+                yield break; // 타겟이 설정되었으므로 코루틴 종료
+            }
 
+            yield return null; // 다음 프레임까지 대기
         }
     }
 
-    protected override void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        base.OnTriggerEnter(other);
-
         if (other.transform.CompareTag("Enemy"))
         {
             Destroy(gameObject);
@@ -74,20 +88,23 @@ public class PlayerBullet : Bullets
 
     private void Update()
     {
-        Vector3 playerDirection = (player.transform.position - transform.position).normalized;
+        if (tfTarget != null)
+        {
+            Vector3 playerDirection = (tfTarget.position - transform.position).normalized;
 
-        if (currentSpeed <= speed)
-            currentSpeed += speed * Time.deltaTime;
+            if (currentSpeed <= speed)
+                currentSpeed += speed * Time.deltaTime;
 
-        transform.position += playerDirection * currentSpeed * Time.deltaTime;
+            transform.position += playerDirection * currentSpeed * Time.deltaTime;
 
-        transform.forward = Vector3.Lerp(transform.forward, playerDirection, 0.25f);
+            transform.forward = Vector3.Lerp(transform.forward, playerDirection, 0.25f);
+        }
     }
 
-    protected override void Awake()
+    private void Awake()
     {
+        rigid = GetComponent<Rigidbody>();
         targetSetTime = Time.time; // 초기화
         StartCoroutine(LaunchDelay());
-        player = FindObjectOfType<Player>();
     }
 }
