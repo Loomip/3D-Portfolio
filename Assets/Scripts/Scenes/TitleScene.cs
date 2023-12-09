@@ -20,8 +20,6 @@ public class TitleScene : GameManager
 
     private GameObject currentOptionMenu;
 
-    public GameObject Gold;
-
     // "School" æ¿¿∏∑Œ ¿¸»Ø
     public void SceneStart()
     {
@@ -53,7 +51,6 @@ public class TitleScene : GameManager
             {
                 inven.SetActive(true);
                 currentOptionMenu = Instantiate(prefab, Maun);
-                Gold.SetActive(false);
 
             }
             else
@@ -82,6 +79,12 @@ public class TitleScene : GameManager
 
         SoundManager.instance.PlayBgm(e_Bgm.TitleSound);
     }
+    public void Exit()
+    {
+        Destroy(currentOptionMenu);
+        currentOptionMenu = null;
+        inven.SetActive(false);
+    }
 
     private void Update()
     {
@@ -90,7 +93,6 @@ public class TitleScene : GameManager
             Destroy(currentOptionMenu);
             currentOptionMenu = null;
             inven.SetActive(false);
-            Gold.SetActive(true);
         }
     }
 }

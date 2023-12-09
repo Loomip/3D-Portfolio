@@ -231,7 +231,7 @@ public class Enhance : MonoBehaviour
         InventoryManager.instance.RemoveItem(item);
 
         // 아이템 초기화
-        item = null;
+        slot.ClearSlot();
 
         Debug.Log("Enhance Success!");
     }

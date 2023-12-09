@@ -29,6 +29,8 @@ public class EquipSlot : Slot
         // 원본 아이템 제거
         InventoryManager.instance.RemoveItem(data);
 
+        img_Icon.enabled = true;
+
         Set_Icon(data);
 
         // 플레이어 상태 업데이트
@@ -54,6 +56,7 @@ public class EquipSlot : Slot
     
         // 장착된 아이템을 제거함
         img_Icon.sprite = null;
+        img_Icon.enabled = false;
 
         // 해제된 아이템을 인벤토리에 추가
         InventoryManager.instance.AddItem(detachedItem);
@@ -68,6 +71,9 @@ public class EquipSlot : Slot
     private void Start()
     {
         player = FindObjectOfType<Player>();
+    }
+    private void Update()
+    {
         img_Frame.enabled = true;
     }
 }

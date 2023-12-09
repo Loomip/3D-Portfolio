@@ -24,6 +24,7 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
     //골드 UI를 리프레쉬 해주는 함수
     public void Refresh_Gold()
     {
+        if(goldText != null)
         goldText.text = string.Format("{0: #,##0} 골드", gold);
     }
 

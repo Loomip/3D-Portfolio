@@ -209,9 +209,6 @@ public class Equip : MonoBehaviour
     }
 
 
-    // 현재 활성화된 무기의 인덱스
-    List<int> currentWeaponIndices = new List<int>();
-
     //사용하기
     private void Button_Use(ItemData itemData)
     {
@@ -255,6 +252,9 @@ public class Equip : MonoBehaviour
             slot.ClearSlot();
         }
     }
+
+    // 현재 활성화된 무기의 인덱스
+    List<int> currentWeaponIndices = new List<int>();
 
     // 장비하기
     private void Button_Equip(ItemData item)
@@ -337,33 +337,6 @@ public class Equip : MonoBehaviour
         }
     }
 
-    //버리기
-    public void Button_Discard()
-    {
-        // 선택된 아이템이 없으면 함수를 종료
-        if (slot == null)
-        {
-            Debug.LogError("버릴 아이템이 선택되지 않았습니다.");
-            return;
-        }
-
-        // 아이템을 인벤토리에서 제거
-        InventoryManager.instance.RemoveItem(slot.GetItem());
-
-        // 아이템을 버린 후에 아이템의 개수를 확인
-        // 선택된 태두리가 안꺼짐 (수정사항)
-        ItemData remainingItem = slot.GetItem();
-        if (remainingItem == null || remainingItem.amount == 0)
-        {
-            Refresh_Tooltip(null);
-            Refresh_Button(null);
-            slot.ClearSlot();
-            // 선택된 아이템 초기화
-            slot = null;
-        }
-
-        RefreshIcon();
-    }
 
     private e_Weapon GetWeaponType(Data_Item.Param item)
     {
@@ -434,6 +407,34 @@ public class Equip : MonoBehaviour
         }
 
         return indexList;
+    }
+
+
+    //버리기
+    public void Button_Discard()
+    {
+        // 선택된 아이템이 없으면 함수를 종료
+        if (slot == null)
+        {
+            Debug.LogError("버릴 아이템이 선택되지 않았습니다.");
+            return;
+        }
+
+        // 아이템을 인벤토리에서 제거
+        InventoryManager.instance.RemoveItem(slot.GetItem());
+
+        // 아이템을 버린 후에 아이템의 개수를 확인
+        ItemData remainingItem = slot.GetItem();
+        if (remainingItem == null || remainingItem.amount == 0)
+        {
+            Refresh_Tooltip(null);
+            Refresh_Button(null);
+            slot.ClearSlot();
+            // 선택된 아이템 초기화
+            slot = null;
+        }
+
+        RefreshIcon();
     }
 
     //아이템 선택한 것을 바꿔주는 함수
