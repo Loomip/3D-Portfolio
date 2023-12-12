@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    Data_Item.Param m_ItemData;
     Image img_Frame;
+    Image img_Selected;
     protected Image img_Icon;
     TextMeshProUGUI txt_Amount;
 
@@ -49,7 +49,10 @@ public class Slot : MonoBehaviour
         img_Frame = transform.GetChild(0).GetComponent<Image>();
         img_Icon = transform.GetChild(1).GetComponent<Image>();
         txt_Amount = GetComponentInChildren<TextMeshProUGUI>();
-
+        if (img_Selected != null)
+        {
+            img_Selected = transform.GetChild(2).GetComponent<Image>();
+        }
         ClearSlot();
     }
 
@@ -85,7 +88,10 @@ public class Slot : MonoBehaviour
     //슬롯을 비우는 메서드
     public void ClearSlot()
     {
-        img_Frame.enabled = false;
+        if (img_Selected != null)
+        {
+            img_Selected.enabled = false;
+        }
         isSelect = false;
         txt_Amount.enabled = false;
         isEmpty = true;
@@ -126,7 +132,7 @@ public class Slot : MonoBehaviour
     //슬롯의 선택 상태를 설정하는 메서드
     public void SelectSlot(bool isSelect)
     {
-        img_Frame.enabled = isSelect;
+        img_Selected.enabled = isSelect;
     }
 
     private void Awake()

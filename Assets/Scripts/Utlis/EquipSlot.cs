@@ -7,8 +7,6 @@ using static UnityEditor.Progress;
 
 public class EquipSlot : Slot
 {
-    public Image img_Frame;
-
     public ItemData EquippedItem { get; private set; } // 이 슬롯에 장착된 아이템
 
     public e_EquipType Type { get; private set; }
@@ -71,9 +69,5 @@ public class EquipSlot : Slot
     private void Start()
     {
         player = FindObjectOfType<Player>();
-    }
-    private void Update()
-    {
-        img_Frame.enabled = true;
     }
 }
