@@ -95,3 +95,15 @@ MonoBehaviour:
       Kor: "\uC74C\uC18C\uAC70"
       Eng: Mute
       Jpn: "\u30DF\u30E5\u30FC\u30C8"
+    - Type: Success
+      Kor: "\uC131\uACF5\uD588\uC5B4\uC694! "
+      Eng: It's a success !
+      Jpn: "\u6210\u529F\u3057\u307E\u3057\u305F"
+    - Type: Failed
+      Kor: "\uC2E4\uD328\uD588\uC5B4\uC694 .."
+      Eng: I failed ..
+      Jpn: "\u5931\u6557\u3057\u307E\u3057\u305F"
+    - Type: Max
+      Kor: "\uCD5C\uB300 \uAC15\uD654 \uC785\uB2C8\uB2E4."
+      Eng: Maximum reinforcement.
+      Jpn: "\u6700\u5927\u5F37\u5316\u3067\u3059"

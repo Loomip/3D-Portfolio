@@ -49,10 +49,7 @@ public class Slot : MonoBehaviour
         img_Frame = transform.GetChild(0).GetComponent<Image>();
         img_Icon = transform.GetChild(1).GetComponent<Image>();
         txt_Amount = GetComponentInChildren<TextMeshProUGUI>();
-        if (img_Selected != null)
-        {
-            img_Selected = transform.GetChild(2).GetComponent<Image>();
-        }
+        img_Selected = transform.Find("Selected")?.GetComponent<Image>();
         ClearSlot();
     }
 
@@ -121,7 +118,7 @@ public class Slot : MonoBehaviour
             {
                 equip.SelectSlot(this);
             }
-            if(enhance != null)
+            if (enhance != null)
             {
                 enhance.SelectSlot(this);
             }

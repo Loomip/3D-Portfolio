@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using System.Collections;
 
 public class Enhance : MonoBehaviour
 {
@@ -20,6 +20,10 @@ public class Enhance : MonoBehaviour
 
     //선택된 아이템의 이미지
     public Image tooltip_Icon;
+
+    // 시스템 메시지
+    [SerializeField]
+    private TextMeshProUGUI systemMessageText;  
 
     //버튼용 Delegate(대리자)
     delegate void UseButton();
@@ -144,6 +148,7 @@ public class Enhance : MonoBehaviour
         }
     }
 
+
     //아이템 선택한 것을 바꿔주는 함수
     public void SelectSlot(Slot newSlot)
     {
@@ -191,7 +196,7 @@ public class Enhance : MonoBehaviour
         // 강화 레벨이 enhanceChances 배열의 범위를 벗어나면 강화를 시도하지 않음
         if (itemEnhanceLevel >= enhanceChances.Length)
         {
-            Debug.Log("Item has reached maximum enhance level!");
+            StartCoroutine(ShowSystemMessage(DataManager.instance.GetWordData("Max")));
             return;
         }
 
@@ -204,6 +209,9 @@ public class Enhance : MonoBehaviour
             // 강화 성공 시 로직
             EnhanceItem(item);
 
+            // 강화 성공 메시지 표시
+            StartCoroutine(ShowSystemMessage(DataManager.instance.GetWordData("Success")));
+
             // 강화 성공 후 툴팁 비활성화
             Refresh_Tooltip(null);
 
@@ -214,9 +222,18 @@ public class Enhance : MonoBehaviour
         }
         else
         {
-            // 강화 실패 시 로직
-            Debug.Log("Enhance Failed!");
+            // 강화 실패 메시지 표시
+            StartCoroutine(ShowSystemMessage(DataManager.instance.GetWordData("Failed")));
         }
+    }
+
+    private IEnumerator ShowSystemMessage(string message)
+    {
+        // 메시지와 이미지를 표시
+        systemMessageText.text = message;
+        systemMessageText.enabled = true;
+
+        yield return null;
     }
 
     private void EnhanceItem(ItemData item)
@@ -232,8 +249,6 @@ public class Enhance : MonoBehaviour
 
         // 아이템 초기화
         slot.ClearSlot();
-
-        Debug.Log("Enhance Success!");
     }
 
     private void AddEnhancedItemToNewSlot(ItemData item)
@@ -268,6 +283,10 @@ public class Enhance : MonoBehaviour
         ItemData selectedItem = GetSelectedItem();
         Refresh_Tooltip(selectedItem);
         Refresh_Button(selectedItem);
+    }
+    private void OnEnable()
+    {
+        systemMessageText.enabled = false;
     }
 
     private void Update()

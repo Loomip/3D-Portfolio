@@ -85,14 +85,4 @@ public class TitleScene : GameManager
         currentOptionMenu = null;
         inven.SetActive(false);
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && currentOptionMenu != null)
-        {
-            Destroy(currentOptionMenu);
-            currentOptionMenu = null;
-            inven.SetActive(false);
-        }
-    }
 }

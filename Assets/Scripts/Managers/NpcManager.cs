@@ -98,8 +98,6 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
             if (isDialogueFinished)
             {
                 npc.SetCurrentDialogIndex(currentDialogue.Return);
-                isDialogueFinished = false;
-                hasSelectOptions = false;
             }
 
             yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.Return) || Input.GetMouseButton(0));
@@ -118,9 +116,6 @@ public class NpcManager : SingletonDontDestroy<NpcManager>
                     UIManager.instance.Close_Talk(gameObject);
                     isDialogueFinished = false;
                     hasSelectOptions = false;
-
-                    
-
                     yield break;
                 }
                 //선택지가 아닐시
