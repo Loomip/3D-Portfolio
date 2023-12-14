@@ -25,7 +25,7 @@ public class InventoryManager : SingletonDontDestroy<InventoryManager>
     public void Refresh_Gold()
     {
         if(goldText != null)
-        goldText.text = string.Format("{0: #,##0} °ñµå", gold);
+        goldText.text = string.Format("{0: #,##0}", gold);
     }
 
 
