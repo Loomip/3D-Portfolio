@@ -127,6 +127,8 @@ public class KingSlime : Enemy
     {
         base.Die(reactvec);  // Enemy 클래스의 Die 함수 호출
 
+        StopCoroutine(Think());
+
         bossroomController.isFinalBossRoom = false;
 
         if (bossroomController != null)
